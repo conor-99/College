@@ -1,6 +1,4 @@
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertFalse;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -18,11 +16,48 @@ public class SortComparisonTest {
     }
 
     @Test
-    public void testEmpty() {
-        assertTrue(true);
+    public void testEmptyInsert() {
+        double[] unsorted   = new double[] {};
+        double[] sorted     = new double[] {};
+        double[] result     = SortComparison.insertionSort(unsorted);
+        assertTrue(arrayEquals(result, sorted));
     }
 
-    public static void main(String[] args) {
+    @Test
+    public void testEmptySelect() {
+        double[] unsorted   = new double[] {};
+        double[] sorted     = new double[] {};
+        double[] result     = SortComparison.selectionSort(unsorted);
+        assertTrue(arrayEquals(result, sorted));
+    }
+
+    @Test
+    public void testUnsortedInsert() {
+        double[] unsorted   = new double[] { 1.0, 3.0, 2.0, 3.0, 1.0, 4.0, -1.0 };
+        double[] sorted     = new double[] { -1.0, 1.0, 1.0, 2.0, 3.0, 3.0, 4.0 };
+        double[] result     = SortComparison.insertionSort(unsorted);
+        assertTrue(arrayEquals(result, sorted));
+    }
+
+    @Test
+    public void testUnsortedSelect() {
+        double[] unsorted   = new double[] { 1.0, 3.0, 2.0, 3.0, 1.0, 4.0, -1.0 };
+        double[] sorted     = new double[] { -1.0, 1.0, 1.0, 2.0, 3.0, 3.0, 4.0 };
+        double[] result     = SortComparison.selectionSort(unsorted);
+        assertTrue(arrayEquals(result, sorted));
+    }
+
+    public static void main(String[] args) { }
+
+    private static boolean arrayEquals(double[] a, double[] b) {
+
+        if (a.length != b.length) return false;
+
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] != b[i]) return false;
+        }
+
+        return true;
 
     }
 
