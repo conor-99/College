@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c41e21a2-a4d2-4d64-b4dc-4e2d69556737" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/SortComparison.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SortComparison.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SortComparisonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SortComparisonTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -34,23 +33,22 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="2465" />
+          <entry key="java" value="2920" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2465" />
+          <entry key="JAVA" value="2920" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SortComparison.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="50" column="45" selection-start-line="50" selection-start-column="45" selection-end-line="50" selection-end-column="45" />
+            <state>
               <folding>
                 <element signature="method#insertionSort#0;class#SortComparison#0" />
                 <element signature="e#299#300#0" expanded="true" />
@@ -67,12 +65,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SortComparisonTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="2" lean-forward="true" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+            <state relative-caret-position="296">
+              <caret line="73" column="8" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="8" />
               <folding>
+                <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
                 <element signature="e#354#355#0" expanded="true" />
                 <element signature="e#390#391#0" expanded="true" />
@@ -81,6 +80,7 @@
                 <element signature="method#testInsert#0;class#SortComparisonTest#0" />
                 <element signature="method#testUnsortedSelect#0;class#SortComparisonTest#0" />
                 <element signature="method#arrayEquals#0;class#SortComparisonTest#0" />
+                <element signature="method#importArray#0;class#SortComparisonTest#0" />
               </folding>
             </state>
           </provider>
@@ -94,8 +94,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/SortComparisonTest.java" />
         <option value="$PROJECT_DIR$/src/SortComparison.java" />
+        <option value="$PROJECT_DIR$/src/SortComparisonTest.java" />
       </list>
     </option>
   </component>
@@ -131,7 +131,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550245070752" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550245575323" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
@@ -302,27 +302,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SortComparisonTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="2" lean-forward="true" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#354#355#0" expanded="true" />
-            <element signature="e#390#391#0" expanded="true" />
-            <element signature="method#testEmptyInsert#0;class#SortComparisonTest#0" />
-            <element signature="method#testEmptySelect#0;class#SortComparisonTest#0" />
-            <element signature="method#testInsert#0;class#SortComparisonTest#0" />
-            <element signature="method#testUnsortedSelect#0;class#SortComparisonTest#0" />
-            <element signature="method#arrayEquals#0;class#SortComparisonTest#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/SortComparison.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="50" column="45" selection-start-line="50" selection-start-column="45" selection-end-line="50" selection-end-column="45" />
+        <state>
           <folding>
             <element signature="method#insertionSort#0;class#SortComparison#0" />
             <element signature="e#299#300#0" expanded="true" />
@@ -334,6 +316,25 @@
             <element signature="method#selectionSort#0;class#SortComparison#0" />
             <element signature="method#swap#0;class#SortComparison#0" />
             <element signature="method#print#0;class#SortComparison#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SortComparisonTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="73" column="8" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="8" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#354#355#0" expanded="true" />
+            <element signature="e#390#391#0" expanded="true" />
+            <element signature="method#testEmptyInsert#0;class#SortComparisonTest#0" />
+            <element signature="method#testEmptySelect#0;class#SortComparisonTest#0" />
+            <element signature="method#testInsert#0;class#SortComparisonTest#0" />
+            <element signature="method#testUnsortedSelect#0;class#SortComparisonTest#0" />
+            <element signature="method#arrayEquals#0;class#SortComparisonTest#0" />
+            <element signature="method#importArray#0;class#SortComparisonTest#0" />
           </folding>
         </state>
       </provider>

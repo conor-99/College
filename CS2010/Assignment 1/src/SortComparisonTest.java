@@ -1,16 +1,11 @@
-import static org.junit.Assert.assertTrue;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
-
 /**
  *
  * @author Conor McCauey
  *
  * /// Results Table ///
  * | INPUT    | INSERT | QUICK  | MRG R  | MRG I  | SELECT |
- * | 0010 r.  |        |        |        |        |        |
- * | 0100 r.  |        |        |        |        |        |
+ * |   10 r.  |        |        |        |        |        |
+ * |  100 r.  |        |        |        |        |        |
  * | 1000 r.  |        |        |        |        |        |
  * | 1000 fu. |        |        |        |        |        |
  * | 1000 no. |        |        |        |        |        |
@@ -25,6 +20,15 @@ import org.junit.runners.JUnit4;
  * e. ...
  *
 */
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
+import static org.junit.Assert.assertTrue;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 
 @RunWith(JUnit4.class)
 public class SortComparisonTest {
@@ -66,7 +70,9 @@ public class SortComparisonTest {
         assertTrue(arrayEquals(result, sorted));
     }
 
-    public static void main(String[] args) { }
+    public static void main(String[] args) {
+        
+    }
 
     private static boolean arrayEquals(double[] a, double[] b) {
 
@@ -77,6 +83,31 @@ public class SortComparisonTest {
         }
 
         return true;
+
+    }
+
+    private static double[] importArray(String file, int size) {
+
+        double[] a = new double[size];
+
+        try {
+
+            FileReader fr = new FileReader(file);
+            BufferedReader br = new BufferedReader(fr);
+
+            int i = 0;
+            String l = null;
+
+            while ((l = br.readLine()) != null && i < size) {
+                a[i] = Double.parseDouble(l);
+                i++;
+            }
+
+            br.close();
+
+        } catch (Exception e) { }
+
+        return a;
 
     }
 
