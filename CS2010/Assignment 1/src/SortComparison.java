@@ -48,15 +48,7 @@ class SortComparison {
 
     }
 
-    public static void main(String[] args) {
-
-        double[] a = new double[] { 1.0, 3.0, 2.0, 3.0, 1.0, 4.0, -1.0 };
-        double[] b = selectionSort(a);
-
-        print(a);
-        print(b);
-
-    }
+    public static void main(String[] args) { }
 
     // Swap two elements in an array of doubles
     private static void swap(double[] a, int i, int j) {
@@ -66,7 +58,7 @@ class SortComparison {
     }
 
     // Print out an array of doubles
-    public static void print(double[] a) {
+    private static void print(double[] a) {
 
         for (int i = 0; i < a.length; i++) {
             System.out.print(a[i] + " ");

@@ -4,7 +4,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 /**
- * 
+ *
  * @author Conor McCauey
  *
  * /// Results Table ///
