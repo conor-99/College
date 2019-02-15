@@ -70,7 +70,15 @@ public class SortComparisonTest {
         assertTrue(arrayEquals(result, sorted));
     }
 
+    @Test
+    public void quick() {
+        SortComparison.print(importArray("src/inputs/numbers10.txt", 10));
+        assertTrue(true);
+    }
+
     public static void main(String[] args) {
+
+        SortComparison.print(importArray("inputs/numbers10.txt", 10));
 
         long start, end, time;
 
@@ -111,7 +119,10 @@ public class SortComparisonTest {
 
             br.close();
 
-        } catch (Exception e) { }
+        } catch (Exception e) {
+            System.out.println("Error importing array");
+            e.printStackTrace();
+        }
 
         return a;
 

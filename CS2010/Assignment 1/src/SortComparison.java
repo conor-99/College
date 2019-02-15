@@ -58,7 +58,7 @@ class SortComparison {
     }
 
     // Print out an array of doubles
-    private static void print(double[] a) {
+    public static void print(double[] a) {
 
         for (int i = 0; i < a.length; i++) {
             System.out.print(a[i] + " ");
