@@ -4,7 +4,26 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 /**
-    @author Conor McCauey
+ * 
+ * @author Conor McCauey
+ *
+ * /// Results Table ///
+ * | INPUT    | INSERT | QUICK  | MRG R  | MRG I  | SELECT |
+ * | 0010 r.  |        |        |        |        |        |
+ * | 0100 r.  |        |        |        |        |        |
+ * | 1000 r.  |        |        |        |        |        |
+ * | 1000 fu. |        |        |        |        |        |
+ * | 1000 no. |        |        |        |        |        |
+ * | 1000 ro. |        |        |        |        |        |
+ * | 1000 s.  |        |        |        |        |        |
+ *
+ * /// Questions ///
+ * a. ...
+ * b. ...
+ * c. ...
+ * d. ...
+ * e. ...
+ *
 */
 
 @RunWith(JUnit4.class)

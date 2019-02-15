@@ -51,7 +51,7 @@ class SortComparison {
     public static void main(String[] args) {
 
         double[] a = new double[] { 1.0, 3.0, 2.0, 3.0, 1.0, 4.0, -1.0 };
-        double[] b = insertionSort(a);
+        double[] b = selectionSort(a);
 
         print(a);
         print(b);
