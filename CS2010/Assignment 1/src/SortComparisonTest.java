@@ -71,7 +71,13 @@ public class SortComparisonTest {
     }
 
     public static void main(String[] args) {
-        
+
+        long start, end, time;
+
+        start = System.nanoTime();
+        end = System.nanoTime();
+        time = (end - start) / 1000;
+
     }
 
     private static boolean arrayEquals(double[] a, double[] b) {
