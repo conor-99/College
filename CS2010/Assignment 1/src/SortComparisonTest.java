@@ -8,7 +8,7 @@ import org.junit.runners.JUnit4;
 /**
  *  Test class for SortComparison.java
  *
- *  @author
+ *  @author Conor McCauley
  *  @version HT 2019
  */
 @RunWith(JUnit4.class)
