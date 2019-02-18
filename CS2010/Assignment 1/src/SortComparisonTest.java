@@ -55,6 +55,30 @@ public class SortComparisonTest {
     }
 
     @Test
+    public void testEmptyMergeRec() {
+        double[] unsorted   = new double[] {};
+        double[] sorted     = new double[] {};
+        double[] result     = SortComparison.mergeSortRecursive(unsorted);
+        assertTrue(arrayEquals(result, sorted));
+    }
+
+    @Test
+    public void testEmptyMergeIter() {
+        double[] unsorted   = new double[] {};
+        double[] sorted     = new double[] {};
+        double[] result     = SortComparison.mergeSortIterative(unsorted);
+        assertTrue(arrayEquals(result, sorted));
+    }
+
+    @Test
+    public void testEmptyQuick() {
+        double[] unsorted   = new double[] {};
+        double[] sorted     = new double[] {};
+        double[] result     = SortComparison.quickSort(unsorted);
+        assertTrue(arrayEquals(result, sorted));
+    }
+
+    @Test
     public void testUnsortedInsert() {
         double[] unsorted   = new double[] { 1.0, 3.0, 2.0, 3.0, 1.0, 4.0, -1.0 };
         double[] sorted     = new double[] { -1.0, 1.0, 1.0, 2.0, 3.0, 3.0, 4.0 };
@@ -71,9 +95,27 @@ public class SortComparisonTest {
     }
 
     @Test
-    public void quick() {
-        SortComparison.print(importArray("src/inputs/numbers10.txt", 10));
-        assertTrue(true);
+    public void testUnsortedMergeRec() {
+        double[] unsorted   = new double[] { 1.0, 3.0, 2.0, 3.0, 1.0, 4.0, -1.0 };
+        double[] sorted     = new double[] { -1.0, 1.0, 1.0, 2.0, 3.0, 3.0, 4.0 };
+        double[] result     = SortComparison.mergeSortRecursive(unsorted);
+        assertTrue(arrayEquals(result, sorted));
+    }
+
+    @Test
+    public void testUnsortedMergeIter() {
+        double[] unsorted   = new double[] { 1.0, 3.0, 2.0, 3.0, 1.0, 4.0, -1.0 };
+        double[] sorted     = new double[] { -1.0, 1.0, 1.0, 2.0, 3.0, 3.0, 4.0 };
+        double[] result     = SortComparison.mergeSortIterative(unsorted);
+        assertTrue(arrayEquals(result, sorted));
+    }
+
+    @Test
+    public void testUnsortedQuick() {
+        double[] unsorted   = new double[] { 1.0, 3.0, 2.0, 3.0, 1.0, 4.0, -1.0 };
+        double[] sorted     = new double[] { -1.0, 1.0, 1.0, 2.0, 3.0, 3.0, 4.0 };
+        double[] result     = SortComparison.quickSort(unsorted);
+        assertTrue(arrayEquals(result, sorted));
     }
 
     public static void main(String[] args) {
