@@ -4,7 +4,7 @@
 
 class SortComparison {
 
-    static double[] insertionSort(double a[]){
+    static double[] insertionSort(double[] a){
 
         for (int i = 1; i < a.length; i++) {
             for (int j = i; j > 0; j--) {
@@ -16,16 +16,52 @@ class SortComparison {
 
     }
 
-    static double[] quickSort(double a[]) {
+    static double[] quickSort(double[] a) {
 
-        print(a);
+        if (a.length <= 1) return a;
+
         shuffle(a);
-        print(a);
+        quickRecSort(a, 0, (a.length - 1));
+
         return a;
 
     }
 
-    static double[] mergeSortIterative(double a[]) {
+    private static void quickRecSort(double[] a, int lo, int hi) {
+
+        if (hi <= lo) return;
+
+        int v = quickPartition(a, lo, hi);
+        quickRecSort(a, lo, (v - 1));
+        quickRecSort(a, (v + 1), hi);
+
+    }
+
+    private static int quickPartition(double[] a, int lo, int hi) {
+
+        int i = lo;
+        int j = hi + 1;
+
+        double v = a[lo];
+
+        while (true) {
+
+            while (a[++i] < v) { if (i == hi) break; }
+            while (v < a[--j]) { if (j == lo) break; }
+            if (i >= j) break;
+
+            swap(a, i, j);
+
+        }
+
+        a[lo] = a[j];
+        a[j] = v;
+
+        return j;
+
+    }
+
+    static double[] mergeSortIterative(double[] a) {
 
         int n = a.length;
         double[] aux = new double[n];
@@ -40,7 +76,7 @@ class SortComparison {
 
     }
 
-    static double[] mergeSortRecursive(double a[]) {
+    static double[] mergeSortRecursive(double[] a) {
 
         double[] aux = new double[a.length];
         mergeRecSort(a, aux, 0, (a.length - 1));
@@ -75,7 +111,7 @@ class SortComparison {
 
     }
 
-    static double[] selectionSort(double a[]) {
+    static double[] selectionSort(double[] a) {
 
         int l = a.length;
 
@@ -95,14 +131,7 @@ class SortComparison {
 
     }
 
-    public static void main(String[] args) {
-
-        double[] a = new double[] { 1.0, 2.0, 0.0, -1.0, 3.0, 4.0, 1.0, 0.0, -2.0 };
-        print(a);
-        double[] b = quickSort(a);
-        print(b);
-
-    }
+    public static void main(String[] args) { }
 
     // Swap two elements in an array of doubles
     private static void swap(double[] a, int i, int j) {
@@ -125,22 +154,6 @@ class SortComparison {
             swap(a, i, r);
 
         }
-
-    }
-
-    // Math.min() alternative -- not used
-    private static int min(int x, int y) {
-        return (x < y) ? x : y;
-    }
-
-    // Print out an array of doubles
-    public static void print(double[] a) {
-
-        for (int i = 0; i < a.length; i++) {
-            System.out.print(a[i] + " ");
-        }
-
-        System.out.println();
 
     }
 

@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c41e21a2-a4d2-4d64-b4dc-4e2d69556737" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SortComparison.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SortComparison.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SortComparisonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SortComparisonTest.java" afterDir="false" />
     </list>
@@ -12,6 +11,12 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Sort_Comparison$SortComparisonTest.ic" NAME="SortComparisonTest Coverage Results" MODIFIED="1550505046169" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="164" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="388673474">
@@ -37,44 +42,44 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="5849" />
+          <entry key="java" value="7481" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="5849" />
+          <entry key="JAVA" value="7481" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SortComparison.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="398">
+              <caret line="158" selection-start-line="158" selection-end-line="158" />
               <folding>
                 <element signature="method#insertionSort#0;class#SortComparison#0" />
+                <element signature="method#quickRecSort#0;class#SortComparison#0" />
+                <element signature="method#quickPartition#0;class#SortComparison#0" />
+                <element signature="method#mergeSortIterative#0;class#SortComparison#0" />
                 <element signature="method#mergeSortRecursive#0;class#SortComparison#0" />
                 <element signature="method#mergeRecSort#0;class#SortComparison#0" />
                 <element signature="method#mergeRecMerge#0;class#SortComparison#0" />
                 <element signature="method#selectionSort#0;class#SortComparison#0" />
                 <element signature="method#swap#0;class#SortComparison#0" />
                 <element signature="method#shuffle#0;class#SortComparison#0" />
-                <element signature="e#2831#2832#0" expanded="true" />
-                <element signature="e#2869#2870#0" expanded="true" />
-                <element signature="method#print#0;class#SortComparison#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SortComparisonTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="449">
-              <caret line="131" lean-forward="true" selection-start-line="131" selection-end-line="131" />
+            <state relative-caret-position="75">
+              <caret line="153" column="4" selection-start-line="153" selection-start-column="4" selection-end-line="153" selection-end-column="4" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -104,12 +109,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/SortComparisonTest.java" />
         <option value="$PROJECT_DIR$/src/SortComparison.java" />
+        <option value="$PROJECT_DIR$/src/SortComparisonTest.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-11" />
     <option name="width" value="980" />
     <option name="height" value="1044" />
@@ -127,7 +132,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550504065021" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550506068070" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
@@ -147,7 +152,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.SortComparison">
+  <component name="RunManager" selected="JUnit.SortComparisonTest">
     <configuration name="SortComparison" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SortComparison" />
       <module name="Sort Comparison" />
@@ -202,8 +207,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SortComparison" />
         <item itemvalue="JUnit.SortComparisonTest" />
+        <item itemvalue="Application.SortComparison" />
         <item itemvalue="JUnit.SortComparisonTest.quick" />
         <item itemvalue="JUnit.SortComparisonTest.testUnsortedSelect" />
         <item itemvalue="JUnit.SortComparisonTest.testUnsorted" />
@@ -224,18 +229,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SortComparisonTest_testUnsortedSelect - 2019.02.15 at 15h 23m 56s.xml">
-      <configuration name="SortComparisonTest.testUnsortedSelect" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SortComparisonTest - 2019.02.15 at 15h 24m 05s.xml">
-      <configuration name="SortComparisonTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SortComparisonTest - 2019.02.15 at 15h 53m 08s.xml">
-      <configuration name="SortComparisonTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SortComparisonTest - 2019.02.15 at 15h 53m 19s.xml">
-      <configuration name="SortComparisonTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="SortComparisonTest - 2019.02.15 at 15h 53m 45s.xml">
       <configuration name="SortComparisonTest" configurationId="JUnit" />
     </history-entry>
@@ -254,9 +247,21 @@
     <history-entry file="SortComparisonTest - 2019.02.18 at 15h 19m 48s.xml">
       <configuration name="SortComparisonTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="SortComparisonTest - 2019.02.18 at 15h 48m 22s.xml">
+      <configuration name="SortComparisonTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SortComparisonTest - 2019.02.18 at 15h 48m 46s.xml">
+      <configuration name="SortComparisonTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SortComparisonTest - 2019.02.18 at 15h 50m 00s.xml">
+      <configuration name="SortComparisonTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SortComparisonTest - 2019.02.18 at 15h 50m 52s.xml">
+      <configuration name="SortComparisonTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="653" height="696" extended-state="0" />
+    <frame x="-7" y="-7" width="1295" height="704" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.12631579" />
@@ -268,15 +273,16 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.29457363" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.78380567" weight="0.290146" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.21619433" side_tool="true" weight="0.290146" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32846716" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32664233" />
+      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.32955465" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -298,10 +304,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/SortComparison.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="158" selection-start-line="158" selection-end-line="158" />
+          <folding>
+            <element signature="method#insertionSort#0;class#SortComparison#0" />
+            <element signature="method#quickRecSort#0;class#SortComparison#0" />
+            <element signature="method#quickPartition#0;class#SortComparison#0" />
+            <element signature="method#mergeSortIterative#0;class#SortComparison#0" />
+            <element signature="method#mergeSortRecursive#0;class#SortComparison#0" />
+            <element signature="method#mergeRecSort#0;class#SortComparison#0" />
+            <element signature="method#mergeRecMerge#0;class#SortComparison#0" />
+            <element signature="method#selectionSort#0;class#SortComparison#0" />
+            <element signature="method#swap#0;class#SortComparison#0" />
+            <element signature="method#shuffle#0;class#SortComparison#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/SortComparisonTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="131" lean-forward="true" selection-start-line="131" selection-end-line="131" />
+        <state relative-caret-position="75">
+          <caret line="153" column="4" selection-start-line="153" selection-start-column="4" selection-end-line="153" selection-end-column="4" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
@@ -318,25 +343,6 @@
             <element signature="method#main#0;class#SortComparisonTest#0" />
             <element signature="method#arrayEquals#0;class#SortComparisonTest#0" />
             <element signature="method#importArray#0;class#SortComparisonTest#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SortComparison.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="method#insertionSort#0;class#SortComparison#0" />
-            <element signature="method#mergeSortRecursive#0;class#SortComparison#0" />
-            <element signature="method#mergeRecSort#0;class#SortComparison#0" />
-            <element signature="method#mergeRecMerge#0;class#SortComparison#0" />
-            <element signature="method#selectionSort#0;class#SortComparison#0" />
-            <element signature="method#swap#0;class#SortComparison#0" />
-            <element signature="method#shuffle#0;class#SortComparison#0" />
-            <element signature="e#2831#2832#0" expanded="true" />
-            <element signature="e#2869#2870#0" expanded="true" />
-            <element signature="method#print#0;class#SortComparison#0" />
           </folding>
         </state>
       </provider>

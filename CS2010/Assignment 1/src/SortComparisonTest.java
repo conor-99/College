@@ -26,8 +26,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import static org.junit.Assert.assertTrue;
 
+import java.awt.desktop.ScreenSleepEvent;
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
 
 @RunWith(JUnit4.class)
@@ -120,14 +120,92 @@ public class SortComparisonTest {
 
     public static void main(String[] args) {
 
-        SortComparison.print(importArray("inputs/numbers10.txt", 10));
+        double[] rTen       = importArray("inputs/numbers10.txt", 10);
+        double[] rHundred   = importArray("inputs/numbers100.txt", 100);
+        double[] rThou      = importArray("inputs/numbers1000.txt", 1000);
+        double[] fuThou     = importArray("inputs/numbers1000Duplicates.txt", 1000);
+        double[] noThou     = importArray("inputs/numbersNearlyOrdered1000.txt", 1000);
+        double[] roThou     = importArray("inputs/numbersReverse1000.txt", 1000);
+        double[] sThou      = importArray("inputs/numbersSorted1000.txt", 1000);
 
+        System.out.println("10 r");
+        print(getAverageTimes(rTen, 3));
+
+        System.out.println("100 r");
+        print(getAverageTimes(rHundred, 3));
+
+        System.out.println("1000 r");
+        print(getAverageTimes(rThou, 3));
+
+        System.out.println("1000 fu");
+        print(getAverageTimes(fuThou, 3));
+
+        System.out.println("1000 no");
+        print(getAverageTimes(noThou, 3));
+
+        System.out.println("1000 ro");
+        print(getAverageTimes(roThou, 3));
+
+        System.out.println("1000 s");
+        print(getAverageTimes(sThou, 3));
+
+    }
+
+    private static long[] getAverageTimes(double[] a, int runs) {
+
+        long[] results = new long[5];
         long start, end, time;
+        double[] b = new double[a.length];
 
-        start = System.nanoTime();
-        end = System.nanoTime();
-        time = (end - start) / 1000000;
+        for (int i = 0; i < runs; i++) {
 
+            System.arraycopy(a, 0, b, 0, a.length);
+            start = System.nanoTime();
+            SortComparison.insertionSort(b);
+            end = System.nanoTime();
+            time = (end - start) / 1000000;
+            results[0] += time;
+
+            System.arraycopy(a, 0, b, 0, a.length);
+            start = System.nanoTime();
+            SortComparison.selectionSort(b);
+            end = System.nanoTime();
+            time = (end - start) / 1000000;
+            results[0] += time;
+
+            System.arraycopy(a, 0, b, 0, a.length);
+            start = System.nanoTime();
+            SortComparison.insertionSort(b);
+            end = System.nanoTime();
+            time = (end - start) / 1000000;
+            results[0] += time;
+
+            System.arraycopy(a, 0, b, 0, a.length);
+            start = System.nanoTime();
+            SortComparison.insertionSort(b);
+            end = System.nanoTime();
+            time = (end - start) / 1000000;
+            results[0] += time;
+
+            System.arraycopy(a, 0, b, 0, a.length);
+            start = System.nanoTime();
+            SortComparison.insertionSort(b);
+            end = System.nanoTime();
+            time = (end - start) / 1000000;
+            results[0] += time;
+
+        }
+
+        // Calculate averages
+        for (int i = 0; i < 5; i++) { results[i] /= runs; }
+
+        return results;
+
+    }
+
+    private static void print(long[] a) {
+        for (long l : a) { System.out.print(l + " "); }
+        System.out.println();
     }
 
     private static boolean arrayEquals(double[] a, double[] b) {
