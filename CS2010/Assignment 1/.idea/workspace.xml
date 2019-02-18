@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c41e21a2-a4d2-4d64-b4dc-4e2d69556737" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/SortComparison.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SortComparison.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SortComparisonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SortComparisonTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="c41e21a2-a4d2-4d64-b4dc-4e2d69556737" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -79,8 +76,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SortComparisonTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="21" column="94" selection-start-line="21" selection-start-column="94" selection-end-line="21" selection-end-column="94" />
+            <state relative-caret-position="109">
+              <caret line="34" column="2" lean-forward="true" selection-start-line="34" selection-start-column="2" selection-end-line="34" selection-end-column="2" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#testEmptyInsert#0;class#SortComparisonTest#0" />
@@ -135,7 +132,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550509144052" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550509197659" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
@@ -329,8 +326,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SortComparisonTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="21" column="94" selection-start-line="21" selection-start-column="94" selection-end-line="21" selection-end-column="94" />
+        <state relative-caret-position="109">
+          <caret line="34" column="2" lean-forward="true" selection-start-line="34" selection-start-column="2" selection-end-line="34" selection-end-column="2" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#testEmptyInsert#0;class#SortComparisonTest#0" />
