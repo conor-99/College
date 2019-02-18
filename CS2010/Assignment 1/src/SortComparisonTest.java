@@ -2,15 +2,15 @@
  *
  * @author Conor McCauey
  *
- * /// Results Table ///
+ * /// Results Table (milliseconds) ///
  * | INPUT    | INSERT | QUICK  | MRG R  | MRG I  | SELECT |
- * |   10 r.  |        |        |        |        |        |
- * |  100 r.  |        |        |        |        |        |
- * | 1000 r.  |        |        |        |        |        |
- * | 1000 fu. |        |        |        |        |        |
- * | 1000 no. |        |        |        |        |        |
- * | 1000 ro. |        |        |        |        |        |
- * | 1000 s.  |        |        |        |        |        |
+ * |   10 r.  | 0.006  | 0.396  | 0.011  | 0.012  | 0.004  |
+ * |  100 r.  | 0.361  | 0.236  | 0.072  | 0.052  | 0.183  |
+ * | 1000 r.  | 5.300  | 0.792  | 0.208  | 0.297  | 4.877  |
+ * | 1000 fu. | 0.997  | 0.235  | 0.133  | 0.297  | 0.759  |
+ * | 1000 no. | 0.741  | 0.237  | 0.386  | 0.439  | 0.619  |
+ * | 1000 ro. | 2.010  | 0.203  | 0.088  | 0.146  | 1.103  |
+ * | 1000 s.  | 1.445  | 0.200  | 0.083  | 0.162  | 0.725  |
  *
  * /// Questions ///
  * a. ...
@@ -151,48 +151,64 @@ public class SortComparisonTest {
 
     }
 
-    private static long[] getAverageTimes(double[] a, int runs) {
+    public static long[] getAverageTimes(double[] a, int runs) {
 
         long[] results = new long[5];
         long start, end, time;
         double[] b = new double[a.length];
 
+        // Time each sorting method
         for (int i = 0; i < runs; i++) {
 
             System.arraycopy(a, 0, b, 0, a.length);
+
             start = System.nanoTime();
             SortComparison.insertionSort(b);
             end = System.nanoTime();
-            time = (end - start) / 1000000;
+            //time = (end - start) / 1000000;
+            time = (end - start) / 1000;
+
             results[0] += time;
 
             System.arraycopy(a, 0, b, 0, a.length);
+
+            start = System.nanoTime();
+            SortComparison.quickSort(b);
+            end = System.nanoTime();
+            //time = (end - start) / 1000000;
+            time = (end - start) / 1000;
+
+            results[1] += time;
+
+            System.arraycopy(a, 0, b, 0, a.length);
+
+            start = System.nanoTime();
+            SortComparison.mergeSortRecursive(b);
+            end = System.nanoTime();
+            //time = (end - start) / 1000000;
+            time = (end - start) / 1000;
+
+            results[2] += time;
+
+            System.arraycopy(a, 0, b, 0, a.length);
+
+            start = System.nanoTime();
+            SortComparison.mergeSortIterative(b);
+            end = System.nanoTime();
+            //time = (end - start) / 1000000;
+            time = (end - start) / 1000;
+
+            results[3] += time;
+
+            System.arraycopy(a, 0, b, 0, a.length);
+
             start = System.nanoTime();
             SortComparison.selectionSort(b);
             end = System.nanoTime();
-            time = (end - start) / 1000000;
-            results[0] += time;
+            //time = (end - start) / 1000000;
+            time = (end - start) / 1000;
 
-            System.arraycopy(a, 0, b, 0, a.length);
-            start = System.nanoTime();
-            SortComparison.insertionSort(b);
-            end = System.nanoTime();
-            time = (end - start) / 1000000;
-            results[0] += time;
-
-            System.arraycopy(a, 0, b, 0, a.length);
-            start = System.nanoTime();
-            SortComparison.insertionSort(b);
-            end = System.nanoTime();
-            time = (end - start) / 1000000;
-            results[0] += time;
-
-            System.arraycopy(a, 0, b, 0, a.length);
-            start = System.nanoTime();
-            SortComparison.insertionSort(b);
-            end = System.nanoTime();
-            time = (end - start) / 1000000;
-            results[0] += time;
+            results[4] += time;
 
         }
 
@@ -203,7 +219,7 @@ public class SortComparisonTest {
 
     }
 
-    private static void print(long[] a) {
+    public static void print(long[] a) {
         for (long l : a) { System.out.print(l + " "); }
         System.out.println();
     }
@@ -220,7 +236,7 @@ public class SortComparisonTest {
 
     }
 
-    private static double[] importArray(String file, int size) {
+    public static double[] importArray(String file, int size) {
 
         double[] a = new double[size];
 
