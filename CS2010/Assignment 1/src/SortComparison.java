@@ -131,39 +131,6 @@ class SortComparison {
 
     }
 
-    public static void main(String[] args) {
-
-        double[] rTen       = SortComparisonTest.importArray("inputs/numbers10.txt", 10);
-        double[] rHundred   = SortComparisonTest.importArray("inputs/numbers100.txt", 100);
-        double[] rThou      = SortComparisonTest.importArray("inputs/numbers1000.txt", 1000);
-        double[] fuThou     = SortComparisonTest.importArray("inputs/numbers1000Duplicates.txt", 1000);
-        double[] noThou     = SortComparisonTest.importArray("inputs/numbersNearlyOrdered1000.txt", 1000);
-        double[] roThou     = SortComparisonTest.importArray("inputs/numbersReverse1000.txt", 1000);
-        double[] sThou      = SortComparisonTest.importArray("inputs/numbersSorted1000.txt", 1000);
-
-        System.out.println("10 r");
-        SortComparisonTest.print(SortComparisonTest.getAverageTimes(rTen, 3));
-
-        System.out.println("100 r");
-        SortComparisonTest.print(SortComparisonTest.getAverageTimes(rHundred, 3));
-
-        System.out.println("1000 r");
-        SortComparisonTest.print(SortComparisonTest.getAverageTimes(rThou, 3));
-
-        System.out.println("1000 fu");
-        SortComparisonTest.print(SortComparisonTest.getAverageTimes(fuThou, 3));
-
-        System.out.println("1000 no");
-        SortComparisonTest.print(SortComparisonTest.getAverageTimes(noThou, 3));
-
-        System.out.println("1000 ro");
-        SortComparisonTest.print(SortComparisonTest.getAverageTimes(roThou, 3));
-
-        System.out.println("1000 s");
-        SortComparisonTest.print(SortComparisonTest.getAverageTimes(sThou, 3));
-
-    }
-
     // Swap two elements in an array of doubles
     private static void swap(double[] a, int i, int j) {
         double t = a[i];

@@ -26,7 +26,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import static org.junit.Assert.assertTrue;
 
-import java.awt.desktop.ScreenSleepEvent;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
@@ -118,6 +117,11 @@ public class SortComparisonTest {
         assertTrue(arrayEquals(result, sorted));
     }
 
+    @Test
+    public void testMainMethod() {
+        main(null); // runs the main method -- which allows us to time our sorting algorithms
+    }
+
     public static void main(String[] args) {
 
         double[] rTen       = importArray("inputs/numbers10.txt", 10);
@@ -151,7 +155,7 @@ public class SortComparisonTest {
 
     }
 
-    public static long[] getAverageTimes(double[] a, int runs) {
+    private static long[] getAverageTimes(double[] a, int runs) {
 
         long[] results = new long[5];
         long start, end, time;
@@ -219,7 +223,7 @@ public class SortComparisonTest {
 
     }
 
-    public static void print(long[] a) {
+    private static void print(long[] a) {
         for (long l : a) { System.out.print(l + " "); }
         System.out.println();
     }
@@ -236,7 +240,7 @@ public class SortComparisonTest {
 
     }
 
-    public static double[] importArray(String file, int size) {
+    private static double[] importArray(String file, int size) {
 
         double[] a = new double[size];
 
