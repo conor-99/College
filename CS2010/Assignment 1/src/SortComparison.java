@@ -1,5 +1,5 @@
 /**
- @author Conor McCauey
+ * @author Conor McCauley
 */
 
 class SortComparison {

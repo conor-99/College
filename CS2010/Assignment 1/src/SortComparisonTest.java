@@ -1,6 +1,6 @@
 /**
  *
- * @author Conor McCauey
+ * @author Conor McCauley
  *
  * /// Results Table (milliseconds) ///
  * | INPUT    | INSERT | QUICK  | MRG R  | MRG I  | SELECT |
@@ -13,11 +13,34 @@
  * | 1000 s.  | 1.445  | 0.200  | 0.083  | 0.162  | 0.725  |
  *
  * /// Questions ///
- * a. ...
- * b. ...
- * c. ...
- * d. ...
- * e. ...
+ * a.
+ *      Insertion sort:
+ *          Since we iterate through the list, ordering each element as we go, then the more ordered the list already
+ *          is the less swaps we'll need to carry out because we can ignore the ordered sections of the list.
+ *      Selection sort:
+ *          When the list is already sorted we won't need to make as many comparisons to find the next largest element
+ *          in the list -- we can add items from the unsorted list to the sorted list quicker.
+ *
+ * b.
+ *      Selection sort (nearly ordered is 7.9x faster than random order):
+ *          The reason for this is given in question (a) -- we don't need to make as many comparisons and can move items
+ *          from the unsorted list to the sorted list quicker.
+ *
+ * c.
+ *      Worst: selection sort -- 100x increase in input size -> 1219x increase in time.
+ *      Best: quick sort -- 100x increase in input size -> 2x increase in time.
+ *
+ * d.
+ *      Yes, the recursive version seems to be faster in all cases except '100 random'.
+ *
+ * e.
+ *      10 random:          selection sort.
+ *      100 random:         merge sort (iter).
+ *      1000 random:        merge sort (rec).
+ *      1000 few unique:    merge sort (rec).
+ *      1000 near order:    quick sort.
+ *      1000 rev order:     merge sort (rec).
+ *      1000 sorted:        merge sort (rec).
  *
 */
 
