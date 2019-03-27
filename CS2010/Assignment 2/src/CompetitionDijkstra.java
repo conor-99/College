@@ -21,18 +21,15 @@ public class CompetitionDijkstra {
      * @param filename: A filename containing the details of the city road network
      * @param sA, sB, sC: speeds for 3 contestants
     */
-    CompetitionDijkstra (String filename, int sA, int sB, int sC){
-
-       //TODO
+    CompetitionDijkstra(String filename, int sA, int sB, int sC) {
+        
     }
 
 
     /**
     * @return int: minimum minutes that will pass before the three contestants can meet
      */
-    public int timeRequiredforCompetition(){
-
-        //TO DO
+    public int timeRequiredforCompetition() {
         return -1;
     }
 
