@@ -30,9 +30,9 @@ public class CompetitionTests {
     @Test
     public void testFWTiny() {
 
-        CompetitionFloydWarshall floydWarshall = new CompetitionFloydWarshall("inputs/tiny.txt", 60, 70, 80);
+        CompetitionFloydWarshall floydWarshall = new CompetitionFloydWarshall("inputs/tiny.txt", 50, 70, 80);
 
-        int expected = -1;
+        int expected = 38;
         int actual = floydWarshall.timeRequiredForCompetition();
 
         Assert.assertEquals(expected, actual);
@@ -44,7 +44,7 @@ public class CompetitionTests {
 
         CompetitionFloydWarshall floydWarshall = new CompetitionFloydWarshall("inputs/big.txt", 60, 70, 80);
 
-        int expected = -1;
+        int expected = 24;
         int actual = floydWarshall.timeRequiredForCompetition();
 
         Assert.assertEquals(expected, actual);

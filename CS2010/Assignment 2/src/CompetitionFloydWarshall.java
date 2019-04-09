@@ -84,45 +84,48 @@ class CompetitionFloydWarshall {
             adjList[src].addFirst(new Edge(src, dst, weight));
         }
 
-        // Get the max distance using Dijkstra's algorithm
+        // Get the max distance using the Floyd-Warshall algorithm
         double maxDistanceFloydWarshall() {
-
-            double maxDist = 0;
-
-            for (int i = 0; i < N; i++) {
-                double dist = floydWarshall(i);
-                if (dist > maxDist) maxDist = dist;
-            }
-
-            return maxDist;
-
+            return getMax(floydWarshall());
         }
 
         // Implementation of the Floyd-Warshall algorithm
-        private double floydWarshall(int src) {
+        private double[][] floydWarshall() {
 
-            return 0;
+            double[][] minDistances = new double[N][N];
+
+            for (int u = 0; u < N; u++)
+                for (int v = 0; v < N; v++)
+                    if (u == v) minDistances[u][v] = 0;
+                    else minDistances[u][v] = Double.POSITIVE_INFINITY;
+
+            for (int u = 0; u < N; u++)
+                for (Edge e : adjList[u])
+                    minDistances[u][e.dst] = e.weight;
+
+            for (int k = 0; k < N; k++) {
+                for (int i = 0; i < N; i++) {
+                    for (int j = 0; j < N; j++) {
+                        double d = minDistances[i][k] + minDistances[k][j];
+                        if (minDistances[i][j] > d) minDistances[i][j] = d;
+                    }
+                }
+            }
+
+            return minDistances;
 
         }
 
-        // Get the ID of the vertex with smallest distance
-        private int getMin(Map<Integer, Vertex> vertices) {
+        // Get the max value from a 2D array of doubles
+        private double getMax(double[][] minDistances) {
 
-            int id = 0;
-            double dist = Double.POSITIVE_INFINITY;
+            double max = 0;
 
-            // Iterate over every vertex in the map
-            for (Vertex v : vertices.values()) {
+            for (int i = 0; i < N; i++)
+                for (int j = 0; j < N; j++)
+                    if (minDistances[i][j] > max) max = minDistances[i][j];
 
-                // If the vertex's distance is the smallest so far
-                if (v.dist < dist) {
-                    id = v.id;
-                    dist = v.dist;
-                }
-
-            }
-
-            return id;
+            return max;
 
         }
 
@@ -136,21 +139,6 @@ class CompetitionFloydWarshall {
                 this.src = src;
                 this.dst = dst;
                 this.weight = weight;
-            }
-
-        }
-
-        // For storing vertices in the map for Dijkstra's algorithm
-        private class Vertex {
-
-            int id;
-            double dist;
-            Vertex prev;
-
-            Vertex(int id, double dist, Vertex prev) {
-                this.id = id;
-                this.dist = dist;
-                this.prev = prev;
             }
 
         }
