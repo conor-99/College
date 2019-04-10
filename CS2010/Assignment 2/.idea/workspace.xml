@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4f7dc88f-6648-4a10-aa48-b402c5bb208a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/CompetitionFloydWarshall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CompetitionFloydWarshall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CompetitionTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CompetitionTests.java" afterDir="false" />
-    </list>
+    <list default="true" id="4f7dc88f-6648-4a10-aa48-b402c5bb208a" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,7 +13,7 @@
     <session id="-1780509909">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.14" value="1" />
@@ -78,7 +75,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CompetitionFloydWarshall.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
+            <state relative-caret-position="1666">
               <caret line="123" column="29" selection-start-line="123" selection-start-column="29" selection-end-line="123" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -153,7 +150,7 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="ToolWindowTODO.ShowToolbar" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554849240466" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554849250074" />
     <property name="settings.editor.selected.configurable" value="MTCustomThemeConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -212,9 +209,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CompetitionTests - 2019.04.09 at 20h 52m 48s.xml">
-      <configuration name="CompetitionTests" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="CompetitionTests - 2019.04.09 at 20h 53m 33s.xml">
       <configuration name="CompetitionTests" configurationId="JUnit" />
     </history-entry>
@@ -242,6 +236,9 @@
     <history-entry file="CompetitionTests - 2019.04.09 at 21h 02m 48s.xml">
       <configuration name="CompetitionTests" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="CompetitionTests - 2019.04.09 at 23h 33m 52s.xml">
+      <configuration name="CompetitionTests" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -253,7 +250,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="653" height="696" extended-state="0" />
+    <frame x="-7" y="-7" width="1295" height="704" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.11049285" />
@@ -265,7 +262,7 @@
       <window_info id="Favorites" order="6" show_stripe_button="false" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.16981132" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -330,7 +327,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CompetitionFloydWarshall.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
+        <state relative-caret-position="1666">
           <caret line="123" column="29" selection-start-line="123" selection-start-column="29" selection-end-line="123" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />

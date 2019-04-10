@@ -1,3 +1,3 @@
 # College
 
-For college projects that require version control.
+This repository is for college assignments and projects that I felt required version control.
