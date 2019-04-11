@@ -15,7 +15,7 @@ class CompetitionFloydWarshall {
             graph = new WeightedGraph(filename);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-            System.exit(1);
+            graph = null;
         }
 
         // Initialise the speeds

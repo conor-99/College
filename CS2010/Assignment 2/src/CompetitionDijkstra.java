@@ -15,7 +15,7 @@ class CompetitionDijkstra {
             graph = new WeightedGraph(filename);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-            System.exit(1);
+            graph = null;
         }
 
         // Initialise the speeds
@@ -119,6 +119,9 @@ class CompetitionDijkstra {
 
                 // Remove the vertex with the smallest distance from the map
                 u = vertices.remove(getMin(vertices));
+
+                // If the graph isn't connected
+                if (u == null) return Double.POSITIVE_INFINITY;
 
                 // For each of the vertex's neighbours
                 for (Edge e : adjList[u.id]) {
