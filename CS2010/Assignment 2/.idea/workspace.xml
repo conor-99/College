@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Assignment 2:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="4f7dc88f-6648-4a10-aa48-b402c5bb208a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment 2/CompetitionDijkstra.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment 2/CompetitionDijkstra.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment 2/CompetitionFloydWarshall.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment 2/CompetitionFloydWarshall.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment 2/CompetitionTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment 2/CompetitionTests.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CompetitionDijkstra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CompetitionDijkstra.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CompetitionFloydWarshall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CompetitionFloydWarshall.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CompetitionTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CompetitionTests.java" afterDir="false" />
@@ -18,14 +26,15 @@
     <session id="-1780509909">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="8" />
           <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.12" value="2" />
-          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.13" value="2" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -44,12 +53,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="9148" />
+          <entry key="java" value="9623" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="9148" />
+          <entry key="JAVA" value="9623" />
         </counts>
       </usages-collector>
     </session>
@@ -59,16 +68,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CompetitionDijkstra.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+            <state relative-caret-position="192">
+              <caret line="41" column="60" selection-start-line="41" selection-start-column="60" selection-end-line="41" selection-end-column="60" />
               <folding>
-                <element signature="e#0#5556#0" expanded="true" />
                 <element signature="imports" expanded="true" />
-                <element signature="e#2334#2335#0" expanded="true" />
-                <element signature="e#2407#2408#0" expanded="true" />
+                <element signature="e#2492#2493#0" expanded="true" />
+                <element signature="e#2565#2566#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -77,23 +85,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CompetitionFloydWarshall.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+            <state relative-caret-position="204">
+              <caret line="41" column="70" selection-start-line="41" selection-start-column="70" selection-end-line="41" selection-end-column="70" />
               <folding>
-                <element signature="e#0#4163#0" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CompetitionTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="2414">
+              <caret line="144" column="91" selection-start-line="144" selection-start-column="91" selection-end-line="144" selection-end-column="91" />
               <folding>
-                <element signature="e#0#3086#0" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
@@ -102,15 +108,20 @@
       </file>
     </leaf>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>src/</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/CompetitionTests.java" />
-        <option value="$PROJECT_DIR$/src/CompetitionFloydWarshall.java" />
         <option value="$PROJECT_DIR$/src/CompetitionDijkstra.java" />
+        <option value="$PROJECT_DIR$/src/CompetitionFloydWarshall.java" />
+        <option value="$PROJECT_DIR$/src/CompetitionTests.java" />
       </list>
     </option>
   </component>
@@ -121,9 +132,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-11" />
-    <option name="width" value="980" />
-    <option name="height" value="527" />
+    <option name="x" value="-12" />
+    <option name="width" value="981" />
+    <option name="height" value="528" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -131,7 +142,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -144,6 +154,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -151,7 +162,10 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="ToolWindowTODO.ShowToolbar" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554972676623" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554975822780" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="MTCustomThemeConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -171,6 +185,16 @@
       <module name="Assignment 2" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="CompetitionTests" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CompetitionTests.testDijkstraBig" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Assignment 2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CompetitionTests" />
+      <option name="METHOD_NAME" value="testDijkstraBig" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -210,13 +234,15 @@
       <item itemvalue="JUnit.CompetitionTests.testDijkstraTiny" />
       <item itemvalue="JUnit.CompetitionTests.testFWImpossible" />
       <item itemvalue="JUnit.CompetitionTests.testDijkstraImpossible" />
+      <item itemvalue="JUnit.CompetitionTests.testDijkstraBig" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.CompetitionTests" />
+        <item itemvalue="JUnit.CompetitionTests.testDijkstraBig" />
+        <item itemvalue="JUnit.CompetitionTests.testDijkstraTiny" />
         <item itemvalue="JUnit.CompetitionTests.testDijkstraImpossible" />
         <item itemvalue="JUnit.CompetitionTests.testFWImpossible" />
-        <item itemvalue="JUnit.CompetitionTests.testDijkstraTiny" />
       </list>
     </recent_temporary>
   </component>
@@ -234,34 +260,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CompetitionTests - 2019.04.09 at 23h 33m 52s.xml">
+    <history-entry file="CompetitionTests - 2019.04.11 at 10h 13m 44s.xml">
       <configuration name="CompetitionTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CompetitionTests - 2019.04.11 at 07h 23m 20s.xml">
+    <history-entry file="CompetitionTests - 2019.04.11 at 10h 14m 07s.xml">
       <configuration name="CompetitionTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CompetitionTests_testFWImpossible - 2019.04.11 at 07h 25m 49s.xml">
-      <configuration name="CompetitionTests.testFWImpossible" configurationId="JUnit" />
+    <history-entry file="CompetitionTests - 2019.04.11 at 10h 16m 33s.xml">
+      <configuration name="CompetitionTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CompetitionTests_testDijkstraImpossible - 2019.04.11 at 07h 26m 00s.xml">
-      <configuration name="CompetitionTests.testDijkstraImpossible" configurationId="JUnit" />
+    <history-entry file="CompetitionTests - 2019.04.11 at 10h 23m 00s.xml">
+      <configuration name="CompetitionTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CompetitionTests_testDijkstraImpossible - 2019.04.11 at 07h 26m 54s.xml">
-      <configuration name="CompetitionTests.testDijkstraImpossible" configurationId="JUnit" />
+    <history-entry file="CompetitionTests_testDijkstraBig - 2019.04.11 at 10h 23m 13s.xml">
+      <configuration name="CompetitionTests.testDijkstraBig" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CompetitionTests_testDijkstraImpossible - 2019.04.11 at 07h 29m 00s.xml">
-      <configuration name="CompetitionTests.testDijkstraImpossible" configurationId="JUnit" />
+    <history-entry file="CompetitionTests_testDijkstraBig - 2019.04.11 at 10h 26m 32s.xml">
+      <configuration name="CompetitionTests.testDijkstraBig" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CompetitionTests_testDijkstraImpossible - 2019.04.11 at 07h 33m 02s.xml">
-      <configuration name="CompetitionTests.testDijkstraImpossible" configurationId="JUnit" />
+    <history-entry file="CompetitionTests_testDijkstraBig - 2019.04.11 at 10h 29m 22s.xml">
+      <configuration name="CompetitionTests.testDijkstraBig" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CompetitionTests_testFWImpossible - 2019.04.11 at 07h 33m 34s.xml">
-      <configuration name="CompetitionTests.testFWImpossible" configurationId="JUnit" />
+    <history-entry file="CompetitionTests - 2019.04.11 at 10h 34m 50s.xml">
+      <configuration name="CompetitionTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CompetitionTests_testDijkstraImpossible - 2019.04.11 at 07h 33m 43s.xml">
-      <configuration name="CompetitionTests.testDijkstraImpossible" configurationId="JUnit" />
+    <history-entry file="CompetitionTests - 2019.04.11 at 10h 38m 41s.xml">
+      <configuration name="CompetitionTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CompetitionTests - 2019.04.11 at 09h 50m 53s.xml">
+    <history-entry file="CompetitionTests - 2019.04.11 at 10h 43m 40s.xml">
       <configuration name="CompetitionTests" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -278,7 +304,7 @@
     <frame x="-7" y="-7" width="1295" height="704" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.11049285" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12631579" />
       <window_info id="Structure" order="1" show_stripe_button="false" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -287,7 +313,7 @@
       <window_info id="Favorites" order="6" show_stripe_button="false" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.51132077" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32830188" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -295,10 +321,10 @@
       <window_info anchor="bottom" id="Terminal" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="8" show_stripe_button="false" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="10" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.34339622" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" show_stripe_button="false" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24939272" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
@@ -317,44 +343,35 @@
     <entry file="file://$PROJECT_DIR$/Assignment 2.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/inputs/tiny.txt">
+    <entry file="file://$PROJECT_DIR$/inputs/tiny.txt" />
+    <entry file="file://$PROJECT_DIR$/src/CompetitionDijkstra.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CompetitionTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="192">
+          <caret line="41" column="60" selection-start-line="41" selection-start-column="60" selection-end-line="41" selection-end-column="60" />
           <folding>
-            <element signature="e#0#3086#0" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#2492#2493#0" expanded="true" />
+            <element signature="e#2565#2566#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CompetitionFloydWarshall.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+        <state relative-caret-position="204">
+          <caret line="41" column="70" selection-start-line="41" selection-start-column="70" selection-end-line="41" selection-end-column="70" />
           <folding>
-            <element signature="e#0#4163#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CompetitionDijkstra.java">
+    <entry file="file://$PROJECT_DIR$/src/CompetitionTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+        <state relative-caret-position="2414">
+          <caret line="144" column="91" selection-start-line="144" selection-start-column="91" selection-end-line="144" selection-end-column="91" />
           <folding>
-            <element signature="e#0#5556#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#2334#2335#0" expanded="true" />
-            <element signature="e#2407#2408#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -362,9 +379,81 @@
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>Assignment 2:jar</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>9.0</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Assignment 2</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>9.0</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
           <splitter-proportions>
             <option name="proportions">
               <list>

@@ -3,7 +3,7 @@
 */
 
 import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.*;
 
 class CompetitionFloydWarshall {
@@ -17,7 +17,7 @@ class CompetitionFloydWarshall {
         // Construct a graph using data from the file
         try {
             graph = new WeightedGraph(filename);
-        } catch (FileNotFoundException e) {
+        } catch (Exception e) {
             //e.printStackTrace();
             graph = null;
         }
@@ -36,7 +36,7 @@ class CompetitionFloydWarshall {
     }
 
     // Calculate the time taken for the slowest person to travel from intersections A to B where |AB| is maximised
-    int timeRequiredForCompetition() {
+    int timeRequiredforCompetition() {
 
         // If the graph hasn't been initialised or the speeds are invalid
         if (graph == null || slowest < 50 || fastest > 100) return -1;
@@ -58,12 +58,19 @@ class CompetitionFloydWarshall {
         int N, S;
         LinkedList<Edge> adjList[];
 
-        WeightedGraph(String filename) throws FileNotFoundException {
+        WeightedGraph(String filename) throws IOException, NullPointerException {
 
             File file = new File(filename);
             Scanner scanner = new Scanner(file);
 
             N = scanner.nextInt();
+
+            // If the graph is empty then set S to 0 and return
+            if (N == 0) {
+                S = 0;
+                return;
+            }
+
             adjList = new LinkedList[N];
 
             for (int i = 0; i < N; i++)
@@ -90,7 +97,12 @@ class CompetitionFloydWarshall {
 
         // Get the max distance using the Floyd-Warshall algorithm
         double maxDistanceFloydWarshall() {
+
+            // If the graph is empty
+            if (N == 0 || S == 0) return Double.POSITIVE_INFINITY;
+
             return getMax(floydWarshall());
+
         }
 
         // Implementation of the Floyd-Warshall algorithm

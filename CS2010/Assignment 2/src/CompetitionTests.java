@@ -10,26 +10,26 @@ public class CompetitionTests {
     @Test
     public void testDijkstraTiny() {
 
-        CompetitionDijkstra dijkstra = new CompetitionDijkstra("inputs/tiny.txt", 50, 70, 80);
+        CompetitionDijkstra dijkstra = new CompetitionDijkstra("tiny.txt", 50, 70, 80);
 
         int expected = 38;
-        int actual   = dijkstra.timeRequiredForCompetition();
+        int actual   = dijkstra.timeRequiredforCompetition();
 
         Assert.assertEquals(expected, actual);
 
     }
 
-    @Test
+    /*@Test
     public void testDijkstraBig() {
 
-        CompetitionDijkstra dijkstra = new CompetitionDijkstra("inputs/big.txt", 60, 70, 80);
+        CompetitionDijkstra dijkstra = new CompetitionDijkstra("big.txt", 60, 70, 80);
 
         int expected = 24;
-        int actual   = dijkstra.timeRequiredForCompetition();
+        int actual   = dijkstra.timeRequiredforCompetition();
 
         Assert.assertEquals(expected, actual);
 
-    }
+    }*/
 
     @Test
     public void testDijkstraNoFile() {
@@ -37,19 +37,43 @@ public class CompetitionTests {
         CompetitionDijkstra dijkstra = new CompetitionDijkstra("nofile", 60, 70, 80);
 
         int expected = -1;
-        int actual   = dijkstra.timeRequiredForCompetition();
+        int actual   = dijkstra.timeRequiredforCompetition();
 
         Assert.assertEquals(expected, actual);
 
     }
 
     @Test
-    public void testDijkstraInvalidSpeed() {
+    public void testDijkstraInvalidSpeed1() {
 
-        CompetitionDijkstra dijkstra = new CompetitionDijkstra("nofile", 40, 70, 80);
+        CompetitionDijkstra dijkstra = new CompetitionDijkstra("tiny.txt", 40, 40, 40);
 
         int expected = -1;
-        int actual   = dijkstra.timeRequiredForCompetition();
+        int actual   = dijkstra.timeRequiredforCompetition();
+
+        Assert.assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void testDijkstraInvalidSpeed2() {
+
+        CompetitionDijkstra dijkstra = new CompetitionDijkstra("tiny.txt", 140, 140, 140);
+
+        int expected = -1;
+        int actual   = dijkstra.timeRequiredforCompetition();
+
+        Assert.assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void testDijkstraEmpty() {
+
+        CompetitionDijkstra dijkstra = new CompetitionDijkstra("empty.txt", 50, 60, 70);
+
+        int expected = -1;
+        int actual   = dijkstra.timeRequiredforCompetition();
 
         Assert.assertEquals(expected, actual);
 
@@ -58,10 +82,10 @@ public class CompetitionTests {
     @Test
     public void testDijkstraImpossible() {
 
-        CompetitionDijkstra dijkstra = new CompetitionDijkstra("inputs/impossible.txt", 50, 70, 80);
+        CompetitionDijkstra dijkstra = new CompetitionDijkstra("impossible.txt", 50, 70, 80);
 
         int expected = -1;
-        int actual   = dijkstra.timeRequiredForCompetition();
+        int actual   = dijkstra.timeRequiredforCompetition();
 
         Assert.assertEquals(expected, actual);
 
@@ -70,26 +94,26 @@ public class CompetitionTests {
     @Test
     public void testFWTiny() {
 
-        CompetitionFloydWarshall floydWarshall = new CompetitionFloydWarshall("inputs/tiny.txt", 50, 70, 80);
+        CompetitionFloydWarshall floydWarshall = new CompetitionFloydWarshall("tiny.txt", 50, 70, 80);
 
         int expected = 38;
-        int actual   = floydWarshall.timeRequiredForCompetition();
+        int actual   = floydWarshall.timeRequiredforCompetition();
 
         Assert.assertEquals(expected, actual);
 
     }
 
-    @Test
+    /*@Test
     public void testFWBig() {
 
-        CompetitionFloydWarshall floydWarshall = new CompetitionFloydWarshall("inputs/big.txt", 60, 70, 80);
+        CompetitionFloydWarshall floydWarshall = new CompetitionFloydWarshall("big.txt", 60, 70, 80);
 
         int expected = 24;
-        int actual   = floydWarshall.timeRequiredForCompetition();
+        int actual   = floydWarshall.timeRequiredforCompetition();
 
         Assert.assertEquals(expected, actual);
 
-    }
+    }*/
 
     @Test
     public void testFWNoFile() {
@@ -97,19 +121,43 @@ public class CompetitionTests {
         CompetitionFloydWarshall floydWarshall = new CompetitionFloydWarshall("nofile", 60, 70, 80);
 
         int expected = -1;
-        int actual   = floydWarshall.timeRequiredForCompetition();
+        int actual   = floydWarshall.timeRequiredforCompetition();
 
         Assert.assertEquals(expected, actual);
 
     }
 
     @Test
-    public void testFWInvalidSpeed() {
+    public void testFWInvalidSpeed1() {
 
-        CompetitionFloydWarshall floydWarshall = new CompetitionFloydWarshall("nofile", 40, 70, 80);
+        CompetitionFloydWarshall floydWarshall = new CompetitionFloydWarshall("tiny.txt", 40, 40, 40);
 
         int expected = -1;
-        int actual   = floydWarshall.timeRequiredForCompetition();
+        int actual   = floydWarshall.timeRequiredforCompetition();
+
+        Assert.assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void testFWInvalidSpeed2() {
+
+        CompetitionFloydWarshall floydWarshall = new CompetitionFloydWarshall("tiny.txt", 140, 140, 140);
+
+        int expected = -1;
+        int actual   = floydWarshall.timeRequiredforCompetition();
+
+        Assert.assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void testFWEmpty() {
+
+        CompetitionFloydWarshall floydWarshall = new CompetitionFloydWarshall("empty.txt", 50, 60, 70);
+
+        int expected = -1;
+        int actual   = floydWarshall.timeRequiredforCompetition();
 
         Assert.assertEquals(expected, actual);
 
@@ -118,10 +166,10 @@ public class CompetitionTests {
     @Test
     public void testFWImpossible() {
 
-        CompetitionFloydWarshall floydWarshall = new CompetitionFloydWarshall("inputs/impossible.txt", 50, 70, 80);
+        CompetitionFloydWarshall floydWarshall = new CompetitionFloydWarshall("impossible.txt", 50, 70, 80);
 
         int expected = -1;
-        int actual   = floydWarshall.timeRequiredForCompetition();
+        int actual   = floydWarshall.timeRequiredforCompetition();
 
         Assert.assertEquals(expected, actual);
 
