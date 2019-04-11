@@ -1,3 +1,7 @@
+/*
+    @author Conor McCauley
+*/
+
 import org.junit.Test;
 import org.junit.Assert;
 

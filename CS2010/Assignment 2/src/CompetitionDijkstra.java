@@ -1,3 +1,7 @@
+/*
+    @author Conor McCauley
+*/
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
@@ -14,7 +18,7 @@ class CompetitionDijkstra {
         try {
             graph = new WeightedGraph(filename);
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
             graph = null;
         }
 
