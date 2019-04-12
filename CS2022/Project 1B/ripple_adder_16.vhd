@@ -21,6 +21,7 @@ architecture structural of rippleadder16 is
 	end component;
 	signal C: std_logic_vector (15 downto 1);
 begin
+	
 	Bit0: fulladder port map (B(0), A(0), CI, S(0), C(1));
 	Bit1: fulladder port map (B(1), A(1), C(1), S(1), C(2));
 	Bit2: fulladder port map (B(2), A(2), C(2), S(2), C(3));
@@ -37,4 +38,7 @@ begin
 	Bit13: fulladder port map (B(13), A(13), C(13), S(13), C(14));
 	Bit14: fulladder port map (B(14), A(14), C(14), S(14), C(15));
 	Bit15: fulladder port map (B(15), A(15), C(15), S(15), CO);
+	
+	C <= CO;
+
 end structural;
