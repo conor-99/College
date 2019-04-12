@@ -1,4 +1,5 @@
 -- 16-bit Ripple Adder
+-- Taken from Project1B
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
