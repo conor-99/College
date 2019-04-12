@@ -20,10 +20,9 @@ begin
 		if reset = '1' then car_O <= "00000000";
 		else
 			if rising_edge(Clk) then
-				car_O <=
-					car_I after delay when load = '1' else
-					car_I + 1 after delay
-				;
+				if load = '1' then car_O <= car_I;
+				else car_O <= car_I + 1;
+				end if;
 			end if;
 		end if;
 	end process;
