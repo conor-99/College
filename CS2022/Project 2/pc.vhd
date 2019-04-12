@@ -15,5 +15,13 @@ end pc;
 architecture behave of pc is
 	constant delay: Time := 5ns;
 begin
-	
+	process (PL, PI, reset)
+		variable stored: std_logic_vector (15 downto 0); -- store that value 'in memory'
+	begin
+		if reset = '1' then stored := x"0000";
+		elsif PL = '1' then stored := stored + data_I;
+		elsif PI = '1' then stored := stored + x"0001";
+		end if;
+		data_O <= stored after delay;
+	end process;
 end behave;
