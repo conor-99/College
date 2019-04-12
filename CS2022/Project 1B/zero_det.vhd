@@ -8,7 +8,7 @@ entity zerodet is
 		-- Clock
 		Clk: in std_logic;
 		-- Data
-		data: in std_logic_vector (3 downto 0);
+		data: in std_logic_vector (15 downto 0);
 		-- Flag
 		Z: out std_logic
 	);

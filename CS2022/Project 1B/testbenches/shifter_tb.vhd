@@ -54,7 +54,8 @@ begin
 		H_sig <= "11";
 		Clk_sig <= '1';
 		wait for 100ns;
-		Clk_sig <= '0';
+		Clk_sig <= '1';
 	end process;
 
 end behave;
+
