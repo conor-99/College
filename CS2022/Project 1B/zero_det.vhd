@@ -5,11 +5,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity zerodet is
 	port(
-		-- Clock
-		Clk: in std_logic;
-		-- Data
 		data: in std_logic_vector (15 downto 0);
-		-- Flag
 		Z: out std_logic
 	);
 end zerodet;
@@ -17,13 +13,9 @@ end zerodet;
 architecture behave of zerodet is
 constant delay: Time := 1ns;
 begin
-	process(Clk)
-	begin
-		if (rising_edge(Clk)) then
-			if data = "0000" then 	Z <= '1';
-			else 			Z <= '0';
-			end if;
-		end if;
-	end process;
+	Z <=
+		'1' after delay when data = x"0000" else
+		'0' after delay
+	;
 end behave;
 
