@@ -8,7 +8,7 @@ entity ripple_adder_16 is
 		B, A: in std_logic_vector (15 downto 0);
 		CI: in std_logic;
 		S: out std_logic_vector (15 downto 0);
-		CO: out std_logic
+		CO, V: out std_logic
 	);
 end ripple_adder_16;
 
@@ -22,6 +22,7 @@ architecture structural of ripple_adder_16 is
 	end component;
 
 	signal C: std_logic_vector (15 downto 1);
+	signal E: std_logic;
 
 begin
 	
@@ -40,6 +41,9 @@ begin
 	Bit12: full_adder port map (B(12), A(12), C(12), S(12), C(13));
 	Bit13: full_adder port map (B(13), A(13), C(13), S(13), C(14));
 	Bit14: full_adder port map (B(14), A(14), C(14), S(14), C(15));
-	Bit15: full_adder port map (B(15), A(15), C(15), S(15), CO);
+	Bit15: full_adder port map (B(15), A(15), C(15), S(15), E);
+
+	CO <= E;
+	V <= (C(15) xor E); -- N + N = P or P + P = N
 
 end structural;

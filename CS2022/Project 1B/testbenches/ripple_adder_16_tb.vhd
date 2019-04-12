@@ -10,14 +10,14 @@ architecture behave of ripple_adder_16_tb is
 	signal B_sig, A_sig: std_logic_vector (15 downto 0) := "0000000000000000";
 	signal CI_sig: std_logic := '0';
 	signal S_sig: std_logic_vector (15 downto 0);
-	signal CO_sig: std_logic;
+	signal CO_sig, V_sig: std_logic;
 	
 	component ripple_adder_16 is
 		port (
 			B, A: in std_logic_vector (15 downto 0);
 			CI: in std_logic;
 			S: out std_logic_vector (15 downto 0);
-			CO: out std_logic
+			CO, V: out std_logic
 		);
 	end component ripple_adder_16;
 
