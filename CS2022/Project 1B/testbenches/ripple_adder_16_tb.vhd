@@ -29,7 +29,8 @@ begin
 		A => A_sig,
 		CI => CI_sig,
 		S => S_sig,
-		CO => CO_sig
+		CO => CO_sig,
+		V => V_sig
 	);
 
 	process is
