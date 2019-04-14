@@ -34,11 +34,20 @@ begin
 
 	process is
 	begin
-		car_I_sig <= x"AA";
+		reset_sig <= '1';
+		load_sig <= '0';
 		Clk_sig <= '0';
-		reset_sig <= '0';
-		load_sig <= '1';
 		wait for 100ns;
+		reset_sig <= '0';
+		car_I_sig <= x"AA";
+		Clk_sig <= '1';
+		wait for 100ns;
+		Clk_sig <= '0';
+		wait for 100ns;
+		load_sig <= '1';
+		Clk_sig <= '1';
+		wait for 100ns;
+		Clk_sig <= '0';
 	end process;
 
 end behave;
