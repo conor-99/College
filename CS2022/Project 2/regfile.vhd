@@ -6,39 +6,32 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity regfile is
 	port(
-		-- A select
 		src_A0, src_A1, src_A2, src_A3: in std_logic;
-		-- B select
 		src_B0, src_B1, src_B2, src_B3: in std_logic;
-		-- Destination select
 		des_A0, des_A1, des_A2, des_A3: in std_logic;
-		-- Clock
-		Clk: in std_logic;
-		-- Data
+		Clk, RW: in std_logic;
 		data: in std_logic_vector (15 downto 0);
-		-- A data, B data
 		data_A, data_B: out std_logic_vector (15 downto 0)
 	);
 end regfile;
 
 architecture behave of regfile is
--- components
-	-- register
+	
 	component reg
 	port(
 		D: in std_logic_vector (15 downto 0);
-		load, Clk: in std_logic;
+		load, reg_rw, Clk: in std_logic;
 		Q: out std_logic_vector (15 downto 0)
 	);
 	end component;
-	-- 4-to-16 decoder
+	
 	component dec16
 	port(
 		A0, A1, A2, A3: in std_logic;
 		Q0, Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9, Q10, Q11, Q12, Q13, Q14, Q15: out std_logic
 	);
 	end component;
-	-- 16-to-1 multiplexer
+	
 	component mux16
 	port(
 		in0, in1, in2, in3, in4, in5, in6, in7, in8, in9, in10, in11, in12, in13, in14, in15: in std_logic_vector (15 downto 0);
@@ -46,17 +39,19 @@ architecture behave of regfile is
 		z: out std_logic_vector (15 downto 0)
 	);
 	end component;
-	-- signals
+	
 	signal load_reg0, load_reg1, load_reg2, load_reg3, load_reg4, load_reg5, load_reg6, load_reg7, load_reg8: std_logic;
 	signal reg0_q, reg1_q, reg2_q, reg3_q, reg4_q, reg5_q, reg6_q, reg7_q, reg8_q, reg_A, reg_B: std_logic_vector (15 downto 0);
-	-- constants
+	
 	constant delay: Time := 5ns;
+	
 begin
-	-- port maps
+	
 	-- reg0
 	reg00: reg port map(
 		D => data,
 		load => load_reg0,
+		reg_rw => RW,
 		Clk => Clk,
 		Q => reg0_q
 	);
@@ -64,6 +59,7 @@ begin
 	reg01: reg port map(
 		D => data,
 		load => load_reg1,
+		reg_rw => RW,
 		Clk => Clk,
 		Q => reg1_q
 	);
@@ -71,6 +67,7 @@ begin
 	reg02: reg port map(
 		D => data,
 		load => load_reg2,
+		reg_rw => RW,
 		Clk => Clk,
 		Q => reg2_q
 	);
@@ -78,6 +75,7 @@ begin
 	reg03: reg port map(
 		D => data,
 		load => load_reg3,
+		reg_rw => RW,
 		Clk => Clk,
 		Q => reg3_q
 	);
@@ -85,6 +83,7 @@ begin
 	reg04: reg port map(
 		D => data,
 		load => load_reg4,
+		reg_rw => RW,
 		Clk => Clk,
 		Q => reg4_q
 	);
@@ -92,6 +91,7 @@ begin
 	reg05: reg port map(
 		D => data,
 		load => load_reg5,
+		reg_rw => RW,
 		Clk => Clk,
 		Q => reg5_q
 	);
@@ -99,6 +99,7 @@ begin
 	reg06: reg port map(
 		D => data,
 		load => load_reg6,
+		reg_rw => RW,
 		Clk => Clk,
 		Q => reg6_q
 	);
@@ -106,6 +107,7 @@ begin
 	reg07: reg port map(
 		D => data,
 		load => load_reg7,
+		reg_rw => RW,
 		Clk => Clk,
 		Q => reg7_q
 	);
@@ -113,6 +115,7 @@ begin
 	reg08: reg port map(
 		D => data,
 		load => load_reg8,
+		reg_rw => RW,
 		Clk => Clk,
 		Q => reg8_q
 	);

@@ -6,9 +6,9 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity reg is
 	port(
-		D: in std_logic_vector (3 downto 0);
-		load, Clk: in std_logic;
-		Q: out std_logic_vector (3 downto 0)
+		D: in std_logic_vector (15 downto 0);
+		load, reg_rw, Clk: in std_logic;
+		Q: out std_logic_vector (15 downto 0)
 	);
 end reg;
 
@@ -18,7 +18,7 @@ begin
 	process(Clk)
 	begin
 		if (rising_edge(Clk)) then
-			if load = '1' then
+			if (load = '1' and reg_rw = '1') then
 				Q <= D after delay;
 			end if;
 		end if;
