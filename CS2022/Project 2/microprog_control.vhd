@@ -37,6 +37,7 @@ architecture behave of microprog_control is
 	end component;
 
 	signal PC_PL, PC_PI: std_logic;
+	signal cPC_O: std_logic_vector (15 downto 0);
 	
 	component inst_reg
 		port(
@@ -125,7 +126,7 @@ begin
 	PC_PL <= cm_PL;
 	PC_PI <= cm_PI;
 	comp_pc: pc port map (
-		ext_O, PC_PL, PC_PI, reset, PC_O
+		ext_O, PC_PL, PC_PI, reset, cPC_O
 	);
 	
 	IR_IL <= cm_IL;
@@ -165,5 +166,20 @@ begin
 	comp_mux2: mux2_8 port map (
 		m2_NA, m2_OP, m2_MC, m2_O
 	);
+
+	TD <= cm_TD;
+	TA <= cm_TA;
+	TB <= cm_TB;
+	MB <= cm_MB;
+	MD <= cm_MD;
+	RW <= cm_RW;
+	MM <= cm_MM;
+	MW <= cm_MW;
+	DR <= IR_DR;
+	SA <= IR_SA;
+	SB <= IR_SB;
+	FS <= cm_FS;
+	PC_O <= cPC_O;
+	zfill_O <= zf_O;
 	
 end behave;
