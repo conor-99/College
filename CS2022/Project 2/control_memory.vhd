@@ -21,7 +21,7 @@ begin
 	mem_process: process(car_I)
 	variable mem: mem_array := (
 		-- 0
-		x"FFFFFFF", x"0000000", x"AAAAAAA", x"0000000",
+		x"FFFFFFF", x"0000000", x"66F55F5", x"0000000",
 		x"BBBBBBB", x"0000000", x"CCCCCCC", x"0000000",
 		x"DDDDDDD", x"0000000", x"1111111", x"0000000",
 		x"2222222", x"0000000", x"3333333", x"0000000",
