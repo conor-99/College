@@ -35,10 +35,13 @@ begin
 
 	process is
 	begin
-		ins_I_sig <= x"DEAD";
+		ins_I_sig <= x"DEAF";
 		IL_sig <= '1';
 		wait for 100ns;
 		IL_sig <= '0';
+		ins_I_sig <= x"FEED";
+		IL_sig <= '1';
+		wait for 100ns;
 	end process;
 
 end behave;

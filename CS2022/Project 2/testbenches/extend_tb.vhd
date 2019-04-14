@@ -29,11 +29,11 @@ begin
 
 	process is
 	begin
-		DR_sig <= "100";
-		SB_sig <= "110";
+		DR_sig <= "110";
+		SB_sig <= "111";
 		wait for 100ns;
-		DR_sig <= "010";
-		SB_sig <= "001";
+		DR_sig <= "011";
+		SB_sig <= "111";
 		wait for 100ns;
 	end process;
 

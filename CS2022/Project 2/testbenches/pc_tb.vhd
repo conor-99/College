@@ -34,9 +34,18 @@ begin
 
 	process is
 	begin
-		data_I_sig <= x"DEAD";
-		PL <= '0';
-		wait for 100ns;
+		data_I_sig <= x"0002";
+		PL_sig <= '0';
+		PI_sig <= '0';
+		reset_sig <= '1';
+		wait for 5ns;
+		reset_sig <= '0';
+		PI_sig <= '1';
+		wait for 5ns;
+		PL_sig <= '1';
+		wait for 5ns;
+		reset_sig <= '1';
+		wait for 5ns;
 	end process;
 
 end behave;
