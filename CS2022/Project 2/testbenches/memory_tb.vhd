@@ -32,10 +32,14 @@ begin
 
 	process is
 	begin
-		data_I_sig <= x"DEAD";
-		addr_I_sig <= x"BEEF";
+		data_I_sig <= x"0000";
+		addr_I_sig <= x"0001";
 		MW_sig <= '0';
 		wait for 100ns;
+		addr_I_sig <= x"0002";
+		wait for 100ns;
+		data_I_sig <= x"FFFF";
+		addr_I_sig <= x"0000";
 		MW_sig <= '1';
 		wait for 100ns;
 		MW_sig <= '0';

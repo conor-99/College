@@ -18,7 +18,7 @@ begin
 	mem_process: process(addr_I, data_I, MW)
 	variable mem: mem_array := (
 		-- 00
-		x"0000", x"0000", x"0000", x"0000",
+		x"1337", x"DEAD", x"BEEF", x"000F",
 		x"0000", x"0000", x"0000", x"0000",
 		x"0000", x"0000", x"0000", x"0000",
 		x"0000", x"0000", x"0000", x"0000",
