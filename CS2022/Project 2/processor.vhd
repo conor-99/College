@@ -6,7 +6,8 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity processor is
 	port(
-		Clk, reset: in std_logic
+		Clk, reset: in std_logic;
+		proc_O: out std_logic_vector (15 downto 0)
 	);
 end processor;
 
@@ -31,19 +32,19 @@ architecture behave of processor is
 	
 	component datapath
 		port(
-			data_I, const_I: in std_logic_vector (15 downto 0);
+			data_I, const_I, PC_I: in std_logic_vector (15 downto 0);
 			F: in std_logic_vector (4 downto 0);
 			dst_A, src_A, src_B: in std_logic_vector (3 downto 0);
-			RW, MB, MD, Clk: in std_logic;
+			RW, MB, MD, MM, Clk: in std_logic;
 			data_O, addr_O: out std_logic_vector (15 downto 0);
 			V, C, N, Z: out std_logic
 		);
 	end component;
 	
-	signal d_data_I, d_const_I, d_data_O, d_addr_O: std_logic_vector (15 downto 0);
+	signal d_data_I, d_const_I, d_PC_I, d_data_O, d_addr_O: std_logic_vector (15 downto 0);
 	signal d_FS: std_logic_vector (4 downto 0);
 	signal d_dst_A, d_src_A, d_src_B: std_logic_vector (3 downto 0);
-	signal d_RW, d_MB, d_MD, d_V, d_C, d_N, d_Z: std_logic;
+	signal d_RW, d_MB, d_MD, d_MM, d_V, d_C, d_N, d_Z: std_logic;
 	
 	component memory
 		port(
@@ -71,6 +72,7 @@ begin
 
 	d_data_I <= m_data_O;
 	d_const_I <= c_zf_O;
+	d_PC_I <= c_PC_O;
 	d_FS <= c_FS;
 	d_dst_A(2 downto 0) <= c_DR;
 	d_dst_A(3) <= c_TD;
@@ -81,10 +83,11 @@ begin
 	d_RW <= c_RW;
 	d_MB <= c_MB;
 	d_MD <= c_MD;
+	d_MM <= c_MM;
 	comp_dpath: datapath port map (
-		d_data_I, d_const_I, d_FS,
+		d_data_I, d_const_I, d_PC_I, d_FS,
 		d_dst_A, d_src_A, d_src_B,
-		d_RW, d_MB, d_MD, Clk,
+		d_RW, d_MB, d_MD, d_MM, Clk,
 		d_data_O, d_addr_O,
 		d_V, d_C, d_N, d_Z
 	);
@@ -95,5 +98,7 @@ begin
 	comp_mem: memory port map (
 		m_data_I, m_addr_I, m_MW, m_data_O
 	);
+
+	proc_O <= m_data_O;
 	
 end behave;
