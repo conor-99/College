@@ -7,7 +7,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity processor is
 	port(
 		Clk, reset: in std_logic;
-		proc_O: out std_logic_vector (15 downto 0)
+		PC_O, proc_O: out std_logic_vector (15 downto 0)
 	);
 end processor;
 
@@ -99,6 +99,7 @@ begin
 		m_data_I, m_addr_I, m_MW, m_data_O
 	);
 
+	PC_O <= c_PC_O;
 	proc_O <= m_data_O;
 	
 end behave;

@@ -9,12 +9,13 @@ architecture behave of processor_tb is
 
 	signal Clk_sig: std_logic := '0';
 	signal reset_sig: std_logic := '0';
+	signal PC_O_sig: std_logic_vector (15 downto 0);
 	signal proc_O_sig: std_logic_vector (15 downto 0);
 	
 	component processor is
 		port (
 			Clk, reset: in std_logic;
-			proc_O: out std_logic_vector (15 downto 0)
+			PC_O, proc_O: out std_logic_vector (15 downto 0)
 		);
 	end component processor;
 
@@ -24,6 +25,7 @@ begin
 	port map(
 		Clk => Clk_sig,
 		reset => reset_sig,
+		PC_O => PC_O_sig,
 		proc_O => proc_O_sig
 	);
 
