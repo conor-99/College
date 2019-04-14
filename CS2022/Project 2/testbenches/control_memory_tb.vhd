@@ -49,7 +49,9 @@ begin
 
 	process is
 	begin
-		car_I_sig <= x"AA";
+		car_I_sig <= x"02";
+		wait for 100ns;
+		car_I_sig <= x"01";
 		wait for 100ns;
 	end process;
 
