@@ -25,9 +25,9 @@ namespace Tests
             tree.root.right.right = new BinaryTreeNode<int>(7);
 
             LowestCommonAncestor<int> LCA = new LowestCommonAncestor<int>(tree);
-            int result = LCA.Find(6, 7);
-
-            Assert.AreEqual(3, result, "");
+            int result = LCA.Find(6, 2);
+            
+            Assert.AreEqual(1, result, $"{result} != 1");
 
         }
 

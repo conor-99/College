@@ -38,7 +38,22 @@ namespace LowestCommonAncestor
 
         private bool FindPath(BinaryTreeNode<T> root, T n, List<T> path)
         {
+
+            if (root == null)
+                return false;
+
+            path.Add(root.value);
+
+            if (root.value.Equals(n))
+                return true;
+            if (root.left != null && FindPath(root.left, n, path))
+                return true;
+            if (root.right != null && FindPath(root.right, n, path))
+                return true;
+
+            path.RemoveAt(path.Count - 1);
             return false;
+
         }
 
     }
