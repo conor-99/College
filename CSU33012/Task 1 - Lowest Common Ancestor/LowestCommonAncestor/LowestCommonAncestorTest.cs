@@ -16,13 +16,18 @@ namespace Tests
 
             BinaryTree<int> tree = new BinaryTree<int>();
 
-            tree.root = new BinaryTreeNode<int>(0);
-            tree.root.left = new BinaryTreeNode<int>(1);
-            tree.root.right = new BinaryTreeNode<int>(2);
+            tree.root = new BinaryTreeNode<int>(1);
+            tree.root.left = new BinaryTreeNode<int>(2);
+            tree.root.right = new BinaryTreeNode<int>(3);
+            tree.root.left.left = new BinaryTreeNode<int>(4);
+            tree.root.left.right = new BinaryTreeNode<int>(5);
+            tree.root.right.left = new BinaryTreeNode<int>(6);
+            tree.root.right.right = new BinaryTreeNode<int>(7);
 
-            int lca = LowestCommonAncestor<int>.Find(tree, 1, 2);
+            LowestCommonAncestor<int> LCA = new LowestCommonAncestor<int>(tree);
+            int result = LCA.Find(6, 7);
 
-            Assert.AreEqual(0, lca, "");
+            Assert.AreEqual(3, result, "");
 
         }
 
