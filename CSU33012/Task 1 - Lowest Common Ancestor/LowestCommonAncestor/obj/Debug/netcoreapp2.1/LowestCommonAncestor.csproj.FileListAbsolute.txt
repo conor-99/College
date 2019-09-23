@@ -2,3 +2,14 @@ C:\Users\conor\Dropbox (Personal)\College\Repository\CSU33012\Task 1 - Lowest Co
 C:\Users\conor\Dropbox (Personal)\College\Repository\CSU33012\Task 1 - Lowest Common Ancestor\LowestCommonAncestor\obj\Debug\netcoreapp2.1\LowestCommonAncestor.csproj.CoreCompileInputs.cache
 C:\Users\conor\Dropbox (Personal)\College\Repository\CSU33012\Task 1 - Lowest Common Ancestor\LowestCommonAncestor\obj\Debug\netcoreapp2.1\LowestCommonAncestor.AssemblyInfoInputs.cache
 C:\Users\conor\Dropbox (Personal)\College\Repository\CSU33012\Task 1 - Lowest Common Ancestor\LowestCommonAncestor\obj\Debug\netcoreapp2.1\LowestCommonAncestor.AssemblyInfo.cs
+C:\Users\conor\Dropbox (Personal)\College\Repository\CSU33012\Task 1 - Lowest Common Ancestor\LowestCommonAncestor\bin\Debug\netcoreapp2.1\NUnit3.TestAdapter.dll
+C:\Users\conor\Dropbox (Personal)\College\Repository\CSU33012\Task 1 - Lowest Common Ancestor\LowestCommonAncestor\bin\Debug\netcoreapp2.1\NUnit3.TestAdapter.pdb
+C:\Users\conor\Dropbox (Personal)\College\Repository\CSU33012\Task 1 - Lowest Common Ancestor\LowestCommonAncestor\bin\Debug\netcoreapp2.1\nunit.engine.netstandard.dll
+C:\Users\conor\Dropbox (Personal)\College\Repository\CSU33012\Task 1 - Lowest Common Ancestor\LowestCommonAncestor\bin\Debug\netcoreapp2.1\Mono.Cecil.dll
+C:\Users\conor\Dropbox (Personal)\College\Repository\CSU33012\Task 1 - Lowest Common Ancestor\LowestCommonAncestor\bin\Debug\netcoreapp2.1\LowestCommonAncestor.deps.json
+C:\Users\conor\Dropbox (Personal)\College\Repository\CSU33012\Task 1 - Lowest Common Ancestor\LowestCommonAncestor\bin\Debug\netcoreapp2.1\LowestCommonAncestor.runtimeconfig.json
+C:\Users\conor\Dropbox (Personal)\College\Repository\CSU33012\Task 1 - Lowest Common Ancestor\LowestCommonAncestor\bin\Debug\netcoreapp2.1\LowestCommonAncestor.runtimeconfig.dev.json
+C:\Users\conor\Dropbox (Personal)\College\Repository\CSU33012\Task 1 - Lowest Common Ancestor\LowestCommonAncestor\bin\Debug\netcoreapp2.1\LowestCommonAncestor.dll
+C:\Users\conor\Dropbox (Personal)\College\Repository\CSU33012\Task 1 - Lowest Common Ancestor\LowestCommonAncestor\bin\Debug\netcoreapp2.1\LowestCommonAncestor.pdb
+C:\Users\conor\Dropbox (Personal)\College\Repository\CSU33012\Task 1 - Lowest Common Ancestor\LowestCommonAncestor\obj\Debug\netcoreapp2.1\LowestCommonAncestor.dll
+C:\Users\conor\Dropbox (Personal)\College\Repository\CSU33012\Task 1 - Lowest Common Ancestor\LowestCommonAncestor\obj\Debug\netcoreapp2.1\LowestCommonAncestor.pdb

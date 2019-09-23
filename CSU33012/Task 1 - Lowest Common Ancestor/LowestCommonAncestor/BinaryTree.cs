@@ -1,20 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace LowestCommonAncestor
+﻿namespace LowestCommonAncestor
 {
 
     class BinaryTree<T>
     {
-
-        BinaryTreeNode<T> root;
-
-        public BinaryTree(T value, BinaryTreeNode<T> left, BinaryTreeNode<T> right)
-        {
-            root = new BinaryTreeNode<T>(value, left, right);
-        }
-
+        public BinaryTreeNode<T> root;
     }
 
     class BinaryTreeNode<T>
@@ -23,11 +12,9 @@ namespace LowestCommonAncestor
         public BinaryTreeNode<T> left, right;
         public T value;
 
-        public BinaryTreeNode(T value, BinaryTreeNode<T> left, BinaryTreeNode<T> right)
+        public BinaryTreeNode(T value)
         {
             this.value = value;
-            this.left = left;
-            this.right = right;
         }
 
     }
