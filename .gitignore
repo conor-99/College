@@ -2,3 +2,4 @@ work/
 *.bak
 *.mti
 *.mpf
+*.lock
