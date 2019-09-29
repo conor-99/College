@@ -47,6 +47,7 @@ gcd:		push	ebp
 			mov		eax, [ebp + 8]	; eax = a
 			mov		ecx, [ebp + 12] ; ecx = b
 			xor		edx, edx		; edx = 0
+			cdq
 			idiv	ecx				; edx = eax % ecx
 			push	edx
 			push	[ebp + 12]
