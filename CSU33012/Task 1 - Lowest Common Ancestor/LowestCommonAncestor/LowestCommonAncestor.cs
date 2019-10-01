@@ -1,30 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace LowestCommonAncestor
 {
 
-    class LowestCommonAncestor<T>
+    public class BinaryTree
     {
 
-        private BinaryTree<T> tree;
-        private List<T> pathA, pathB;
+        public const int NONE = int.MaxValue;
 
-        public LowestCommonAncestor(BinaryTree<T> tree)
-        {
-            this.tree = tree;
-            pathA = new List<T>();
-            pathB = new List<T>();
-        }
+        public BinaryTreeNode root;
+        private List<int> pathA, pathB;
 
-        public T Find(T a, T b)
+        public int FindLCA(int a, int b)
         {
 
-            pathA.Clear();
-            pathB.Clear();
+            pathA = new List<int>();
+            pathB = new List<int>();
 
-            if (!FindPath(tree.root, a, pathA) || !FindPath(tree.root, b, pathB))
-                return a; // TO-DO
+            if (!FindPath(root, a, pathA) || !FindPath(root, b, pathB))
+                return NONE;
 
             int i;
             for (i = 0; i < pathA.Count && i < pathB.Count; i++)
@@ -36,7 +30,7 @@ namespace LowestCommonAncestor
 
         }
 
-        private bool FindPath(BinaryTreeNode<T> root, T n, List<T> path)
+        private bool FindPath(BinaryTreeNode root, int n, List<int> path)
         {
 
             if (root == null)
@@ -54,6 +48,19 @@ namespace LowestCommonAncestor
             path.RemoveAt(path.Count - 1);
             return false;
 
+        }
+
+    }
+
+    public class BinaryTreeNode
+    {
+
+        public BinaryTreeNode left, right;
+        public int value;
+
+        public BinaryTreeNode(int value)
+        {
+            this.value = value;
         }
 
     }

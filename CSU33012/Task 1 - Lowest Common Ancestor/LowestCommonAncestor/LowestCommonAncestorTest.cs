@@ -1,7 +1,6 @@
-using LowestCommonAncestor;
 using NUnit.Framework;
 
-namespace Tests
+namespace LowestCommonAncestor
 {
 
     public class Tests
@@ -11,23 +10,54 @@ namespace Tests
         public void Setup() {}
 
         [Test]
-        public void Test1()
+        public void TestStandardTree()
         {
 
-            BinaryTree<int> tree = new BinaryTree<int>();
+            BinaryTree tree = new BinaryTree();
 
-            tree.root = new BinaryTreeNode<int>(1);
-            tree.root.left = new BinaryTreeNode<int>(2);
-            tree.root.right = new BinaryTreeNode<int>(3);
-            tree.root.left.left = new BinaryTreeNode<int>(4);
-            tree.root.left.right = new BinaryTreeNode<int>(5);
-            tree.root.right.left = new BinaryTreeNode<int>(6);
-            tree.root.right.right = new BinaryTreeNode<int>(7);
+            tree.root = new BinaryTreeNode(1);
+            tree.root.left = new BinaryTreeNode(2);
+            tree.root.right = new BinaryTreeNode(3);
+            tree.root.left.left = new BinaryTreeNode(4);
+            tree.root.left.right = new BinaryTreeNode(5);
+            tree.root.right.left = new BinaryTreeNode(6);
+            tree.root.right.right = new BinaryTreeNode(7);
 
-            LowestCommonAncestor<int> LCA = new LowestCommonAncestor<int>(tree);
-            int result = LCA.Find(6, 2);
+            int result = tree.FindLCA(6, 2);
             
             Assert.AreEqual(1, result, $"{result} != 1");
+
+        }
+
+        [Test]
+        public void TestEmptyTree()
+        {
+
+            BinaryTree tree = new BinaryTree();
+
+            int result = tree.FindLCA(6, 2);
+
+            Assert.AreEqual(BinaryTree.NONE, result, $"{result} != Infinity");
+
+        }
+
+        [Test]
+        public void TestValueMissing()
+        {
+
+            BinaryTree tree = new BinaryTree();
+
+            tree.root = new BinaryTreeNode(1);
+            tree.root.left = new BinaryTreeNode(2);
+            tree.root.right = new BinaryTreeNode(3);
+            tree.root.left.left = new BinaryTreeNode(4);
+            tree.root.left.right = new BinaryTreeNode(5);
+            tree.root.right.left = new BinaryTreeNode(6);
+            tree.root.right.right = new BinaryTreeNode(7);
+
+            int result = tree.FindLCA(6, 10);
+
+            Assert.AreEqual(BinaryTree.NONE, result, $"{result} != Infinity");
 
         }
 
