@@ -19,8 +19,10 @@ namespace LowestCommonAncestor
             this.root = root;
 
             vertexMap = new Dictionary<int, Vertex>();
-            foreach (Vertex vertex in vertices)
-                vertexMap.Add(vertex.value, vertex);
+
+            if (vertices != null)
+                foreach (Vertex vertex in vertices)
+                    vertexMap.Add(vertex.value, vertex);
 
         }
 
