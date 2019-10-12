@@ -12,3 +12,4 @@ C:\Users\conor\Dropbox (Personal)\College\Repository\CSU33012\Task 1 - Lowest Co
 C:\Users\conor\Dropbox (Personal)\College\Repository\CSU33012\Task 1 - Lowest Common Ancestor\LowestCommonAncestor\bin\Debug\netcoreapp2.1\LowestCommonAncestor.pdb
 C:\Users\conor\Dropbox (Personal)\College\Repository\CSU33012\Task 1 - Lowest Common Ancestor\LowestCommonAncestor\obj\Debug\netcoreapp2.1\LowestCommonAncestor.dll
 C:\Users\conor\Dropbox (Personal)\College\Repository\CSU33012\Task 1 - Lowest Common Ancestor\LowestCommonAncestor\obj\Debug\netcoreapp2.1\LowestCommonAncestor.pdb
+C:\Users\conor\Dropbox (Personal)\College\Repository\CSU33012\Task 1 - Lowest Common Ancestor\LowestCommonAncestor\obj\Debug\netcoreapp2.1\LowestCommonAncestor.csprojAssemblyReference.cache

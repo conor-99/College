@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Vertex = LowestCommonAncestor.DirectedAcyclicGraphVertex;
 
@@ -19,6 +18,7 @@ namespace LowestCommonAncestor
 
             this.root = root;
 
+            vertexMap = new Dictionary<int, Vertex>();
             foreach (Vertex vertex in vertices)
                 vertexMap.Add(vertex.value, vertex);
 
@@ -36,8 +36,12 @@ namespace LowestCommonAncestor
             MarkPredecessors(vA, StatusLCA.A, StatusLCA.Default);
             MarkPredecessors(vB, StatusLCA.AB, StatusLCA.A);
 
-            List<int> solutions = GetSolutions();
-            return (solutions.Count == 0) ? NONE : solutions.Max();
+            int maxSolution = int.MinValue;
+            foreach (Vertex vertex in vertexMap.Values)
+                if (vertex.count == 0 && vertex.status == StatusLCA.AB && vertex.value > maxSolution)
+                    maxSolution = vertex.value;
+
+            return (maxSolution == int.MinValue) ? NONE : maxSolution;
 
         }
 
@@ -51,13 +55,11 @@ namespace LowestCommonAncestor
                 return;
 
             foreach (Vertex predecessor in root.predecessors)
+            {
+                if (root.status == StatusLCA.AB) predecessor.count++;
                 MarkPredecessors(predecessor, mark, markIf);
+            }
 
-        }
-
-        private List<int> GetSolutions()
-        {
-            return new List<int>() { 1, 2, 3 };
         }
         
     }
