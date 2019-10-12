@@ -8,36 +8,23 @@ namespace LowestCommonAncestor
 
         public const int NONE = int.MaxValue;
 
-        private List<DirectedAcyclicGraphVertex> vertices;
+        private Dictionary<int, HashSet<int>> vertices = new Dictionary<int, HashSet<int>>();
 
-        public void AddVertex(DirectedAcyclicGraphVertex vertex)
+        public void AddVertex(int value, HashSet<int> successors)
         {
-            vertices.Add(vertex);
+
+            if (!vertices.ContainsKey(value))
+                vertices.Add(value, new HashSet<int>());
+
+            vertices[value].UnionWith(successors);
+            
         }
 
         public int FindLCA(int a, int b)
         {
             return NONE;
         }
-
-    }
-
-    public class DirectedAcyclicGraphVertex
-    {
-
-        public List<DirectedAcyclicGraphVertex> vertices;
-        public int value;
-
-        public DirectedAcyclicGraphVertex(int value)
-        {
-            this.value = value;
-        }
-
-        public void AddVertex(DirectedAcyclicGraphVertex vertex)
-        {
-            vertices.Add(vertex);
-        }
-
+        
     }
 
 }
