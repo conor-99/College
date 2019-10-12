@@ -1,4 +1,3 @@
-C:\Users\conor\Dropbox (Personal)\College\Repository\CSU33012\Task 1 - Lowest Common Ancestor\LowestCommonAncestor\obj\Debug\netcoreapp2.1\LowestCommonAncestor.csprojAssemblyReference.cache
 C:\Users\conor\Dropbox (Personal)\College\Repository\CSU33012\Task 1 - Lowest Common Ancestor\LowestCommonAncestor\obj\Debug\netcoreapp2.1\LowestCommonAncestor.csproj.CoreCompileInputs.cache
 C:\Users\conor\Dropbox (Personal)\College\Repository\CSU33012\Task 1 - Lowest Common Ancestor\LowestCommonAncestor\obj\Debug\netcoreapp2.1\LowestCommonAncestor.AssemblyInfoInputs.cache
 C:\Users\conor\Dropbox (Personal)\College\Repository\CSU33012\Task 1 - Lowest Common Ancestor\LowestCommonAncestor\obj\Debug\netcoreapp2.1\LowestCommonAncestor.AssemblyInfo.cs

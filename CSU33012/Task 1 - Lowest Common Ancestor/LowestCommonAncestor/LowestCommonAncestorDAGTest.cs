@@ -15,8 +15,6 @@ namespace LowestCommonAncestor
         public void TestStandardDAG()
         {
 
-            DirectedAcyclicGraph graph = new DirectedAcyclicGraph();
-
             Vertex v1, v2, v3, v4, v5, v6;
             v1 = new Vertex(1);
             v2 = new Vertex(2);
@@ -38,10 +36,12 @@ namespace LowestCommonAncestor
             v6.predecessors = new List<Vertex>() { v1 };
             v6.successors   = new List<Vertex>() { v2 };
 
-            graph.root = v1;
+
+            List<Vertex> vertices = new List<Vertex>() { v1, v2, v3, v4, v5, v6 };
+            DirectedAcyclicGraph graph = new DirectedAcyclicGraph(v1, vertices);
 
             int result = graph.FindLCA(4, 5);
-
+            
             Assert.AreEqual(5, result, $"{result} != 5");
 
         }
