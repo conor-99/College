@@ -16,7 +16,8 @@ namespace LowestCommonAncestor
             if (!vertices.ContainsKey(value))
                 vertices.Add(value, new HashSet<int>());
 
-            vertices[value].UnionWith(successors);
+            if (successors != null)
+                vertices[value].UnionWith(successors);
             
         }
 
