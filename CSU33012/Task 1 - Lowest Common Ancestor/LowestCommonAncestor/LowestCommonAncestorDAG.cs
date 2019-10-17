@@ -10,13 +10,10 @@ namespace LowestCommonAncestor
 
         public const int NONE = int.MaxValue;
 
-        public Vertex root;
         public Dictionary<int, Vertex> vertexMap;
 
-        public DirectedAcyclicGraph(Vertex root, List<Vertex> vertices)
+        public DirectedAcyclicGraph(List<Vertex> vertices)
         {
-
-            this.root = root;
 
             vertexMap = new Dictionary<int, Vertex>();
 
