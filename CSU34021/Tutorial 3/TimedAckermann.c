@@ -12,7 +12,7 @@ int ackermann(int x, int y) {
 		return ackermann(x - 1, ackermann(x, y - 1));
 }
 
-int main(int agrc, char** argv) {
+int main(int argc, char** argv) {
 	
 	int result;
 	int totalTime = 0;
