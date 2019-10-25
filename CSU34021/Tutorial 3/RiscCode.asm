@@ -46,7 +46,7 @@ p:		add 	R0, #4, R9 			; mov R9, #4
 /*
 gcd:
 	a, b 		= R26, R27
-	u, v, w 	= R16, R17, R18	// u, v = temp values, w = a % b
+	u, v 		= R16, R17	// u, v = temp values
 	ret expr 	= R1
 	ret addr 	= R25
 mod:
