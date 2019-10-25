@@ -1,0 +1,9 @@
+Note: ignore the choppy/weird language - the grader only accepts synopses of /exactly/ 200 words for whatever reason?!
+
+A database is a set of data that provides integrity, security and concurrency. A database management systems allows users to maintain databases.
+
+Many databases use the relational data model where data items are organised into a number of relations. Each relation generally resembles a table and thus allows data to be inserted, modified, deleted and queried. In a relational database data items are stored in values. Values are in particular rows (tuple) and columns (attribute). Values in a column are of the same data type. Rows consists of a number of columns. A table (relation) consists of a number of rows.
+
+The view mechanism allows parts of the database to be prevented to different users in different ways without changing the table definitions. The external view is presented to the user or programmer and is made suits the intended use of the information. The conceptual view is a global description of the database that hides details of physical storage structures. The internal level contains the internal schema which describes the physical storage structure of the database.
+
+Data can be modified and queried using a structured query language consisting of data definition, data manipulation and data control languages. SQL is available in several different dialects.
