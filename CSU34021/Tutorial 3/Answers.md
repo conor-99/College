@@ -4,7 +4,13 @@ See `RiscCode.asm`.
 
 ## Question 2
 
-To-do.
+To see how the results were calculated see `AnalysedAckermann.c`.
+
+| Register Set | Procedure Calls | Max. RW Depth (+ necessary RWs) | RW Overflows | RW Underflows |
+| - | - | - | - | - |
+| `6` | `172233` | `511` (`513`) | `172218` | `172218` |
+| `8` | `172233` | `511` (`513`) | `172182` | `172182` |
+| `16` | `172233` | `511` (`513`) | `171593` | `171593` |
 
 ## Question 3
 
