@@ -12,4 +12,4 @@ I used the `gettimeofday()` function from `time.h` to get the time (in microseco
 
 The execution time is calculated in microseconds and since I get the average to two decimal places my result is accurate to within `1e-8` seconds.
 
-The implementation I used is in `TimedAckermann.c`. It took `517.17` microseconds to run.
+The implementation I used is in `TimedAckermann.c`. It took an average of `517.17` microseconds to calculate `ackermann(3, 6)`.
