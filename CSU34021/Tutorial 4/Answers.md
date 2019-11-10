@@ -69,3 +69,11 @@ JAL 	R0, 0
 ```
 
 ![1](images/8.png)
+
+## Question 2
+
+| Question | R1 Value | Clock Cycles | Explanation
+| - | - | - | - |
+| i | 15 | 10 | Results in O0 and O1 can be fed back into the ALU without waiting for the values to be put in and gotten from the register file. |
+| ii | 15 | 18 | Need to stall between instructions so that the registers can be updated as we don't store results in O1 or O0. |
+| iii | 6 | 10 | No stalls are used so values are accessed before the correct data has been put into the register file leading to the incorrect result.  |
