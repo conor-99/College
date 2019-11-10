@@ -90,10 +90,10 @@ The difference is due to stall cycles.
 
 | Number of Cycles | Explanation |
 | - | - |
-| `4` | Due to the filling up of the pipeline at the start of the program |
-| `4` | Due to `LD` and `SRLi` both depending on R2 (see (iii)) - occurs 4 times |
-| `2` | Due to `J` as the processor needs to fetch the next instruction (`BEQZ` instead of `ST`) - occurs twice |
-| `2` | Due to branch prediction incorrectly loading the instruction following `BEQZ` |
+| `4` | Due to the filling up of the pipeline at the start of the program. |
+| `4` | Due to `LD` and `SRLi` both depending on R2 (see *(iii)*) - occurs 4 times. |
+| `2` | Due to `J` as the processor needs to fetch the next instruction (`BEQZ` instead of `ST`) - occurs twice. |
+| `2` | Due to branch prediction incorrectly loading the instruction following `BEQZ` - occurs twice. |
 
 
 #### (ii)
@@ -102,7 +102,7 @@ The difference is due to stall cycles.
 | - | - |
 | `38` | `53` |
 
-There are 3 more stall cycles than in (i). These are due to there being no branch prediction for the unconditional jump instruction. The unconditional jump occurs 4 times but seeing as branch prediction makes a mistake at cycle `43` for the `BEQZ` instruction there is only an increase in `4 - 1 = 3` stall cycles.
+There are 3 more stall cycles than in *(i)*. These are due to there being no branch prediction for the unconditional jump instruction. The unconditional jump occurs 4 times but seeing as branch prediction makes a mistake at cycle `43` for the `BEQZ` instruction there is only an increase in `4 - 1 = 3` stall cycles.
 
 #### (iii)
 
