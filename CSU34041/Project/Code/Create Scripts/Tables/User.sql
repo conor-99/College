@@ -1,5 +1,5 @@
 use energycrm;
-#drop table if exists User;
+#drop table if exists `User`;
 
 create table if not exists `User` (
 	Id int auto_increment primary key,
