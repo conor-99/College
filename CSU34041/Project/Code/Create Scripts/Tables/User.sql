@@ -5,7 +5,7 @@ create table if not exists `User` (
 	Id int auto_increment primary key,
 	UserTypeId int,
     UserStatusId int,
-    Email varchar(255) not null unique check (Email like '_%@_%._%'),
+    Email varchar(255) not null unique check (VerifyEmail(Email)),
     Username varchar(255) not null unique,
     `Password` varchar(255) not null,
     PasswordSalt varchar(255) not null,
