@@ -6,10 +6,11 @@ create table if not exists Invoice (
     InvoiceStatusId int,
     BillingRunId int,
     CustomerId int,
-	Amount real not null check (Amount >= 0),
+	Amount real not null,
     DateCreated timestamp not null,
 	DateModified timestamp null,
     constraint FK_Invoice_InvoiceStatus foreign key (InvoiceStatusId) references InvoiceStatus(Id),
     constraint FK_Invoice_BillingRun foreign key (BillingRunId) references BillingRun(Id),
-    constraint FK_Invoice_Customer foreign key (CustomerId) references Customer(Id)
+    constraint FK_Invoice_Customer foreign key (CustomerId) references Customer(Id),
+    constraint CR_Invoice_Amount check (Amount >= 0)
 );

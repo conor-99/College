@@ -5,8 +5,9 @@ create table if not exists Unit (
 	Id int auto_increment primary key,
     Symbol varchar(255) not null,
     `Name` varchar(255) null,
-    ConversionFactor real not null check (ConversionFactor >= 0),
+    ConversionFactor real not null,
     DateCreated timestamp not null,
 	DateModified timestamp null,
-    unique(Symbol, `Name`)
+    unique(Symbol, `Name`),
+    constraint CR_Unit_ConversionFactor check (ConversionFactor >= 0)
 );
