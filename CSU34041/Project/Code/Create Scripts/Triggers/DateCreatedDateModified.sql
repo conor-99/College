@@ -39,7 +39,8 @@ drop trigger if exists TR_MarketPrice_DC;
 drop trigger if exists TR_MarketPrice_DM;
 drop trigger if exists TR_MarketPriceType_DC;
 drop trigger if exists TR_MarketPriceType_DM;
-
+drop trigger if exists TR_EmailQueue_DC;
+drop trigger if exists TR_EmailQueue_DM;
 
 # Create all DC/DM triggers:
 create trigger TR_Address_DC before insert on Address for each row set new.DateCreated = now();
@@ -82,3 +83,5 @@ create trigger TR_MarketPrice_DC before insert on MarketPrice for each row set n
 create trigger TR_MarketPrice_DM before update on MarketPrice for each row set new.DateModified = now();
 create trigger TR_MarketPriceType_DC before insert on MarketPriceType for each row set new.DateCreated = now();
 create trigger TR_MarketPriceType_DM before update on MarketPriceType for each row set new.DateModified = now();
+create trigger TR_EmailQueue_DC before insert on EmailQueue for each row set new.DateCreated = now();
+create trigger TR_EmailQueue_DM before update on EmailQueue for each row set new.DateModified = now();
