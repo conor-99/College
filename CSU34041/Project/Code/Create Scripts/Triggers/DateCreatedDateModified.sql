@@ -35,6 +35,11 @@ drop trigger if exists TR_UserStatus_DC;
 drop trigger if exists TR_UserStatus_DM;
 drop trigger if exists TR_UserType_DC;
 drop trigger if exists TR_UserType_DM;
+drop trigger if exists TR_MarketPrice_DC;
+drop trigger if exists TR_MarketPrice_DM;
+drop trigger if exists TR_MarketPriceType_DC;
+drop trigger if exists TR_MarketPriceType_DM;
+
 
 # Create all DC/DM triggers:
 create trigger TR_Address_DC before insert on Address for each row set new.DateCreated = now();
@@ -73,3 +78,7 @@ create trigger TR_UserStatus_DC before insert on UserStatus for each row set new
 create trigger TR_UserStatus_DM before update on UserStatus for each row set new.DateModified = now();
 create trigger TR_UserType_DC before insert on UserType for each row set new.DateCreated = now();
 create trigger TR_UserType_DM before update on UserType for each row set new.DateModified = now();
+create trigger TR_MarketPrice_DC before insert on MarketPrice for each row set new.DateCreated = now();
+create trigger TR_MarketPrice_DM before update on MarketPrice for each row set new.DateModified = now();
+create trigger TR_MarketPriceType_DC before insert on MarketPriceType for each row set new.DateCreated = now();
+create trigger TR_MarketPriceType_DM before update on MarketPriceType for each row set new.DateModified = now();
