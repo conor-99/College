@@ -1,3 +1,9 @@
 use energycrm;
+#drop procedure if exists SendInvoiceEmail;
 
-# to-do
+delimiter //
+create procedure SendInvoiceEmail(in InvoiceId int)
+begin
+	
+end //
+delimiter ;
