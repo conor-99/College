@@ -10,10 +10,10 @@ create view InvoiceEmailContent as
         mu.MeterType,
         mu.UnitSymbol,
         i.Amount `InvoiceAmount`,
-        round(GetMarketPrice(), 4)  `MarketPrice`,
+        round(GetMarketPrice(3), 4)  `MarketPrice`,
         round(sum(mu.OriginalValue), 4) `OriginalValue`,
         round(sum(mu.ConvertedValue), 4) `ConvertedValue`,
-        round(sum(mu.ConvertedValue) * GetMarketPrice(), 4) `MeterAmount`
+        round(sum(mu.ConvertedValue) * GetMarketPrice(3), 4) `MeterAmount`
 	from MeterUsageOverview mu
 	join InvoiceMeter im on im.MeterId = mu.MeterId
 	join Invoice i on i.Id = im.InvoiceId

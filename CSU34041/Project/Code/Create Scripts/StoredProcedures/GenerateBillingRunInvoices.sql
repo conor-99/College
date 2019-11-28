@@ -8,7 +8,7 @@ begin
     # Get the start and end dates of the billing run:
     call GetBillingRunDates(BillingRunId, @startDate, @endDate);
     # Get the latest market price (€ per kWh)
-    set @marketPrice = GetMarketPrice();
+    set @marketPrice = GetMarketPrice(3);
     
     # Insert data into the Invoice table
     insert into Invoice (InvoiceStatusId, BillingRunId, CustomerId, Amount)
