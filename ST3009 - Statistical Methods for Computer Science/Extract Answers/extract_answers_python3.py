@@ -1,8 +1,8 @@
 """
 
 Usage:
-- python extract_answers.py [week]
-- python extract_answers.py 1
+- python extract_answers_python3.py [week]
+- python extract_answers_python3.py 1
 - etc.
 
 """
