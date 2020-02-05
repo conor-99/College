@@ -1,0 +1,61 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[latin1]{inputenc}
+
+\title{ST3009: Week #1 Assignment}
+\author{Conor McCauley - 17323203}
+\date{February 2, 2020}
+
+\begin{document}
+
+\maketitle
+
+\section*{Question 1}
+
+\noindent (a) There are 10 choices for the first letter, 9 for the second, etc.
+
+$$ 10! = 3628800 $$
+
+\noindent (b) There are 2 orderings of the letters `E' and `F', as well as 8 remaining letters. We have 9 choices for `EF', 8 for the first remaining letter, etc.
+
+$$ 2 \cdot 9! = 725760 $$
+
+\noindent (c) There are 6 letters in total, but there are 3 `A's, 2 `N's and 1 `B'.
+
+$$ \frac{6!}{1! \cdot 2! \cdot 3!} = 60 $$
+
+\noindent (d) There are 5 distinct options and we must choose 3.
+
+$$ {5 \choose 3} = 10 $$
+
+\section*{Question 2}
+
+\noindent (a) Each roll has 6 possible outcomes.
+
+$$ 6^4 = 1296 $$
+
+\noindent (b) There are ${4 \choose 2}$ different placements of the two 3s and 5 options for each of the remaining rolls.
+
+$$ {4 \choose 2} \cdot 5 \cdot 5 = 150 $$
+
+\noindent (c) We know there are 150 ways to get exactly two 3s from the previous question. There are ${4 \choose 3}$ different placements of the three 3s and 5 options for the remaining roll. There is one scenario where only 3s are rolled.
+
+$$ 150 + \left( {4 \choose 3} \cdot 2 \right) + 1 = 171$$
+
+\section*{Question 3}
+
+\noindent (a) There 8 possible position for the first card, 7 for the second, etc. However, there are 2 of each of the 4 suits.
+
+$$ \frac{8!}{2! \cdot 2! \cdot 2! \cdot 2!} = 2520 $$
+
+\noindent (b) There are 4 distinct cards and we must choose 2.
+
+$$ {4 \choose 2} = 6 $$
+
+\noindent (c) There are 2 hearts and 2 diamonds in the deck which means there are ${4 \choose 2}$ ways to get only ``good'' cards. However, since order doesn't matter only half of the ways are distinct.
+
+$$ \frac{{4 \choose 2}}{2} = 3 $$
+
+\end{document}
