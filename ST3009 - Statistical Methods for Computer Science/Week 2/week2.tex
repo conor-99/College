@@ -99,7 +99,7 @@ $$ P(G \mid C) = \frac{P(C \mid G) \cdot P(G)}{P(C)} = \frac{1.0 \cdot 0.6}{0.68
 
 \indent For each cell in the grid the probability that the phone is in the location given the two observed bars is
 
-$$ P(L \mid O) = \frac{P(O \mid L) \cdot P(L)}{P(O \mid L) \cdot P(L) + P(O \mid \overline{L} \cdot P(\overline{L}))} $$
+$$ P(L \mid O) = \frac{P(O \mid L) \cdot P(L)}{P(O \mid L) \cdot P(L) + P(O \mid \overline{L}) \cdot P(\overline{L}))} $$
 
 \indent The following code calculates the updated probability for each cell in the grid:
 
