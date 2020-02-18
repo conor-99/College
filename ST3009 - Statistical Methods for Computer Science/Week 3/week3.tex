@@ -1,0 +1,112 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[latin1]{inputenc}
+\usepackage{listings}
+\renewcommand{\labelitemi}{$\textendash$}
+
+\title{ST3009: Week 3 Assignment}
+\author{Conor McCauley - 17323203}
+\date{February 17, 2020}
+
+\begin{document}
+
+\maketitle
+
+\section*{Question 1}
+
+\noindent (a) Each roll must come up with the exact given number so there's a $\frac{1}{6}$ probability that each of the $6$ rolls is right.
+
+$$ \left( \frac{1}{6} \right)^6 = \frac{1}{46656} \approx 0.0000214 $$
+
+\noindent (b) There are ${6 \choose 4}$ ways to order the `3' rolls. The probability for each of the `3' rolls is $\frac{1}{6}$ and the probability for the other rolls is $\frac{5}{6}$. This is just an application of the binomial probability law.
+
+$$ {6 \choose 4} \cdot \left( \frac{1}{6} \right)^4 \cdot \left( \frac{5}{6} \right)^2 = 0.00803 $$
+
+\noindent (c) There are ${6 \choose 1}$ ways to order the rolls. The probability for the `1' roll is $\frac{1}{6}$ and the probability for the other rolls is $\frac{5}{6}$.
+
+$$ {6 \choose 1} \cdot \left( \frac{1}{6} \right)^1 \cdot \left( \frac{5}{6} \right)^5 = 0.40187 $$
+
+\noindent (d) The probability that we get at least a single 1 is the inverse of the probability that we get exactly zero `1's.
+    
+$$ 1 - \left( \frac{5}{6} \right)^6 = 0.6651 $$
+
+\section*{Question 2}
+
+\noindent The probability of the event $A$ occurring, $P(A)$, is $\frac{1}{6}$. The only way for two dice rolls to sum to 2 is if both rolls are a 1, therefore
+
+$$ P(B) = \frac{1}{6} \cdot \frac{1}{20} = \frac{1}{120} $$
+
+\indent The probability that both $A$ and $B$ occur is the probability that the six-sided die rolls a 1 {\it and} the 20-sided die rolls a 1, thus
+
+$$ P(A \cap B) = \frac{1}{6} \cdot \frac{1}{20} = \frac{1}{120} $$
+
+\indent The formal definition of independence states that two events $E$ and $F$ are independent if
+
+$$ P(E \cap F) = P(E) \cdot P(F) $$
+
+\indent It is clear that the events $A$ and $B$ are {\bf not} independent since
+
+$$ P(A \cap B) = \frac{1}{120} $$
+
+$$ P(A) \cdot P(B) = \frac{1}{6} \cdot \frac{1}{120} = \frac{1}{720} $$
+
+$$ P(A \cap B) \neq P(A) \cdot P(B) $$
+
+\section*{Question 3}
+
+\noindent (a) On the hacker's first try there is a $\frac{n - 1}{n}$ chance that she is unsuccessful and on her second try the chance that she is unsuccessful is $\frac{n - 2}{n - 1}$ (since she removed the incorrect password from the previous try), etc. On her $k$-th try the probability that she {\bf is} successful is $\frac{1}{n - k + 1}$. Therefore, the probability that she succeeds on her $k$-th try is
+
+$$ \frac{n - 1}{n} \cdot \frac{n - 2}{n - 1} \cdots \frac{1}{n - k + 1}$$
+
+\indent It is clear that the numerator of the first factor is cancelled out by the denominator of the second factor, etc. This leaves us with
+
+$$ \frac{1}{n}$$
+
+\noindent (b) Substituting the values into the formula from the previous question gives us the answer
+
+$$ \frac{1}{6} = 0.1\overline{6} $$
+
+\noindent (c) For the first $k - 1$ attempts the probability that the hacker is unsuccessful is $\frac{n - 1}{n}$. Then, on the $k$-th attempt, the probability that she {\bf is} successful is $\frac{1}{n}$. Therefore, the generalised probability that the first success occurs on the $k$-th try is
+
+$$ \left( \frac{n - 1}{n} \right)^{k - 1} \cdot \frac{1}{n}$$
+
+\noindent (d) Substituting the values into the formula from the previous question gives us the answer
+
+$$ \left( \frac{5}{6} \right)^{2} \cdot \frac{1}{6} = 0.115\overline{740} $$
+
+\section*{Question 4}
+
+\noindent (a) The probability that a robot fails at least one of the tests is the inverse of the probability that it passes all of the tests.
+
+$$ 1 - 0.3^3 = 0.973 $$
+
+\noindent (b) As in the previous question, the probability that a human fails at least one of the tests is the inverse of the probability that the person passes all of the tests.
+
+$$ 1 - 0.95^3 = 0.142625 $$
+
+\noindent (c) I will refer to the event that a visitor is a robot as $R$ and the event that a visitor gets flagged as $F$.
+
+\begin{itemize}
+
+    \item Likelihood - the probability that a visitor is flagged given that they are a robot:
+    
+    $$ P(F \mid R) = 0.973 $$
+    
+    \item Prior - the probability that a visitor is a robot prior to receiving any new evidence:
+    
+    $$ P(R) = 0.1 $$
+    
+    \item Evidence - calculated using marginalisation:
+
+    $$ P(F) = P(F \mid R) \cdot P(R) + P(F \mid \overline{R}) \cdot P(\overline{R}) $$
+    $$ = 0.973 \cdot 0.1 + 0.1426 \cdot (1 - 0.1) = 0.22564 $$
+    
+\end{itemize}
+
+\indent Therefore, the probability that the visitor is a robot given that they've been flagged is
+
+$$ P(R \mid F) = \frac{P(F \mid R) \cdot P(R)}{P(F)} = \frac{0.973 \cdot 0.1}{0.22564} = 0.43121 $$
+
+\end{document}

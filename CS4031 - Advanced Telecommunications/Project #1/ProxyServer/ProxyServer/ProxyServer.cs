@@ -10,11 +10,15 @@ using System.Windows.Forms;
 
 namespace ProxyServer
 {
+
     public partial class ProxyServer : Form
     {
+
         public ProxyServer()
         {
             InitializeComponent();
         }
+
     }
+
 }
