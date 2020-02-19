@@ -51,6 +51,7 @@
             this.BlockButton.TabIndex = 2;
             this.BlockButton.Text = "Block Connection";
             this.BlockButton.UseVisualStyleBackColor = true;
+            this.BlockButton.Click += new System.EventHandler(this.BlockAddress);
             // 
             // ConnectionBox
             // 
@@ -69,6 +70,7 @@
             this.UnblockButton.TabIndex = 4;
             this.UnblockButton.Text = "Unblock Connection";
             this.UnblockButton.UseVisualStyleBackColor = true;
+            this.UnblockButton.Click += new System.EventHandler(this.UnblockAddress);
             // 
             // ProxyServer
             // 
