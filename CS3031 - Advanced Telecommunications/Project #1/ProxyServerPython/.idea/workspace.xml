@@ -1,42 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8f68d5a2-6cd7-4fb3-9293-08f6cb99d55d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/proxy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../CS4031 - Advanced Telecommunications/Project #1/ProxyServer/.vs/ProxyServer/v15/.suo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../CS4031 - Advanced Telecommunications/Project #1/ProxyServer/.vs/ProxyServer/v15/Server/sqlite3/storage.ide" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../CS4031 - Advanced Telecommunications/Project #1/ProxyServer/.vs/ProxyServer/v15/Server/sqlite3/storage.ide-shm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../CS4031 - Advanced Telecommunications/Project #1/ProxyServer/.vs/ProxyServer/v15/Server/sqlite3/storage.ide-wal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../CS4031 - Advanced Telecommunications/Project #1/ProxyServer/ProxyServer.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../CS4031 - Advanced Telecommunications/Project #1/ProxyServer/ProxyServer/App.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../CS4031 - Advanced Telecommunications/Project #1/ProxyServer/ProxyServer/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../CS4031 - Advanced Telecommunications/Project #1/ProxyServer/ProxyServer/Properties/AssemblyInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../CS4031 - Advanced Telecommunications/Project #1/ProxyServer/ProxyServer/Properties/Resources.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../CS4031 - Advanced Telecommunications/Project #1/ProxyServer/ProxyServer/Properties/Resources.resx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../CS4031 - Advanced Telecommunications/Project #1/ProxyServer/ProxyServer/Properties/Settings.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../CS4031 - Advanced Telecommunications/Project #1/ProxyServer/ProxyServer/Properties/Settings.settings" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../CS4031 - Advanced Telecommunications/Project #1/ProxyServer/ProxyServer/ProxyServer.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../CS4031 - Advanced Telecommunications/Project #1/ProxyServer/ProxyServer/ProxyServer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../CS4031 - Advanced Telecommunications/Project #1/ProxyServer/ProxyServer/ProxyServer.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../CS4031 - Advanced Telecommunications/Project #1/ProxyServer/ProxyServer/ProxyServer.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../CS4031 - Advanced Telecommunications/Project #1/ProxyServer/ProxyServer/ProxyServer.resx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../CS4031 - Advanced Telecommunications/Project #1/ProxyServer/ProxyServer/bin/Debug/ProxyServer.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../CS4031 - Advanced Telecommunications/Project #1/ProxyServer/ProxyServer/bin/Debug/ProxyServer.exe.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../CS4031 - Advanced Telecommunications/Project #1/ProxyServer/ProxyServer/bin/Debug/ProxyServer.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../CS4031 - Advanced Telecommunications/Project #1/ProxyServer/ProxyServer/obj/Debug/DesignTimeResolveAssemblyReferences.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../CS4031 - Advanced Telecommunications/Project #1/ProxyServer/ProxyServer/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../CS4031 - Advanced Telecommunications/Project #1/ProxyServer/ProxyServer/obj/Debug/ProxyServer.Properties.Resources.resources" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../CS4031 - Advanced Telecommunications/Project #1/ProxyServer/ProxyServer/obj/Debug/ProxyServer.ProxyServer.resources" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../CS4031 - Advanced Telecommunications/Project #1/ProxyServer/ProxyServer/obj/Debug/ProxyServer.csproj.CoreCompileInputs.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../CS4031 - Advanced Telecommunications/Project #1/ProxyServer/ProxyServer/obj/Debug/ProxyServer.csproj.FileListAbsolute.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../CS4031 - Advanced Telecommunications/Project #1/ProxyServer/ProxyServer/obj/Debug/ProxyServer.csproj.GenerateResource.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../CS4031 - Advanced Telecommunications/Project #1/ProxyServer/ProxyServer/obj/Debug/ProxyServer.csprojAssemblyReference.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../CS4031 - Advanced Telecommunications/Project #1/ProxyServer/ProxyServer/obj/Debug/ProxyServer.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../CS4031 - Advanced Telecommunications/Project #1/ProxyServer/ProxyServer/obj/Debug/ProxyServer.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../CS4031 - Advanced Telecommunications/Project #1/ProxyServer/ProxyServer/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../CS4031 - Advanced Telecommunications/Project #1/ProxyServer/ProxyServer/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../CS4031 - Advanced Telecommunications/Project #1/ProxyServer/ProxyServer/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" beforeDir="false" />
-    </list>
+    <list default="true" id="8f68d5a2-6cd7-4fb3-9293-08f6cb99d55d" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,10 +9,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/proxy.py">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2047">
+              <caret line="19" column="56" lean-forward="true" selection-start-line="19" selection-start-column="56" selection-end-line="19" selection-end-column="56" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -90,10 +59,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="977" />
-    <option name="height" value="529" />
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="978" />
+    <option name="height" value="530" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -119,6 +88,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -176,25 +146,20 @@
       <option name="presentableId" value="Default" />
       <updated>1582588525220</updated>
       <workItem from="1582588526675" duration="15364000" />
+      <workItem from="1582613414067" duration="1623000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15364000" />
+    <option name="totallyTimeSpent" value="16987000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="0" weight="0.22821577" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" auto_hide="true" id="Run" order="2" weight="0.32561505" />
@@ -202,22 +167,32 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="SciView" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ProxyServerPython$proxy.coverage" NAME="proxy Coverage Results" MODIFIED="1582611849504" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ProxyServerPython$proxy.coverage" NAME="proxy Coverage Results" MODIFIED="1582613567621" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/proxy.py">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2047">
+          <caret line="19" column="56" lean-forward="true" selection-start-line="19" selection-start-column="56" selection-end-line="19" selection-end-column="56" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
