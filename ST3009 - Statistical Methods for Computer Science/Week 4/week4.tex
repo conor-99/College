@@ -50,7 +50,22 @@ $$ \frac{{3 \choose 0}}{2^3} = 0.125 $$
 
 $$ \frac{{3 \choose 1}}{2^3} = 0.375 $$
 
-\noindent (d)
+\noindent (d) The probability of getting $3$ heads and $0$ tails is the same as the probability of getting $0$ heads and $3$ tails. Likewise, the probability of getting $2$ heads and $1$ tail is the same as the probability of getting $1$ head and $2$ tails.
+
+\indent The probabilities are as follows:
+
+\begin{center}
+    \begin{tabular}{c|c} 
+        $X$ & $P(X)$ \\
+        \hline
+        $-3$ & $0.125$ \\ 
+        $-1$ & $0.375$ \\ 
+        $1$ & $0.375$ \\ 
+        $3$ & $0.125$
+    \end{tabular}
+\end{center}
+
+\indent They can be graphed like so:
 
 \begin{center}
     \begin{tikzpicture}
@@ -71,6 +86,21 @@ $$ \frac{{3 \choose 1}}{2^3} = 0.375 $$
         \end{axis}
     \end{tikzpicture}
 \end{center}
+
+\indent The cumulative probabilities are as follows:
+
+\begin{center}
+    \begin{tabular}{c|c} 
+        $X$ & $CDF(X)$ \\
+        \hline
+        $-3$ & $0.125$ \\ 
+        $-1$ & $0.5$ \\ 
+        $1$ & $0.875$ \\ 
+        $3$ & $1.0$
+    \end{tabular}
+\end{center}
+
+\indent They can be graphed like so:
 
 \begin{center}
     \begin{tikzpicture}
