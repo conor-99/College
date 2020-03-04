@@ -1,0 +1,129 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[latin1]{inputenc}
+\usepackage{listings}
+\usepackage{pgfplots}
+\renewcommand{\labelitemi}{$\textendash$}
+\renewcommand{\arraystretch}{1.4}
+
+\title{ST3009: Week 5 Assignment}
+\author{Conor McCauley - 17323203}
+\date{March 3, 2020}
+
+\begin{document}
+
+\maketitle
+
+\section*{Question 1}
+
+\noindent (a) If one marble is taken out of the box then the probability that the next marble taken out is the same colour as the first one is $\frac{4}{9}$ as there are only $4$ marbles of the same colour remaining and only $9$ marbles left in total. The probability that the marbles are different colours is $\frac{5}{9}$. 
+
+\indent Therefore, the expected value of the winnings, $E[W]$, can be calculated like so:
+
+$$
+E[W] = \left( \frac{4}{9} \cdot 1.10 \right) + \left( \frac{5}{9} \cdot -1.00 \right) = -0.0\overline{6}
+$$
+
+\noindent (b) We can calculate the variance of the winnings, $Var(W)$, using the following formula, where $\mu$ is the mean value of the winnings:
+
+$$
+Var(W) = \sum_{i=1}^n (w_i - \mu)^2 \cdot p(w_i)
+$$
+
+\indent Since $\mu = E[W]$ we can use our answer from the previous question to find the variance:
+
+$$
+Var(W) = \left( (1.10 - -0.0\overline{6})^2 \cdot \frac{4}{9} \right) + \left( (-1.00 - -0.0\overline{6})^2 \cdot \frac{5}{9} \right) = 1.0888
+$$
+
+\section*{Question 2}
+
+\noindent (a) We can calculate $E[X_i]$ using our method from 1(a):
+
+$$
+E[X_i] = (0.6 \cdot 1) + (0.4 \cdot 0) = 0.6
+$$
+
+\indent We can calculate $Var(X_i)$ using the method from 1(b) given that $\mu = 0.6$:
+
+$$
+Var(X_i) = \left( (1 - 0.6)^2 \cdot 0.6 \right) + \left( (0 - 0.6)^2 \cdot 0.4 \right) = 0.24
+$$
+
+\noindent (b) $E[Y]$ is the sum of the expected values for each individual voter $i$ - in other words, it is the expected number of voters given a sample of $n$ people.
+
+\indent Since we know that:
+
+$$Y = X_1 + \cdots + X_n$$
+
+\indent We can use the linearity of expectation to find that:
+
+$$E[Y] = E[X_1] + \cdots + E[X_n]$$
+$$= E[X_i] \cdot n$$
+$$= 0.6n$$
+
+\indent It is clear that $E[X]$ and $E[Y]$ are different since $0.6n \neq 0.6$ where $n > 1$.
+
+\noindent (c) Using the linearity of expectation we know that $E[\frac{1}{n}Y] = \frac{1}{n} \cdot E[Y]$. Given that $E[Y]$ is the expected number of voters given a sample of $n$ people we can deduce that $\frac{1}{n} \cdot E[Y]$ is the proportion of people who voted:
+
+$$E[\frac{1}{n}Y] = \frac{1}{n} \cdot 0.6n = 0.6$$
+
+\noindent (d) From (b) we know that $Y = X \cdot n$ which means that $\frac{1}{n}Y = X$:
+
+$$Var(\frac{1}{n}Y) = Var(X)$$
+
+\section*{Question 3}
+
+\noindent (a) The probability that the first ball is white, $P(X_1 = 1)$, is $\frac{5}{13}$ and the probability that it's red, $P(X_1 = 0)$, is $\frac{8}{13}$.
+
+\indent The probability that both balls are red is:
+
+$$P(X_1 = 0, X_2 = 0) = \frac{8}{13} \cdot \frac{7}{12} = \frac{14}{39}$$
+
+\indent The probability that the first ball is red and the second is white is:
+
+$$P(X_1 = 0, X_2 = 1) = \frac{8}{13} \cdot \frac{5}{12} = \frac{10}{39}$$
+
+\indent The probability that the first ball is white and the second is red is:
+
+$$P(X_1 = 1, X_2 = 0) = \frac{5}{13} \cdot \frac{8}{12} = \frac{10}{39}$$
+
+\indent The probability that the both balls are white is:
+
+$$P(X_1 = 1, X_2 = 0) = \frac{5}{13} \cdot \frac{4}{12} = \frac{5}{39}$$
+
+\indent We can use these probabilities to calculate the joint probability mass function:
+
+\begin{center}
+    \begin{tabular}{c|c|c|c} 
+         & $x_{1}=0$ & $x_{1}=1$ & $P(X_{2}=x_{2})$ \\
+        \hline
+        $x_{2}=0$ & $\frac{14}{39}$ & $\frac{10}{39}$ & $\frac{8}{13}$ \\ 
+        $x_{2}=1$ & $\frac{10}{39}$ & $\frac{5}{39}$ & $\frac{5}{13}$ \\  
+        $P(X_{1}=x_1)$ & $\frac{8}{13}$ & $\frac{5}{13}$ & $1$
+    \end{tabular}
+\end{center}
+
+\noindent (b) The formal definition of independence states that two events $E$ and $F$ are independent if
+
+$$P(E \cap F) = P(E) \cdot P(F)$$
+
+\indent We know from the previous question that $P(X_1) = \frac{5}{13}$ and that $P(X_2) = \frac{5}{13}$:
+
+$$P(X_1) \cdot P(X_2) = \frac{5}{13} \cdot \frac{5}{13} = \frac{25}{169}$$
+
+\indent We also know that $P(X_1 \cap X_2) = \frac{5}{39}$. We can therefore say that $X_1$ and $X_2$ are {\bf not} independent as
+
+$$\frac{25}{169} \neq \frac{5}{39}$$
+
+\noindent (c) From part (a) we know that $P(X_2 = 0) = \frac{8}{13}$ and that $P(X_2 = 1) = \frac{5}{13}$:
+
+$$E[X_2] = \left( \frac{8}{13} \cdot 0 \right) + \left( \frac{5}{13} \cdot 1 \right) = \frac{5}{13} = 0.38461$$
+
+\noindent (d) Similarly, from part (a) we know that $P(X_2 = 0 | X_1 = 1) = \frac{10}{39}$ and that $P(X_2 = 1 | X_1 = 1) = \frac{5}{39}$. We must also divide the result of the following equation by $P(X_1 = 1)$ since we're not interested in the proportion where $P(X_1 = 0)$:
+
+$$E[X_2 | X_1 = 1] = \frac{\left( \frac{10}{39} \cdot 0 \right) + \left( \frac{5}{39} \cdot 1 \right)}{\frac{5}{13}} = \frac{13}{39} = 0.\overline{3}$$
+
+\end{document}
