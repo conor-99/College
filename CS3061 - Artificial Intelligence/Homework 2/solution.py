@@ -58,6 +58,7 @@ G = 0.0
 def p(s, a, t):
 	return M[a][s][t][0]
 
+
 # return the reward for transitioning from s -> t in corner a
 def r(s, a, t):
 	return M[a][s][t][1]
