@@ -12,6 +12,8 @@ class State(Enum):
 	Dead = 2
 
 
+# combined probability and reward matrices
+# - indexed by corner, starting state and finishing state
 M = {
 	Corner.Exercise: {
 		State.Fit: {
@@ -52,14 +54,16 @@ S = [State.Fit, State.Unfit, State.Dead]
 G = 0.0
 
 
+# return the probability of transitioning from s -> t in corner a
 def p(s, a, t):
 	return M[a][s][t][0]
 
-
+# return the reward for transitioning from s -> t in corner a
 def r(s, a, t):
 	return M[a][s][t][1]
 
 
+# memoized implementation of Vn 
 _V = {}
 def V(n, s):
 	k = (n, s)
@@ -68,6 +72,7 @@ def V(n, s):
 	return _V[k]
 
 
+# memoized implementation of qn
 _q = {}
 def q(n, s, a):
 	k = (n, s, a)
@@ -79,6 +84,7 @@ def q(n, s, a):
 	return _q[k]
 
 
+# print out values of qn for each corner for all values <= n
 def show(n, s, g):
 	global G, _q, _V
 	G, _q, _V = g, {}, {}
@@ -87,6 +93,7 @@ def show(n, s, g):
 	return q(n, s, Corner.Exercise), q(n, s, Corner.Relax)
 
 
+# examples
 show(10, State.Fit, 0.5)
 show(8, State.Unfit, 0.8)
 show(10, State.Dead, 0.99)
