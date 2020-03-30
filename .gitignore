@@ -4,4 +4,4 @@ work/
 *.mpf
 *.lock
 *.OpenDB
-
+__pycache__/
