@@ -3,3 +3,12 @@ def parse_timings():
 
 def parse_probabilities():
 	return tuple(map(float, open("dataset_probabilities.txt").readline().split()))
+
+def pmf_hist(timings):
+	return
+
+def prob(timings, value):
+	return
+
+def conf_intervals(timings, value):
+	return
