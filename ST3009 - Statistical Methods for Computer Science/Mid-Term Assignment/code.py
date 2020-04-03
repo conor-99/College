@@ -19,7 +19,7 @@ def pmf_hist(timings):
 def prob(timings):
 
 	rv = lambda x: 1 if x > 10 else 0
-	count = sum(1 if rv(timing) == 1 else 0 for timing in timings)
+	count = sum(rv(timing) for timing in timings)
 
 	return count / len(timings)
 
@@ -62,15 +62,18 @@ all_timings = parse_timings()
 probs = parse_probabilities()
 
 # Q1(a)
-#pmf_hist(all_timings[0])
+pmf_hist(all_timings[0])
 
 # Q1(b)
-#print(prob(all_timings[0]))
+print(prob(all_timings[0]))
 
 # Q1(c)
 conf_intervals(all_timings[0])
 conf_intervals_bootstrap(all_timings[0])
 
 # Q2
-#for timings in all_timings[1:]:
-#	print(prob(timings))
+for timings in all_timings[1:]:
+	print(prob(timings))
+
+# Q3
+# to-do
