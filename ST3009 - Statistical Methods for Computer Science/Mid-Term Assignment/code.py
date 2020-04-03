@@ -57,23 +57,27 @@ def conf_intervals_bootstrap(timings):
 	print("95%% CI - BS CLT: %.4f <= X <= %.4f" % (clt_lo, clt_hi))
 
 
+def prob_z(all_timings, probs):
+	return sum(prob(all_timings[i]) * probs[i] for i in range(len(all_timings)))
+
+
 # Data
 all_timings = parse_timings()
 probs = parse_probabilities()
 
 # Q1(a)
-pmf_hist(all_timings[0])
+#pmf_hist(all_timings[0])
 
 # Q1(b)
-print(prob(all_timings[0]))
+#print(prob(all_timings[0]))
 
 # Q1(c)
-conf_intervals(all_timings[0])
-conf_intervals_bootstrap(all_timings[0])
+#conf_intervals(all_timings[0])
+#conf_intervals_bootstrap(all_timings[0])
 
 # Q2
-for timings in all_timings[1:]:
-	print(prob(timings))
+#for timings in all_timings[1:]:
+#	print(prob(timings))
 
 # Q3
-# to-do
+print(prob_z(all_timings, probs))
