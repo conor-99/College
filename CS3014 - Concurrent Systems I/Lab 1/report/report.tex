@@ -1,0 +1,64 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[latin1]{inputenc}
+\usepackage{listings}
+\usepackage{pgfplots}
+\usepackage{hyperref}
+\usepackage{geometry}
+\renewcommand{\labelitemi}{$\textendash$}
+\renewcommand{\arraystretch}{1.4}
+\hypersetup{colorlinks=true, urlcolor=cyan}
+
+\title{CS3014 Concurrent Systems: Sparse Parallel Multichannel Multikernel Convolution}
+\author{Conor McCauley, Sean Roche}
+\date{April 6, 2020}
+
+\begin{document}
+
+\maketitle
+
+\section{Optimisations}
+
+\subsection{Minor Algorithmic Changes}
+
+\noindent One minor change we made to the algorithm was to remove the initial `zeroing' of the output matrix. The reason for this is that every element in the output matrix is already set to zero so this part of the algorithm was simply a waste of time. This change resulted in a slight decrease in execution times.
+
+\subsection{Reduction of Repeated Memory Accesses}
+
+\noindent We noticed that the \texttt{kernels} matrix was being repeatedly accessed inside of the fourth loop. We modified the code so that the repeated access is done inside of the third loop. Similarly, we noticed that the \texttt{image} matrix was being repeatedly accessed inside of the sixth loop so we modified the code so that the initial access occurs inside of the third loop and the second access occurs inside of the fourth loop. These changes resulted in a noticeable decrease in execution times.
+
+\indent Finally, we noticed that values in the \texttt{output} matrix was being accessed and incremented once for each index in the current kernel's \texttt{kernel\_starts} interval. We replaced this access with a local variable, \texttt{sum}, which we added to the appropriate \texttt{output} value once the loop had been exited. This change resulted in a noticeable decrease in execution times for larger inputs and, strangely, a slight increase in execution times for smaller inputs.
+
+\subsection{Implementation of OpenMP}
+
+\noindent Our final and most effective improvement to the algorithm was to parallelise the bulk of our code using OpenMP. We configured OpenMP through a standard \texttt{\#pragma} declaration.
+
+\indent We used \texttt{collapse(3)} to combine the image width and height loops as well as the first kernel loop into a single iteration space which allowed for much more multithreading and greatly reduced the execution times for large inputs.
+
+\indent Finally, we added an \texttt{if} condition to the declaration so that parallelisation was only utilised when the number of kernels was greater than or equal to 64. We arrived at this number of kernels through repeated trial-and-error.
+
+\section{Conclusions}
+
+\noindent Having completed this assignment we both feel like we have a deeper understanding of parallel computing and, in particular, how this can be implemented using OpenMP.
+
+\indent One of the challenges we faced when trying to optimise the algorithm was ensuring that the sum of the absolute differences between our output and the control output was within the given acceptable range. To do this we had to correctly privatise and share the variables within the algorithm. This took some trial-and-error but eventually we settled on sharing only the \texttt{image}, \texttt{kernels} and \texttt{output} matrices.
+
+\indne Another challenge we faced was dealing with the overhead introduced by setting up OpenMP. We got around this issue by introducing an \texttt{if} condition (see §1.3 for details).
+
+\section{Timings}
+
+\begin{center}
+    \begin{tabular}{|c|c|}
+        \hline
+        Input & Average Execution Time \\ \hline
+        16 16 1 32 32 100 & 199 \mu s \\
+        64 64 3 256 256 100 & 134 {\it ms} \\
+        128 128 3 256 256 100 & 367 {\it ms} \\
+        256 256 3 256 256 100 & 5.01 {\it s} \\ \hline
+    \end{tabular}
+\end{center}
+
+\end{document}
