@@ -1,0 +1,88 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[latin1]{inputenc}
+\usepackage{listings}
+\usepackage{pgfplots}
+\renewcommand{\labelitemi}{$\textendash$}
+\renewcommand{\arraystretch}{1.4}
+
+\title{ST3009: Week 10 Assignment}
+\author{Conor McCauley - 17323203}
+\date{April 6, 2020}
+
+\begin{document}
+
+\maketitle
+
+\section*{Question 1}
+
+\noindent (a) We know that the CDF, $F_X$, of a continuous random variable $X$ at some point $x$ is simply the sum of the probabilities for all values less than or equal to $x$. As such, for some values $t_1, t_2$:
+
+$$P(t_1 \le x \le t_2) = F_X(t_2) - F_X(t_1)$$
+
+\indent Therefore, to calculate $P(X = 0.5)$, we can rewrite the equation like so:
+
+$$P(0.5 - \epsilon \le X \le 0.5) = F_X(0.5) - F_X(0.5 - \epsilon)$$
+$$= (0.5) - (0.5 - \epsilon) = \epsilon$$
+
+\indent As the value of $\epsilon$ approaches 0 the value of $P(X = 0.5)$ also approaches 0. Therefore we can say that $P(X = 0.5) = 0$. Note that this CDF is that of a uniform random variable.
+
+\noindent (b) Using the method from the previous question we can calculate the probability like so:
+
+$$P(0.25 \le x \le 0.5) = F_X(0.5) - F_X(0.25) = 0.5 - 0.25 = 0.25$$
+
+\noindent (c) We must modify our method slightly for this question as the CDF of $X$ for the values $-1 \le x < 0$ is always 0. We can therefore ignore these values and rewrite the equation as $P(0 \le x \le 0.5)$:
+
+$$P(-1 \le x \le 0.5) = F_X(0.5) - F_X(0) = 0.5 - 0 = 0.5$$
+
+\section*{Question 2}
+
+\noindent (a) It is obvious that for all values $x < 0$ the CDF of $X$, $F_X$, will be 0 and that for all values of $x > 2$ the CDF of $X$ will be 1. We know from lectures that the value of $F_X$ for $0 \le x \le 2$ is simply the integral of $f_X$:
+
+$$F_X(x) = \int \frac{x}{2}\,dx = \frac{x^2}{4}$$
+
+\indent We can now write $F_X$ fully, like so:
+
+$$
+F_X(x) =
+\begin{cases}
+    1 & x > 2 \\
+    x^{2}/4 & 0 \le x \le 2 \\
+    0 & x < 0
+\end{cases}
+$$
+
+\noindent (b) The area under the PDF curve for values greater than 2 will always be 0 so we're only interested in $P(0.5 \le X \le 2)$ which, as we know from question 1, can be calculated like so:
+
+$$P(0.5 \le X \le 2) = F_X(2) - F_X(0.5) = \frac{2^2}{4} - \frac{0.5^2}{4} = 0.9375$$
+
+\section*{Question 3}
+
+\noindent (a) Since $X$ and $Y$ are independent we can simply multiply their respective PDFs to calculate their joint PDF:
+
+$$f_{XY}(x,y) = \frac{e^{-|x|}}{2} \cdot e^{-2|y|} = \frac{e^{-|x| - 2|y|}}{2}$$
+
+\noindent (b) We know from the definition of a conditional PDF that its relation to the joint PDF of two dependent continuous random variables, $X$ and $Y$, is as follows:
+
+$$f_{Y \mid X}(y \mid x) = \frac{f_{XY}(x,y)}{f_X(x)} = \frac{\frac{e^{-|xy|}}{2}}{\frac{e^{-|x|}}{2}} = e^{-|xy| + |x|}$$
+
+\noindent (c) Using Bayes' Rule we can calculate $f_{X \mid Y}(x \mid y)$ like so:
+
+$$
+f_{X \mid Y}(x \mid y) = \frac{f_{Y \mid X}(y \mid x) f_{X}(x)}{f_{Y}(y)} = \frac{e^{-|xy| + |x|} \cdot \frac{e^{-|x|}}{2}}{e^{-2|y|}} = \frac{e^{2|y| - |xy|}}{2}
+$$
+
+\section*{Question 4}
+
+\noindent (a) As each random variable in $Z$ is independent of the rest we can calculate the joint conditional PDF by calculating the product of each individual conditional PDF:
+
+$$
+f_{Z \mid X} = \prod_{i = 1}^{m} e^{-2|\theta y^{(i)}- x^{(i)}|} = e^{-2 \sum_{i = 1}^{m} |\theta y^{(i)} - x^{(i)}|}
+$$
+
+\noindent (b) We will need to modify the standard gradient descent algorithm so that it searches for maximum outputs as opposed to minimum outputs first. We can then randomly select an initial starting value for $\theta$, choose some learning rate $\alpha$ and run the modified algorithm on our cost function, $J(\theta)$, which in this case is simply the expression for $f_{Z \mid X}$ from the previous question.
+
+\end{document}
