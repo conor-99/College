@@ -1,0 +1,144 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[latin1]{inputenc}
+\usepackage{listings}
+\usepackage{pgfplots}
+\usepackage{makecell}
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\labelitemi}{$\textendash$}
+\renewcommand{\arraystretch}{2.0}
+\newcommand\aug{\fboxsep=-\fboxrule\!\!\!\fbox{\strut}\!\!\!}
+
+\title{CS3081: Assignment 3}
+\author{Conor McCauley - 17323203}
+\date{April 13, 2020}
+
+\begin{document}
+
+\maketitle
+
+\section*{Answers}
+
+\subsection*{Question 4.26}
+
+\noindent (i) (a) = 4, (b) = 7.
+
+\subsection*{Question 6.13}
+
+\noindent (iii) $530W$
+
+\subsection*{Question 8.8}
+
+\noindent (ii) $O(h^2)$.
+
+\subsection*{Question 8.9}
+
+\noindent (ii) (a) 4940 (males) and 10681 (females) (b) 673601 (males) and 277987 (females).
+
+\section*{Solutions}
+
+\subsection*{Question 4.26}
+
+\indent The following very simple Matlab code calculates the infinity norm of a given matrix. It returns 4 and 7 for the matrices in (a) and (b), respectively.
+
+\begin{lstlisting}[language=Matlab]
+A = [
+    4 -1 0 1 0;
+    -1 4 -1 0 1;
+    0 -1 4 -1 0;
+    1 0 -1 4 -1;
+    0 1 0 -1 4
+];
+N = InfinityNorm(A);
+disp(N);
+
+function N = InfinityNorm(A)
+    % return the largest sum of a row's absolute values
+    N = max(sum(abs(A), 2));
+end
+\end{lstlisting}
+
+\subsection*{Question 6.13}
+
+\noindent We can use the following generalised formula to calculate the $n^{th}$-order polynomial in the Lagrange form:
+
+$$f(x) = \sum_{i = 1}^n y_i \prod_{\substack{j = 1 \\ j \neq i}}^n \frac{(x - x_j)}{(x_i - x_j)}$$
+
+\indent This results in the following formula for the tabular values given in the question and $x = 26$:
+
+$$f(26) = 320 \cdot \frac{(26 - 22)(26- 30)(26 - 38)(26 - 46)}{(14 - 22)(14 - 30)(14 - 38)(14 - 46)} $$
+$$ + 490 \cdot \frac{(26 - 14)(26- 30)(26 - 38)(26 - 46)}{(22 - 14)(22 - 30)(22 - 38)(22 - 46)} $$
+$$ + 540 \cdot \frac{(26 - 14)(26- 22)(26 - 38)(26 - 46)}{(30 - 14)(30 - 22)(30 - 38)(30 - 46)} $$
+$$ + 500 \cdot \frac{(26 - 14)(26- 22)(26 - 30)(26 - 46)}{(38 - 14)(38 - 22)(38 - 30)(38 - 46)} $$
+$$ + 480 \cdot \frac{(26 - 14)(26- 22)(26 - 30)(26 - 38)}{(46 - 14)(46 - 22)(46 - 30)(46 - 38)} $$
+
+$$ = 320 \cdot \frac{-5}{128} + 490 \cdot \frac{15}{32} + 540 \cdot \frac{45}{64} + 500 \cdot \frac{-5}{32} + 480 \cdot \frac{3}{128} = 530W$$
+
+\subsection*{Question 8.8}
+
+\noindent We can use Taylor series expansions to rewrite the terms in the formula. The Taylor series in the case of this finite difference formula can be defined as follows (we use $hk$ rather than $x - x_0$ as they are equivalent in this case since the difference is equal to $k$ steps of size $h$):
+
+$$ f'(x_{i + k}) = f(x_i) + \sum_{n = 1}^{\infty} \frac{f^{(n)}(x_i)}{n!}(hk)^n $$
+
+\indent This gives us the following expansions:
+
+$$ f'(x_{i + 1}) = f(x_i) + h f'(x_i) + \frac{h^2}{2} f''(x_i) + \frac{h^3}{6} f'''(x_i) + \cdots $$
+$$ f'(x_{i + 3}) = f(x_i) + 3h f'(x_i) + \frac{9 h^2}{2} f''(x_i) + \frac{27 h^3}{6} f'''(x_i) + \cdots $$
+
+\indent As there are three points in the initial formula: $x_i$, $x_{i + 1}$ and $x_{i + 3}$, we can treat the fourth term in the expansion as the remainder like so:
+
+$$ f'(x_{i + 1}) = f(x_i) + h f'(x_i) + \frac{h^2}{2} f''(x_i) + \frac{h^3}{6} f'''(\xi_1),\, x_i \le \xi_1 \le x_{i + 1} $$
+$$ f'(x_{i + 3}) = f(x_i) + 3h f'(x_i) + \frac{9 h^2}{2} f''(x_i) + \frac{27 h^3}{6} f'''(\xi_2),\, x_i \le \xi_2 \le x_{i + 3} $$
+
+\indent Then we can solve both of the equations for $f'(x_i)$:
+
+$$ f'(x_i) = \frac{f'(x_{i + 1}) - f(x_i)}{h} - \frac{h}{2} f''(x_i) - \frac{h^2}{6} f'''(\xi_1) $$
+$$ f'(x_i) = \frac{f'(x_{i + 3}) - f(x_i)}{3h} - \frac{3h}{2} f''(x_i) - \frac{3 h^2}{2} f'''(\xi_2) $$
+
+\indent From these equations we can see that the largest exponent of $h$ in both cases is $h^2$ which tells us that the order of the truncation error in this finite difference formula is $O(h^2)$.
+
+\subsection*{Question 8.9}
+
+\noindent (a) The formula for three-point backward differences with unequally spaced points is
+
+$$ f'(x_{i+2}) = y_i \frac{x_{i+2} - x_{i+1}}{(x_i - x_{i+1})(x_i - x_{i+2})} + y_{i+1} \frac{x_{i+2} - x_i}{(x_{i+1} - x_i)(x_{i+1} - x_{i+2})} $$
+$$ + y_{i+2} \frac{2x_{i+2} - x_i - x_{i+1}}{(x_{i+2} - x_i)(x_{i+2} - x_{i+1})} $$
+
+\indent With $x_{i+2} = 2006$ we can substitute the tabular values for male doctors to calculate the rate of changes:
+
+$$ f'(2006) = 638182 \cdot \frac{2006 - 2003}{(2002 - 2003)(2002 - 2006)} + 646493 \cdot \frac{2006 - 2002}{(2003 - 2002)(2003 - 2006)} $$
+$$ + 665647 \cdot \frac{2\cdot2006 - 2002 - 2003}{(2006 - 2002)(2006 - 2003)} $$
+$$ = 4939.92 $$
+
+\indent Similarly, for female doctors:
+
+$$ f'(2006) = 215005 \cdot \frac{2006 - 2003}{(2002 - 2003)(2002 - 2006)} + 225042 \cdot \frac{2006 - 2002}{(2003 - 2002)(2003 - 2006)} $$
+$$ + 256257 \cdot \frac{2\cdot2006 - 2002 - 2003}{(2006 - 2002)(2006 - 2003)} $$
+$$ = 10681.0 $$
+
+\noindent (b) The formula for three-point central differences with unequally spaced points is
+
+$$ f'(x_{i+1}) = y_i \frac{x_{i+1} - x_{i+2}}{(x_i - x_{i+1})(x_i - x_{i+2})} + y_{i+1} \frac{2x_{i+1} - x_i - x_{i+2}}{(x_{i+1} - x_i)(x_{i+1} - x_{i+2})} $$
+$$ + y_{i+2} \frac{x_{i+1} - x_i}{(x_{i+2} - x_i)(x_{i+2} - x_{i+1})} $$
+
+\indent We can substitute our answers from (a) into $f'(x_{i+1})$ and solve for $y_{i+2}$. For male doctors:
+
+$$ 4940 = 646493 \cdot \frac{2006 - 2008}{(2003 - 2006)(2003 - 2008)} + 665647 \cdot  \frac{2\cdot2006 - 2003 - 2008}{(2006 - 2003)(2006 - 2008)} $$
+$$ + y_{i+2} \frac{2006 - 2003}{(2008 - 2003)(2008 - 2006)} $$
+$$ y_{i+2} = \frac{4940 + 86199.07 + 110941.17}{0.3} = 673600.8 $$
+
+\indent Similarly, for female doctors:
+
+$$ 10681 = 225042 \cdot \frac{2006 - 2008}{(2003 - 2006)(2003 - 2008)} + 256257 \cdot  \frac{2\cdot2006 - 2003 - 2008}{(2006 - 2003)(2006 - 2008)} $$
+$$ + y_{i+2} \frac{2006 - 2003}{(2008 - 2003)(2008 - 2006)} $$
+
+$$ y_{i+2} = \frac{10681 + 30005.6 + 42709.5}{0.3} = 277987.0 $$
+
+\indent We can also calculate the percentage errors between the actual and predicted values:
+
+$$ E_{males} = \frac{|673601 - 677807|}{\frac{673601 + 677807}{2}} = 0.0062 = 0.62\% $$
+$$ E_{females} = \frac{|277987 - 276417|}{\frac{277987 + 276417}{2}} = 0.0056 = 0.56\% $$
+
+\end{document}
