@@ -1,0 +1,25 @@
+This is part Bof a two part assignment which will take the place of the annual exam for CSU33014.
+
+Six degrees of separation refers to the idea that, if a person is one "step" away from each person he or she knows and two "steps" away from each person who is known by one of the people he or she knows, then everyone is no more than six "steps" away from each person on Earth. The task of this assignment is to build an efficient parallel implementation of K degrees of separation using parallel threads. You may use pthreads or OpenMP.
+
+Please download the file csu33014-annual-partB.zip, and unzip:
+
+unzip csu33014-annual-partB.zip
+
+The zip file contains six files: csu33014-annual-partB-code.c,  csu33014-annual-partB-person.c, csu33014-annual-partB-code.h, csu33014-annual-partB-person.h, csu33014-annual-partB-main.c, Makefile. Of these six files, you should modify only csu33014-annual-partB-code.c.
+
+The file csu33014-annual-partB-code.c  contains a function that operates on a graph of people, where each person has a number from zero to the number of people minus one. The function number_within_k_degrees finds the number of people who are reachable from a given person in the graph, by following edges to linked people and keeping track of the set of all people visited. The function does not track links beyond k steps from the original root node. There are two additional functions that currently contain just a call to the original that you should complete.
+
+Part B.1: the simple function number_within_k_degrees performs a lot of redundant work because it visits the same nodes of the graph again and again, even though they may have already been visited. Please write a new version of the function that reduces or eliminates the amount of redundant work. Please provide a very large (perhaps a page) comment with the function explaining your algorithm for reducing redundant visits, the complexity of your new algorithm, and the complexity of the original algorithm in number_within_k_degrees. Please feel free to upload supplemental material, such as drawings or a PDF, if you think it would help to explain your solution and the complexity. Your new function should replace the code in  less_redundant_number_within_k_degrees.
+
+Part B.2, write an efficient parallel implementation of your function that reduces the amount of redundant work from Part B.1. You should write the parallel function using OpenMP or pthreads. If it is difficult to parallelize your algorithm that reduces redundancy, then please explain why it is difficult to parallelize, and instead provide a parallel version of another reduced-redundancy algorithm, or the original algorithm. Please provide a very large (perhaps a page) comment with the function explaining your parallelization strategy and algorithm, and the complexity of your algorithm if there are P parallel processing cores. Please feel free to upload supplemental material, such as drawings or a PDF, if you think it would help to explain your solution and the complexity. Your new function should replace the code in  less_redundant_number_within_k_degrees.
+
+To compile your code type:
+
+make all
+
+To test your code type:
+
+make test
+
+You should submit your solution using Blackboard. Please upload all six files, but please make changes only to the file csu33014-annual-partB-code.c. Please also upload a seventh file containing a declaration that the work is entirely your own and you have not collaborated with anyone. A pdf template for this declaration is among the assignment files. Please also feel free to upload any supplemental files describing your algorithms, parallelization strategy, or complexity.
