@@ -24,8 +24,8 @@ def pmf_hist(marks, question):
 	plt.show()
 
 
-#for question in range(3):
-	#pmf_hist(marks, question)
+for question in range(3):
+	pmf_hist(marks, question)
 
 
 # Question 2 (b)
@@ -48,7 +48,10 @@ def mark_cond(marks):
 cond_data = mark_cond(marks)
 for mark in cond_data:
 	cond_datum = cond_data[mark]
-	#print('q1_mark=%d, mean_q2=%d, var_q2=%.2f, mean_q3=%d, var_q3=%.2f' % (mark, cond_datum[0], cond_datum[1], cond_datum[2], cond_datum[3]))
+	print(
+		'q1_mark=%d, mean_q2=%d, var_q2=%.2f, mean_q3=%d, var_q3=%.2f' %
+		(mark, cond_datum[0], cond_datum[1], cond_datum[2], cond_datum[3])
+	)
 
 
 # Question 2 (c)
