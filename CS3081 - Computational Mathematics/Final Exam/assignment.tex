@@ -1,0 +1,207 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{changepage}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[latin1]{inputenc}
+\usepackage{listings}
+\usepackage{pgfplots}
+\usepackage{makecell}
+\usepackage{geometry}
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\labelitemi}{$\textendash$}
+\renewcommand{\arraystretch}{2.0}
+\newcommand\aug{\fboxsep=-\fboxrule\!\!\!\fbox{\strut}\!\!\!}
+\geometry{
+    a4paper,
+    total={170mm,257mm},
+    left=20mm,
+    right=20mm,
+    top=15mm,
+    bottom=15mm
+}
+
+\title{\vspace{-5ex}CS3081: Final Exam\vspace{-2.5ex}}
+\author{Conor McCauley - 17323203}
+\date{\vspace{-2ex}April 28, 2020\vspace{-2ex}}
+
+\begin{document}
+
+\maketitle
+
+\section*{Solutions}
+
+\subsection*{Question 1}
+
+The summation of two polynomials in Matlab can be done by adding their respective coefficient vectors. We can rewrite both polynomials as $0x^3 + 2x^2 + 2x - 6$ and $x^3 + 0x^2 +2x - 4$. It is now apparent that the coefficient vectors that match these polynomials are $[0\: 2\: 2\: -6]$ and $[1\: 0\: 2\: -4]$, respectively. This matches the choice \textbf{C}.
+
+\subsection*{Question 2}
+
+The \texttt{eye(3,3)} function returns the 3-by-3 identity matrix. The \texttt{for} loop then iterates over the values, $x$, from 1 to 3 with a step of 2 and sets the $x^{th}$ column of the first row to 1. Since the loop only accesses 1 and $1 + 2 = 3$ the only value that actually changes is the value in the third column of the first row. This gives us the following result in A (which matches the choice \textbf{B}):
+
+$$
+\begin{pmatrix}
+    1 & 0 & 1 \\
+    0 & 1 & 0 \\
+    0 & 0 & 1
+\end{pmatrix}
+$$
+
+\subsection*{Question 3}
+
+The first line of the code creates a matrix where the first row contains the values from 6 to 8, the second row contains the values from -1 to 1 and the third row contains the values 5, 6 and 7. The second line of the code extracts the third column from the matrix. The final line of the code gets the dimensions of the third row of the matrix after it's been transposed. Since the dimensions were originally 3-by-1 the transposed dimensions will be 1-by-3 which matches the choice \textbf{C}.
+
+\subsection*{Question 4}
+
+We can write the Taylor expansion of $f(x)$ of degree two like so:
+
+$$f(x) = f(x_0) + f'(x_0)(x - x_0) + \frac{f''(x_0)}{2!}(x - x_0)^2 + P_2(x)$$
+
+When we substitute $f(x)$ with $3 - 17x^3$ and set $x = 2.5,\, x_0 = 2.0$ this becomes:
+
+$$\left( 3 - 17 \cdot 2.5^3 \right) = \left( 3 - 17 \cdot 2.0^3 \right) + \left( -51 \cdot 2.0^2 \cdot 0.5 \right) + \frac{-102 \cdot 2.0}{2} \cdot 0.5^2 + P_2(2.5)$$
+$$-262.625 = -260.5 + P_2(2.5)$$
+
+Rearranging the equations gives us a truncation error of $P_2(2.5) = -262.625 + 260.5 = -2.125$ which matches none of the choices so we choose \textbf{E}.
+
+\subsection*{Question 5}
+
+The secant method uses the following recurrence relation:
+
+$$x_{n} = x_{n-1} - f(x_{n-1})\frac{x_{n-1} - x_{n-2}}{f(x_{n-1}) - f(x_{n-2})}$$
+
+\begin{center}
+    \begin{tabular}{|c||c|c|c|c|}
+        \hline
+        $n$ & $x_{n-2}$ & $x_{n-1}$ & $x_{n}$ & $\epsilon = |x_{n} - x_{n-1}|$ \\
+        \hline
+        $2$ & $x_0 = 3$ & $x_1 = 2.5$ & $ x_2 = 2.5 - \frac{973.25 \cdot (2.5 - 3)}{973.25 - 3098} = 2.2709$ & $0.2291$ \\
+        $3$ & $x_1 = 2.5$ & $x_2 = 2.2709$ & $ x_3 = 2.2709 - \frac{456.836 \cdot (2.2709 - 2.5)}{456.836 - 973.25} = 2.0682$ & $0.2027$ \\
+        $4$ & $x_2 = 2.2709$ & $x_3 = 2.0682$ & $ x_4 = 2.0682 - \frac{160.202 \cdot (2.0682 - 2.2709)}{160.202 - 456.836} = 1.9587$ & $0.1095$ \\
+        $5$ & $x_3 = 2.0682$ & $x_4 = 1.9587$ & $ x_5 = 1.9587 - \frac{48.2097 \cdot (1.9587 - 2.0682)}{48.2097 - 160.202} = 1.9115$ & $0.0472$ \\
+        $6$ & $x_4 = 1.9587$ & $x_5 = 1.9115$ & $ x_6 = 1.9115 - \frac{8.58164 \cdot (1.9115 - 1.9587)}{8.58164 - 48.2097} = 1.9012$ & $0.0103$ \\
+        $7$ & $x_5 = 1.9115$ & $x_6 = 1.9012$ & $ x_7 = 1.9012 - \frac{0.56552 \cdot (1.9012 - 1.9115)}{0.56552 - 8.58164} = 1.9004$ & $0.0008$ \\
+        \hline
+    \end{tabular}
+\end{center}
+
+The root at $x = 1.9004$ matches the choice \textbf{C}.
+
+\subsection*{Question 6}
+
+To find the upper triangular matrix we can use Gaussian elimination to reduce all values below the main diagonal to 0:
+
+\begin{center}
+    \begin{tabular}{cc}
+        $$\begin{pmatrix}
+            25 & 5 & 4 \\
+            10 & 8 & 16 \\
+            8 & 12 & 22
+        \end{pmatrix}$$ & Initial matrix \\ \\
+        $$\begin{pmatrix}
+            25 & 5 & 4 \\
+            0 & 6 & 14.4 \\
+            8 & 12 & 22
+        \end{pmatrix}$$ & $R_2 = R_2 - \frac{10}{25}R_1$ \\ \\
+        $$\begin{pmatrix}
+            25 & 5 & 4 \\
+            0 & 6 & 14.4 \\
+            0 & 10.4 & 20.72
+        \end{pmatrix}$$ & $R_3 = R_3 - \frac{8}{25}R_1$ \\ \\
+        $$\begin{pmatrix}
+            25 & 5 & 4 \\
+            0 & 6 & 14.4 \\
+            0 & 0 & -4.24
+        \end{pmatrix}$$ & $R_3 = R_3 - \frac{10.4}{6}R_2$
+    \end{tabular}
+\end{center}
+
+The resulting upper triangular matrix matches the choice \textbf{C}.
+
+\subsection*{Question 7}
+
+We first rewrite each equation $n$ and solve for $x_n$:
+
+$$12x_1 + 7x_2 + 3x_3 = 2,\, x_1 = \frac{2 - 7x_2 - 3x_3}{12}$$
+$$x_1 + 5x_2 + x_3 = -5,\, x_2 = \frac{5 + x_1 + x_3}{-5}$$
+$$2x_1 + 7x_2 - 11x_3 = 6,\, x_3 = \frac{6 - 2x_1 - 7x_2}{-11}$$
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        $n$ & $x_1$ & $x_2$ & $x_3$ \\ \hline
+        0 & 1 & 3 & 5 \\
+        1 & $\frac{2 - 7(1) - 3(5)}{12} = -1.6667$ & $\frac{5 + (-1.6667) + (5)}{-5} = -1.6667$ & $\frac{6 - 2(-1.6667) - 7(-1.6667)}{-11} = -1.9091$ \\
+        2 & $\frac{2 - 7(-1.6667) - 3(-1.9091)}{12} = 1.6162$ & $\frac{5 + (1.6162) + (-1.9091)}{-5} = -0.9414$ & $\frac{6 - 2(1.6162) - 7(-0.9414)}{-11} = -0.8507$ \\
+        3 & $\frac{2 - 7(-0.9414) - 3(-0.8507)}{12} = 0.9285$ & $\frac{5 + (0.9285) + (-0.8507)}{-5} = -1.0156$ & $\frac{6 - 2(0.9285) - 7(-1.0156)}{-11} = -1.0229$ \\
+        \hline
+    \end{tabular}
+\end{center}
+
+These values are approximately equal to the values in choice \textbf{C}.
+
+\subsection*{Question 8}
+
+\begin{adjustwidth}{-1.7cm}{}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        $n$ & $A$ & $x$ & $Ax$ & Normalised $Ax$ \\ \hline
+        
+        1 & $\begin{bmatrix} 4 & 5 \\ 6 & 5 \end{bmatrix}$ & $\begin{bmatrix} 1 \\ 1 \end{bmatrix}$ & 
+        $\begin{bmatrix} 4 & 5 \\ 6 & 5 \end{bmatrix} \begin{bmatrix} 1 \\ 1 \end{bmatrix} = \begin{bmatrix} 4 \cdot 1 + 5 \cdot 1 \\ 6 \cdot 1 + 5 \cdot 1 \end{bmatrix} = \begin{bmatrix} 9 \\ 11 \end{bmatrix}$ &
+        $\frac{1}{11} \begin{bmatrix} 9 \\ 11 \end{bmatrix} = \begin{bmatrix} 0.8182 \\ 1 \end{bmatrix}$ \\ \hline
+        
+        2 & $\begin{bmatrix} 4 & 5 \\ 6 & 5 \end{bmatrix}$ & $\begin{bmatrix} 0.8182 \\ 1 \end{bmatrix}$ & 
+        $\begin{bmatrix} 4 & 5 \\ 6 & 5 \end{bmatrix} \begin{bmatrix} 0.8182 \\ 1 \end{bmatrix} = \begin{bmatrix} 4 \cdot 0.8182 + 5 \cdot 1 \\ 6 \cdot 0.8182 + 5 \cdot 1 \end{bmatrix} = \begin{bmatrix} 8.2728 \\ 9.9092 \end{bmatrix}$ &
+        $\frac{1}{9.9092} \begin{bmatrix} 8.2728 \\ 9.9092 \end{bmatrix} = \begin{bmatrix} 0.8349 \\ 1 \end{bmatrix}$ \\ \hline
+        
+        3 & $\begin{bmatrix} 4 & 5 \\ 6 & 5 \end{bmatrix}$ & $\begin{bmatrix} 0.8349 \\ 1 \end{bmatrix}$ & 
+        $\begin{bmatrix} 4 & 5 \\ 6 & 5 \end{bmatrix} \begin{bmatrix} 0.8349 \\ 1 \end{bmatrix} = \begin{bmatrix} 4 \cdot 0.8349 + 5 \cdot 1 \\ 6 \cdot 0.8349 + 5 \cdot 1 \end{bmatrix} = \begin{bmatrix} 8.3396 \\ 10.0094 \end{bmatrix}$ &
+        $\frac{1}{10.0094} \begin{bmatrix} 8.3396 \\ 10.0094 \end{bmatrix} = \begin{bmatrix} 0.8332 \\ 1 \end{bmatrix}$ \\ \hline
+        
+        4 & $\begin{bmatrix} 4 & 5 \\ 6 & 5 \end{bmatrix}$ & $\begin{bmatrix} 0.8332 \\ 1 \end{bmatrix}$ & 
+        $\begin{bmatrix} 4 & 5 \\ 6 & 5 \end{bmatrix} \begin{bmatrix} 0.8332 \\ 1 \end{bmatrix} = \begin{bmatrix} 4 \cdot 0.8332 + 5 \cdot 1 \\ 6 \cdot 0.8332 + 5 \cdot 1 \end{bmatrix} = \begin{bmatrix} 8.3328 \\ 9.9992 \end{bmatrix}$ &
+        $\frac{1}{9.9992} \begin{bmatrix} 8.3328 \\ 9.9992 \end{bmatrix} = \begin{bmatrix} 0.8333 \\ 1 \end{bmatrix}$ \\ \hline
+        
+    \end{tabular}
+\end{adjustwidth}
+
+We are left with an eigenvector of $\begin{bmatrix} 0.8333 \\ 1 \end{bmatrix}$ and an eigenvalue of $9.9992 \approx 10.0$ which match the choice \textbf{C}.
+
+\subsection*{Question 9}
+
+Newton's first divided difference formula is:
+
+$$f[x_0, x_1] = \frac{f(x_1) - f(x_0)}{x_1 - x_0}$$
+
+Newton's second divided difference formula can be written in terms of the first formula:
+
+$$f[x_0, x_1, x_2] = \frac{f[x_1, x_2] - f[x_0, x_1]}{x_2 - x_0}$$
+
+We can substitute our function, $f(x)$, and our $x$ values into the latter formula to get the following:
+
+$$\frac{\left( \frac{7^2\log_2(7) - 3^2\log_2(3)}{7 - 3} \right) - \left( \frac{3^2\log_2(3) - 2^2\log_2(2)}{3 - 2} \right)}{7 - 2} = 4.11187$$
+
+This result is approximately equal to the value in choice \textbf{D}.
+
+\subsection*{Question 10}
+
+We must first rewrite the integral in the form $\int_{-1}^1 f(t)\, dt$. Since $a = 0$ and $b = 2\pi$ we can substitute these values into the following formulae:
+
+$$x = \frac{1}{2}\left( t(b - a) + a + b \right) = \frac{1}{2}\left( t(2\pi - 0) + 0 + 2\pi \right) = \pi t + \pi$$
+
+$$dx = \frac{1}{2}(b - a)\, dt = \frac{1}{2}(2\pi - 0)\, dt = \pi\, dt$$
+
+We can now rewrite our integral like so:
+
+$$\int_0^{2\pi} \frac{1}{2 + \cos x}\, dx = \int_{-1}^1 f(t) \, dt = \int_{-1}^1 \frac{\pi}{2 + \cos (\pi t + \pi)} \, dt$$
+
+Using the coefficients, $C_i$, and Gauss points, $x_i$, from the textbook we can evaluate our integral like so:
+
+$$\frac{0.5555556 \cdot \pi}{2 + \cos (\pi \cdot -0.77459667 + \pi)} + \frac{0.8888889 \cdot \pi}{2 + \cos (\pi \cdot 0 + \pi)} + \frac{0.5555556 \cdot \pi}{2 + \cos (\pi \cdot 0.77459667 + \pi}$$
+
+$$= 0.6324614 + 2.792527 + 0.6324614 = 4.0574498$$
+
+This matches the value in choice \textbf{A}.
+
+\end{document}
