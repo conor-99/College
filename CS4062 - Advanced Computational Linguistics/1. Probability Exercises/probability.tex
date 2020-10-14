@@ -1,0 +1,99 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[latin1]{inputenc}
+\usepackage{listings}
+\renewcommand{\labelitemi}{$\textendash$}
+
+\title{CS4062: Probability Exercises}
+\author{Conor McCauley - 17323203}
+\date{October 13, 2020}
+
+\begin{document}
+
+\maketitle
+
+\section*{Question 1}
+
+We know from lectures that
+
+$$P(A \mid B) = \frac{P(A \wedge B)}{P(B)}$$
+
+\noindent (i) If we are told that $P(A \wedge B) = P(A) \cdot P(B)$ then we can rewrite our initial equation like so:
+
+$$P(A \mid B) = \frac{P(A) \cdot P(B)}{P(B)} = P(A)$$
+
+\noindent (ii) Similarly, if we are told that $P(A \mid B) = P(A)$ we can replace the left side of our initial equation with $P(A)$ like so:
+
+$$P(A) = \frac{P(A \wedge B)}{P(B)}$$
+$$P(A) \cdot P(B) = P(A \wedge B)$$
+
+\section*{Question 2}
+
+\noindent (a) We can rewrite $P(gw \mid ps)$ like so:
+
+$$P(gw \mid ps) = \frac{P(gw \wedge ps)}{P(ps)} = \frac{28}{28 + 2} = \frac{28}{30} = 0.9\dot{3}$$
+
+\noindent (b) Again, we can rewrite $P(ps \mid gw)$ like so:
+
+$$P(ps \mid gw) = \frac{P(ps \wedge gw)}{P(gw)} = \frac{28}{28 + 140} = \frac{28}{168} = 0.1\dot{6}$$
+
+\section*{Question 3}
+
+\noindent (a) Given that $p(vmel) = 0.01$ we know that $p(\neg vmel) = 0.99$. We can calculate the following:
+
+$$p(dbi \mid vmel) \cdot p(vmel) = 0.95 \cdot 0.01 = 0.0095$$
+$$p(dbi \mid \neg vmel) \cdot p(\neg vmel) = 0.01 \cdot 0.99 = 0.0099$$
+
+This tells us that $\neg vmel$ is the best guess since $0.0099 > 0.0095$.
+
+\noindent (b) Given that $p(vmel) = 0.15$ we know that $p(\neg vmel) = 0.85$. We can calculate the following:
+
+$$p(dbi \mid vmel) \cdot p(vmel) = 0.95 \cdot 0.15 = 0.1425$$
+$$p(dbi \mid \neg vmel) \cdot p(\neg vmel) = 0.01 \cdot 0.85 = 0.0085$$
+
+This tells us that $vmel$ is the best guess since $0.1425 > 0.0085$.
+
+\noindent (c) Given that $p(vmel) = 0.01$ we know that $p(\neg vmel) = 0.99$. We can calculate the following:
+
+$$p(dbi \mid vmel) \cdot p(vmel) = 0.95 \cdot 0.01 = 0.0095$$
+$$p(dbi \mid \neg vmel) \cdot p(\neg vmel) = 0.001 \cdot 0.99 = 0.00099$$
+
+This tells us that $vmel$ is the best guess since $0.0095 > 0.00099$.
+
+\section*{Question 4}
+
+First we must find the total number of days: $62 + 108 + 38 + 292 = 500$. We can then calculate $p(cool:+)$ like so:
+
+$$p(cool:+) = \frac{62 + 108}{500} = \frac{170}{500} = 0.34$$
+
+We can calculate $p(cool:+ \mid noisy:+)$ like so:
+
+$$p(cool:+ \mid noisy:+) = \frac{p(cool:+ \wedge noisy:+)}{p(noisy:+)} = \frac{62}{62 + 30} = \frac{62}{92} \approx 0.674$$
+
+It is clear from these results that, since $p(cool:+ \mid noisy:+) \neq p(cool:+)$, $cool:+$ is \textbf{not} independent of $noisy:+$.
+
+\section*{Question 5}
+
+\noindent (i) First we must find the total number of $open:+$ days: $54 + 36 + 6 + 4 = 100$. Using the first table we can calculate $p(cool:+)$ like so:
+
+$$p(cool:+) = \frac{54 + 36}{100} = \frac{90}{100} = 0.9$$
+
+We can also calculate $p(cool:+ \mid noisy:+)$ like so:
+
+$$p(cool:+ \mid noisy:+) = \frac{p(cool:+ \wedge noisy:+)}{p(noisy:+)} = \frac{54}{54 + 6} = \frac{54}{60} = 0.9$$
+
+Since $p(cool:+ \mid noisy:+) = p(cool:+)$ we can conclude that $cool:+$ \textbf{is} conditionally independent of $noisy:+$ (all given $open:+$).
+
+\noindent (ii) Again, we must first find the total number of $open:-$ days: $8+ 72 + 32 + 288 = 400$. Using the first table we can calculate $p(cool:+)$ like so:
+
+$$p(cool:+) = \frac{8 + 72}{400} = \frac{80}{400} = 0.2$$
+
+We can also calculate $p(cool:+ \mid noisy:+)$ like so:
+
+$$p(cool:+ \mid noisy:+) = \frac{p(cool:+ \wedge noisy:+)}{p(noisy:+)} = \frac{8}{8 + 32} = \frac{8}{40} = 0.2$$
+
+Since $p(cool:+ \mid noisy:+) = p(cool:+)$ we can conclude that $cool:+$ \textbf{is} conditionally independent of $noisy:+$ (all given $open:-$).
+
+\end{document}
