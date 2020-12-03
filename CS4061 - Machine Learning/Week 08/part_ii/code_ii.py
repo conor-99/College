@@ -18,7 +18,7 @@ input_shape = (32, 32, 3)
 
 # the data, split between train and test sets
 (x_train, y_train), (x_test, y_test) = keras.datasets.cifar10.load_data()
-n=5000
+n=5000#5000,10000,20000,40000
 x_train = x_train[1:n]; y_train=y_train[1:n]
 #x_test=x_test[1:500]; y_test=y_test[1:500]
 
@@ -43,18 +43,25 @@ for yt in y_test:
 print(labels_train)
 print(labels_test)
 
+is_part_c = False # if is_part_c then use max pooling, etc
 use_saved_model = False
 if use_saved_model:
 	model = keras.models.load_model("cifar.model")
 else:
 	model = keras.Sequential()
-	model.add(Conv2D(16, (3,3), padding='same', input_shape=x_train.shape[1:],activation='relu'))
-	model.add(Conv2D(16, (3,3), strides=(2,2), padding='same', activation='relu'))
-	model.add(Conv2D(32, (3,3), padding='same', activation='relu'))
-	model.add(Conv2D(32, (3,3), strides=(2,2), padding='same', activation='relu'))
+	if is_part_c:
+		model.add(Conv2D(16, (3,3), padding='same', input_shape=x_train.shape[1:],activation='relu'))
+		model.add(Conv2D(32, (3,3), padding='same', activation='relu'))
+		model.add(MaxPooling2D(pool_size=(2, 2), padding="same"))
+	else:
+		model.add(Conv2D(16, (3,3), padding='same', input_shape=x_train.shape[1:],activation='relu'))
+		model.add(Conv2D(16, (3,3), strides=(2,2), padding='same', activation='relu'))
+		model.add(Conv2D(32, (3,3), padding='same', activation='relu'))
+		model.add(Conv2D(32, (3,3), strides=(2,2), padding='same', activation='relu'))
 	model.add(Dropout(0.5))
 	model.add(Flatten())
-	model.add(Dense(num_classes, activation='softmax',kernel_regularizer=regularizers.l1(0.0001)))
+	l1_param = 0.001#0,0.00001,0.0001,0.001,0.01,0.1,1
+	model.add(Dense(num_classes, activation='softmax',kernel_regularizer=regularizers.l1(l1_param)))
 	model.compile(loss="categorical_crossentropy", optimizer='adam', metrics=["accuracy"])
 	model.summary()
 
@@ -67,19 +74,19 @@ else:
 	print(f'Time taken: {end_time - start_time} seconds')
 	print('==========================')
 	model.save("cifar.model")
-	plt.subplot(211)
+	#plt.subplot(211)
 	plt.plot(history.history['accuracy'])
 	plt.plot(history.history['val_accuracy'])
 	plt.title('model accuracy')
 	plt.ylabel('accuracy')
 	plt.xlabel('epoch')
-	plt.legend(['train', 'val'], loc='upper left')
-	plt.subplot(212)
+	plt.legend(['train', 'val'], loc='lower right')
+	"""plt.subplot(212)
 	plt.plot(history.history['loss'])
 	plt.plot(history.history['val_loss'])
 	plt.title('model loss')
 	plt.ylabel('loss'); plt.xlabel('epoch')
-	plt.legend(['train', 'val'], loc='upper left')
+	plt.legend(['train', 'val'], loc='lower right')"""
 	plt.show()
 
 preds = model.predict(x_train)
