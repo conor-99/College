@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <title>Movie Finder</title>
+        <meta http-equiv='content-type' content='text/html; charset=UTF-8'>
+    </head>
+    <body>
+
+        <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
+
+        <div id='app'>
+
+            <h1>Movies</h1>
+            
+            <h2>Create/Delete Table</h2>
+            <button v-on:click='appCreate'>Create</button>
+            <button v-on:click='appDelete'>Delete</button>
+            
+            <br>
+            
+            <h2>Query Table</h2>
+            <input v-model='queryYear' placeholder='Year'><br>
+            <input v-model='queryPrefix' placeholder='Movie Title (starts with)'><br>
+            <button v-on:click='appQuery'>Query</button>
+            
+            <br>
+            
+            <h2>Query Results</h2>
+            <table>
+                <tr>
+                    <th>#</th>
+                    <th>Title</th>
+                    <th>Year</th>
+                    <th>Rating</th>
+                </tr>
+                <tr v-for='(movie, index) in movies'>
+                    <td>{{ index + 1 }}</td>
+                    <td>{{ movie.title }}</td>
+                    <td>{{ movie.year }}</td>
+                    <td>{{ (movie.rating == -1) ? '' : movie.rating }}</td>
+                </tr>
+            </table>
+
+        </div>
+
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    queryYear: null,
+                    queryPrefix: '',
+                    success: false,
+                    message: '',
+                    movies: {}
+                },
+                methods: {
+                    appCreate() {
+                        fetch(`appCreate`)
+                            .then(res => res.json())
+                            .then(data => {
+                                this.success = data.result.success;
+                                this.message = data.result.message;
+                                alert(this.message);
+                            });
+                    },
+                    appDelete() {
+                        fetch(`appDelete`)
+                            .then(res => res.json())
+                            .then(data => {
+                                this.success = data.result.success;
+                                this.message = data.result.message;
+                                alert(this.message);
+                            });
+                    },
+                    appQuery() {
+                        let prefix = (this.queryPrefix == '') ? '_' : this.queryPrefix;
+                        fetch(`appQuery/${this.queryYear}/${prefix}`)
+                            .then(res => res.json())
+                            .then(data => {
+                                this.success = data.result.success;
+                                this.message = data.result.message;
+                                this.movies = data.result.movies;
+                                if (!this.success) alert(this.message);
+                            });
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>
