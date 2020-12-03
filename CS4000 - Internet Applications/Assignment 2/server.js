@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const port = 3000;
-const fetch = require('node-fetch');
 const path = require('path');
 let publicPath = path.resolve(__dirname, 'public');
 let AWS = require('aws-sdk');
@@ -10,6 +9,7 @@ AWS.config.update({region: 'eu-west-1'});
 app.use(express.static(publicPath));
 app.get('/appCreate', appCreate);
 app.get('/appDelete', appDelete);
+app.get('/appQuery/:year', appQuery); // in case no prefix is included
 app.get('/appQuery/:year/:prefix', appQuery);
 app.listen(port, () => console.log(`App listening on port ${port}`));
 
@@ -20,83 +20,50 @@ const BATCH_SIZE = 25;
     
 let s3 = new AWS.S3();
 let dd = new AWS.DynamoDB();
-let dc = new AWS.DynamoDB.DocumentClient();
 
 async function appCreate(_, res) {
-    console.log('=== CREATE ===');
-
     let tableExists = await checkDynamoTableExists(DB_TABLE);
     if (tableExists) {
-        res.json({result: {
-            success: false,
-            message: 'Table already exists'
-        }});
+        res.json(generateResponse(false, 'Table already exists', {}));
         return;
     }
 
-    console.log('Fetching data...');
+    console.log('Creating...');
     let json = await getS3Object(S3_BUCKET, S3_OBJECT);
-    console.log('Data fetched!');
 
-    console.log('Creating table...');
     await createDynamoTable(DB_TABLE);
-    await dd.waitFor('tableExists', { TableName: DB_TABLE }).promise(); // wait until table has finished created
-    console.log('Table created!');
-    console.log('Inserting data...');
+    await dd.waitFor('tableExists', { TableName: DB_TABLE }).promise(); // wait until table has finished creating
     await insertIntoDynamoTable(DB_TABLE, json);
-    console.log('Data inserted!');
-
-    res.json({result: {
-        success: true,
-        message: 'Creation successful!'
-    }});
+    console.log('Done!');
+    
+    res.json(generateResponse(true, 'Creation successful!', {}));
 }
 
 async function appDelete(_, res) {
-    console.log('=== DELETE ===');
-
     let tableExists = await checkDynamoTableExists(DB_TABLE);
     if (!tableExists) {
-        res.json({result: {
-            success: false,
-            message: 'Table doesn\'t exist'
-        }});
+        res.json(generateResponse(false, 'Table doesn\'t exist', {}));
         return;
     }
     
-    console.log('Deleting table...');
+    console.log('Deleting...')
     await deleteDynamoTable(DB_TABLE);
-    console.log('Table deleted!');
-
-    res.json({result: {
-        success: true,
-        message: 'Deletion successful!'
-    }});
+    console.log('Done!')
+    
+    res.json(generateResponse(true, 'Deletion successful!', {}));
 }
 
 async function appQuery(req, res) {
-    console.log('=== QUERY ===');
-
     let year = parseInt(req.params.year, 10);
-    let prefix = req.params.prefix;
-    if (prefix == '_') prefix = '';
+    let prefix = req.params.prefix ?? '';
 
     if (isNaN(year)) {
-        res.json({result: {
-            success: false,
-            message: 'Invalid year',
-            movies: {}
-        }})
+        res.json(generateResponse(false, 'Invalid year', {}));
     } else {
-        console.log('Fetching results...');
+        console.log('Querying...');
         let data = await queryDynamoTable(DB_TABLE, year.toString(), prefix.toLowerCase());
-        console.log('Results fetched!');
-
-        res.json({result: {
-            success: true,
-            message: 'OK',
-            movies: data
-        }});
+        console.log('Done!');
+        res.json(generateResponse(true, 'OK', data));
     }
 }
 
@@ -136,6 +103,7 @@ async function createDynamoTable(tableName) {
 }
 
 async function insertIntoDynamoTable(tableName, json) {
+    // DynamoDB only allows batch inserts of 25 items
     let batches = [], batch = [];
     for (var i = 0; i < json.length; i++) {
         if (batch.length == BATCH_SIZE) {
@@ -190,4 +158,14 @@ async function queryDynamoTable(tableName, year, prefix) {
     });
 
     return data;
+}
+
+/* Other helper functions */
+
+function generateResponse(_success, _message, _movies) {
+    return { result: {
+        success: _success,
+        message: _message,
+        movies: _movies
+    }};
 }
