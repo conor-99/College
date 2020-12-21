@@ -1,0 +1,277 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[latin1]{inputenc}
+\usepackage{listings}
+\usepackage[dvipsnames]{xcolor}
+\renewcommand{\labelitemi}{$\textendash$}
+\geometry{
+    a4paper,
+    total={170mm,257mm},
+    left=20mm,
+    right=20mm,
+    top=5mm,
+    bottom=15mm
+}
+
+\title{CS4004: Assignment 2}
+\author{Conor McCauley - 17323203}
+\date{December 13, 2020}
+
+\begin{document}
+
+\maketitle
+
+\section*{Question 1}
+
+\noindent (i) For each integer to appear at least twice there must exist $j, k$ for each $i$ such that $j \neq k$ and both $s'[j], s'[k]$ are equal to $s[i]$:
+
+\begin{flalign*}
+& \forall i.( \\
+& \qquad (0 \le i < |s|) \to \exists j. \exists k.( \\
+& \qquad \qquad (0 \le j < |s'|) \wedge (0 \le k < |s'|) \\
+& \qquad \qquad \wedge (j \neq k) \wedge (s[i] = s'[j]) \wedge (s[i] = s'[k]) \\
+& \qquad ) \\
+& )
+\end{flalign*}
+
+\noindent (ii) For no integer to appear more than twice there cannot exist $j, k, l$ for any $i$ such that $j \neq k \neq l$ and all $s'[j], s'[k], s'[l]$ are equal to $s[i]$:
+
+\begin{flalign*}
+& \forall i.( \\
+& \qquad (0 \le i < |s|) \to \neg \exists j. \exists k. \exists l.( \\
+& \qquad \qquad (0 \le j < |s'|) \wedge (0 \le k < |s'|) \wedge (0 \le l < |s'|) \\
+& \qquad \qquad \wedge (j \neq k) \wedge (j \neq l) \\
+& \qquad \qquad \wedge (s[i] = s'[j]) \wedge (s[i] = s'[k]) \wedge (s[i] = s'[l]) \\
+& \qquad ) \\
+& )
+\end{flalign*}
+
+\noindent (iii) For each integer to appear exactly twice then for all $i$ our formula from (i) must be true and our formula from (ii) must not be true:
+
+\begin{flalign*}
+& \forall i.( \\
+& \qquad (0 \le i < |s|) \to \exists j. \exists k.( \\
+& \qquad \qquad (0 \le j < |s'|) \wedge (0 \le k < |s'|) \\
+& \qquad \qquad \wedge (j \neq k) \wedge (s[i] = s'[j]) \wedge (s[i] = s'[k]) \\
+& \qquad \qquad \wedge \neg \exists l.( \\
+& \qquad \qquad \qquad (0 \le l < |s'|) \wedge (j \neq l) \wedge (k \neq l) \wedge (s[i] = s'[l]) \\
+& \qquad \qquad ) \\
+& \qquad ) \\
+& )
+\end{flalign*}
+
+\noindent (iv) We know from the theorems given in lectures that the following holds:
+
+$$X \to Y \equiv \neg Y \to \neg X$$
+
+Therefore, if we express an integer being in $s'$ as $X$ and an integer being in $s$ as $Y$ we can refer to the statement given in the question as $\neg Y \to \neg X$. From the above theorem we can then say that this is equivalent to the statement: $X \to Y$ or if an integer is in $s'$ then it is also in $s$. We can express this new statement like so:
+
+\begin{flalign*}
+& \forall i.( \\
+& \qquad (0 \le i < |s'|) \to \exists j.( \\
+& \qquad \qquad (0 \le j \le |s|) \wedge (s'[i] = s[j]) \\
+& \qquad ) \\
+& )
+\end{flalign*}
+
+\section*{Question 2}
+
+\noindent (a) For this statement to be valid then $lo$ must be within the bounds of $s$ ($0 \le lo < |s|$) and all elements in $s$ must be less than or equal to $s[lo]$. We can express these two conditions like so:
+
+$$(0 \le lo < |s|) \wedge \forall i.((0 \le i < |s|) \to (s[i] \le s[lo]))$$
+
+\noindent (b) The while loop has an invariant of $0 \le lo \le hi < |s|$ and a variant of $hi - lo$:
+
+\begin{center}
+    \begin{tabular}{ll}
+        $\{ 0 < |s| \}$ & \\
+        {\color{gray} \texttt{lo := 0}} & \\
+        $\{ 0 \le 0 \}$ & impl \\
+        $\{ 0 \le lo \}$ & asg \\
+        $\{ lo < |s| \}$ & asg \\
+        $\{ lo \le |s| - 1 \}$ & impl \\
+        {\color{gray} \texttt{hi := |s| - 1}} & \\
+        $\{ |s| - 1 \le |s| - 1 \}$ & impl \\
+        $\{ hi \le |s| - 1 \}$ & asg \\
+        $\{ 0 \le lo \le hi < |s| \}$ & asg \\
+        {\color{gray} \texttt{while (lo < hi) \{}} & \\
+        \qquad $\{ (0 \le lo \le hi < |s|) \wedge (lo < hi) \wedge (0 \le hi - lo = E_0) \}$ & while \\
+        {\color{gray} \qquad \texttt{if (s[lo] <= s[hi]) \{}} & \\
+        \qquad \qquad $\{ 0 < hi - lo = E_0 \}$ & impl \\
+        \qquad \qquad $\{ 0 \le hi - (lo + 1) < E_0 \}$ & impl \\
+        \qquad \qquad $\{ lo + 1 \le hi \}$ & impl \\
+        {\color{gray} \qquad \qquad \texttt{lo := lo + 1}} & \\
+        \qquad \qquad $\{ 0 \le hi - lo < E_0 \}$ & asg \\
+        \qquad \qquad $\{ lo \le hi \}$ & asg \\
+        \qquad \qquad $\{ 0 \le lo \le hi < |s| \}$ & impl \\
+        {\color{gray} \qquad \texttt{\} else \{}} & \\
+        \qquad \qquad $\{ 0 < hi - lo = E_0 \}$ & impl \\
+        \qquad \qquad $\{ 0 \le (hi - 1) - lo < E_0 \}$ & impl \\
+        \qquad \qquad $\{ lo \le hi - 1 \}$ & impl \\
+        {\color{gray} \qquad \qquad \texttt{hi := hi - 1}} & \\
+        \qquad \qquad $\{ 0 \le hi - lo < E_0 \}$ & asg \\
+        \qquad \qquad $\{ lo \le hi \}$ & asg \\
+        \qquad \qquad $\{ 0 \le lo \le hi < |s| \}$ & impl \\
+        {\color{gray} \qquad \texttt{\}}} & \\
+        \qquad $\{ (0 \le lo \le hi < |s|) \wedge (0 \le hi - lo < E_0) \}$ & cond \\
+        {\color{gray} \texttt{\}}} & \\
+        $\{ (0 \le lo \le hi < |s|) \wedge \neg(lo < hi) \}$ & while \\
+        $\{ \top \}$ & impl
+    \end{tabular}
+\end{center}
+
+\noindent (c) The while loop has the following invariant:
+
+$$(0 \le lo \le hi < |s|) \wedge (isMax(s[..(lo+1)] + s[hi..], lo) \vee isMax(s[..(lo+1)] + s[hi..], hi))$$
+
+\begin{center}
+    \begin{tabular}{ll}
+        $\{ 0 < |s| \}$ & \\
+        {\color{gray} \texttt{lo := 0}} & \\
+        $\{ 0 \le 0 \}$ & impl \\
+        $\{ 0 \le lo \}$ & asg \\
+        $\{ lo < |s| \}$ & asg \\
+        $\{ lo \le |s| - 1 \}$ & impl \\
+        {\color{gray} \texttt{hi := |s| - 1}} & \\
+        $\{ |s| - 1 \le |s| - 1 \}$ & impl \\
+        $\{ hi \le |s| - 1 \}$ & asg \\
+        $\{ 0 \le lo \le hi < |s| \}$ & asg \\
+        $\{ isMax(s[..1] + s[(|s| - 1)..], 0) \vee isMax(s[..1] + s[(|s| - 1)..], |s| - 1) \}$ & impl \\
+        $\{ isMax(s[..(lo + 1)] + s[hi..], lo) \vee isMax(s[..(lo + 1)] + s[hi..], hi) \}$ & asg \\
+        $\{ (0 \le lo \le hi < |s|) \wedge isMax(s[..(lo+1)], lo) \wedge isMax(s[hi..], hi) \}$ & impl \\
+        {\color{gray} \texttt{while (lo < hi) \{}} & \\
+        \qquad $\{ (0 \le lo \le hi < |s|) \wedge (isMax(s[..(lo+1)] + s[hi..], lo) \vee isMax(s[..(lo+1)] + s[hi..], hi)) \\
+            \qquad \qquad \wedge (lo < hi) \}$ & while \\
+        {\color{gray} \qquad \texttt{if (s[lo] <= s[hi]) \{}} & \\
+        \qquad \qquad $\{ s[lo] <= s[hi] \}$ & cond \\
+        \qquad \qquad $\{ isMax(s[..(lo + 1)] + s[hi..], hi) \}$ & impl \\
+        \qquad \qquad $\{ isMax(s[..(lo + 2)] + s[hi..], lo) \vee isMax(s[..(lo + 2)] + s[hi..], hi) \}$ & impl \\
+        \qquad \qquad $\{ lo + 1 \le hi \}$ & impl \\
+        {\color{gray} \qquad \qquad \texttt{lo := lo + 1}} & \\
+        \qquad \qquad $\{ lo \le hi \}$ & asg \\
+        \qquad \qquad $\{ 0 \le lo \le hi < |s| \}$ & impl \\
+        \qquad \qquad $\{ isMax(s[..(lo + 1)] + s[hi..], lo) \vee isMax(s[..(lo + 1)] + s[hi..], hi) \}$ & asg \\
+        \qquad \qquad $\{ (isMax(s[..(lo+1)] + s[hi..], lo) \vee isMax(s[..(lo+1)] + s[hi..], hi)) \\
+            \qquad \qquad \qquad \wedge (0 \le lo \le hi < |s|) \}$ & impl \\
+        {\color{gray} \qquad \texttt{\} else \{}} & \\
+        \qquad \qquad $\{ \neg (s[lo] <= s[hi]) \}$ & cond \\
+        \qquad \qquad $\{ isMax(s[..(lo + 1)] + s[hi..], lo) \}$ & impl \\
+        \qquad \qquad $\{ isMax(s[..(lo + 1)] + s[(hi - 1)..], lo) \vee isMax(s[..(lo + 1)] + s[(hi - 1)..], hi) \}$ & impl \\
+        \qquad \qquad $\{ lo \le hi - 1 \}$ & impl \\
+        {\color{gray} \qquad \qquad \texttt{hi := hi - 1}} & \\
+        \qquad \qquad $\{ lo \le hi \}$ & asg \\
+        \qquad \qquad $\{ 0 \le lo \le hi < |s| \}$ & impl \\
+        \qquad \qquad $\{ isMax(s[..(lo + 1)] + s[hi..], lo) \vee isMax(s[..(lo + 1)] + s[hi..], hi) \}$ & asg \\
+        \qquad \qquad $\{ (isMax(s[..(lo+1)] + s[hi..], lo) \vee isMax(s[..(lo+1)] + s[hi..], hi)) \\
+            \qquad \qquad \qquad \wedge (0 \le lo \le hi < |s|) \}$ & impl \\
+        {\color{gray} \qquad \texttt{\}}} & \\
+        \qquad $\{ (0 \le lo \le hi < |s|) \wedge (isMax(s[..(lo+1)] + s[hi..], lo) \vee isMax(s[..(lo+1)] + s[hi..], hi)) \}$ & cond \\
+        {\color{gray} \texttt{\}}} & \\
+        $\{ (0 \le lo \le hi < |s|) \wedge (isMax(s[..(lo+1)] + s[hi..], lo) \vee isMax(s[..(lo+1)] + s[hi..], hi)) \\
+            \qquad \wedge \neg(lo < hi) \}$ & while \\
+        $\{ lo = hi \}$ & impl \\
+        $\{ isMax(s[..(lo+1)] + s[lo..], lo) \vee isMax(s[..(lo+1)] + s[lo..], lo) \}$ & asg \\
+        $\{ isMax(s, lo) \}$ & impl
+    \end{tabular}
+\end{center}
+
+\section*{Question 3}
+
+\noindent (a) For this statement to be valid then each integer at index $i$ should be equal to the integer at index $|s| - i - 1$. We can express this condition like so:
+
+$$\forall i.((0 \le i < |s|) \to (s[i] = s[|s| - i - 1))$$
+
+\noindent (b) The while loop has an invariant of $0 \le i \wedge j < |s|$ and a variant of $j - i + 1$:
+
+\begin{center}
+    \begin{tabular}{ll}
+        $\{ 0 \le |s| \}$ & \\
+        {\color{gray} \texttt{res := 1}} & \\
+        {\color{gray} \texttt{i := 0}} & \\
+        $\{ 0 \le 0 \}$ & impl \\
+        $\{ 0 \le i \}$ & asg \\
+        {\color{gray} \texttt{j := |s| - 1}} & \\
+        $\{ |s| - 1 < |s| \}$ & impl \\
+        $\{ j < |s| \}$ & asg \\
+        $\{ 0 \le i \wedge j < |s| \}$ & impl \\
+        {\color{gray} \texttt{while (i < j \& res = 1) \{}} & \\
+        \qquad $\{ (0 \le i \wedge j < |s|) \wedge i < j \wedge res = 1 \}$ & while \\
+        \qquad $\{ 0 < j - i \}$ & impl \\
+        \qquad $\{ 0 < j - i + 1 \}$ & impl \\
+        \qquad $\{ 0 \le j - i + 1 = E_0 \}$ & impl \\
+        {\color{gray} \qquad \texttt{if (s[i] != s[j]) \{}} & \\
+        \qquad \qquad $\{ 0 \le j - i + 1 = E_0 \wedge s[i] \neq s[j] \}$ & cond \\
+        {\color{gray} \qquad \qquad \texttt{res := 0}} & \\
+        \qquad \qquad $\{ 0 \le j - i + 1 = E_0 \}$ & impl \\
+        {\color{gray} \qquad \texttt{\} else \{}} & \\
+        \qquad \qquad $\{ 0 \le j - i + 1 = E_0 \wedge \neg (s[i] \neq s[j]) \}$ & cond \\
+        {\color{gray} \qquad \qquad \texttt{skip}} & \\
+        \qquad \qquad $\{ 0 \le j - i + 1 = E_0 \}$ & impl \\
+        {\color{gray} \qquad \texttt{\}}} & \\
+        \qquad $\{ 0 < j - i + 1 = E_0 \}$ & impl \\
+        \qquad $\{ 0 < j - i < E_0 \}$ & impl \\
+        \qquad $\{ 0 \le (j - 1) - (i + 1) + 1 < E_0 \}$ & impl \\
+        \qquad $\{ 0 \le i + 1 \}$ & impl \\
+        {\color{gray} \qquad \texttt{i := i + 1}} & \\
+        \qquad $\{ 0 \le i \}$ & asg \\
+        \qquad $\{ 0 \le (j - 1) - i + 1 < E_0 \}$ & asg \\
+        \qquad $\{ j - 1 < |s| \}$ & impl \\
+        {\color{gray} \qquad \texttt{j := j - 1}} & \\
+        \qquad $\{ j < |s| \}$ & asg \\
+        \qquad $\{ 0 \le j - i + 1 < E_0 \}$ & asg \\
+        \qquad $\{ (0 \le i \wedge j < |s|) \wedge 0 \le j - i + 1 < E_0 \}$ & impl \\
+        {\color{gray} \texttt{\}}} & \\
+        $\{ (0 \le i \wedge j < |s|) \wedge \neg (i < j \wedge res = 1) \}$ & while \\
+        $\{ \top \}$ & impl
+    \end{tabular}
+\end{center}
+
+\noindent (c) The while loop has the following invariant (note: this means that when $i = 0, j = |s| - 1$ the checked sequence will be empty - which is also a palindrome):
+
+$$res = 1 \Leftrightarrow isPal(s[..i] + s[(j + 1)..])$$
+
+\begin{center}
+    \begin{tabular}{ll}
+        $\{ 0 \le |s| \}$ & \\
+        {\color{gray} \texttt{res := 1}} & \\
+        {\color{gray} \texttt{i := 0}} & \\
+        {\color{gray} \texttt{j := |s| - 1}} & \\
+        $\{ isPal([]) \}$ & impl \\
+        $\{ s[..0] = [] \wedge s[|s|..] = [] \wedge [] + [] = [] \}$ & impl \\
+        $\{ isPal(s[..0] + s[|s|..]) \}$ & asg \\
+        $\{ res = 1 \wedge isPal(s[..i] + s[(j + 1)..]) \}$ & impl \\
+        $\{ res = 1 \Leftrightarrow isPal(s[..i] + s[(j + 1)..]) \}$ & impl \\
+        {\color{gray} \texttt{while (i < j \& res = 1) \{}} & \\
+        \qquad $\{ i < j \wedge res = 1 \wedge isPal(s[..i] + s[(j + 1)..]) \}$ & while \\
+        \qquad $\{ res = 1 \Leftrightarrow isPal(s[..i] + s[(j + 1)..]) \}$ & impl \\
+        {\color{gray} \qquad \texttt{if (s[i] != s[j]) \{}} & \\
+        \qquad \qquad $\{ s[i] \neq s[j] \}$ & cond \\
+        \qquad \qquad $\{ \neg isPal(s[..(i + 1)] + s[(j - 1 + 1)..]) \}$ & impl \\
+        {\color{gray} \qquad \qquad \texttt{res := 0}} & \\
+        \qquad \qquad $\{ res \neq 1 \wedge \neg isPal(s[..(i + 1)] + s[(j - 1 + 1)..]) \}$ & impl \\
+        \qquad \qquad $\{ res = 1 \Leftrightarrow isPal(s[..(i + 1)] + s[(j - 1 + 1)..]) \}$ & impl \\
+        {\color{gray} \qquad \texttt{\} else \{}} & \\
+        \qquad \qquad $\{ \neg (s[i] \neq s[j]) \}$ & cond \\
+        \qquad \qquad $\{ isPal(s[..(i + 1)] + s[(j - 1 + 1)..]) \}$ & impl \\
+        {\color{gray} \qquad \qquad \texttt{skip}} & \\
+        \qquad \qquad $\{ res = 1 \wedge isPal(s[..(i + 1)] + s[(j - 1 + 1)..]) \}$ & impl \\
+        \qquad \qquad $\{ res = 1 \Leftrightarrow isPal(s[..(i + 1)] + s[(j - 1 + 1)..]) \}$ & impl \\
+        {\color{gray} \qquad \texttt{\}}} & \\
+        \qquad $\{ res = 1 \Leftrightarrow isPal(s[..(i + 1)] + s[(j - 1 + 1)..]) \}$ & impl \\
+        {\color{gray} \qquad \texttt{i := i + 1}} & \\
+        {\color{gray} \qquad \texttt{j := j - 1}} & \\
+        \qquad $\{ res = 1 \Leftrightarrow isPal(s[..i] + s[(j + 1)..]) \}$ & asg \\
+        {\color{gray} \texttt{\}}} & \\
+        $\{ (res = 1 \Leftrightarrow isPal(s[..i] + s[(j + 1)..])) \wedge \neg (i < j \wedge res = 1) \}$ & while \\
+        $\{ res = 1 \Leftrightarrow isPal(s) \}$ & impl
+    \end{tabular}
+\end{center}
+
+\section*{Time}
+
+6 hours.
+
+\end{document}

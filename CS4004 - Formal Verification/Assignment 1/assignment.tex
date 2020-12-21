@@ -1,0 +1,246 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[latin1]{inputenc}
+\usepackage{listings}
+\usepackage[dvipsnames]{xcolor}
+\renewcommand{\labelitemi}{$\textendash$}
+\geometry{
+    a4paper,
+    total={170mm,257mm},
+    left=20mm,
+    right=20mm,
+    top=5mm,
+    bottom=15mm
+}
+
+\title{CS4004: Assignment 1}
+\author{Conor McCauley - 17323203}
+\date{November 3, 2020}
+
+\begin{document}
+
+\maketitle
+
+\section*{Question 1}
+
+\noindent (a) As no contradictions occurred we know that the following semantic entailment is falsifiable and therefore it does not hold:
+
+\begin{center}
+    \begin{tabular}{cccccccccc}
+        & $\neg p$ & $\vee$ & $(q$ & $\to$ & $p)$ & $\models$ & $\neg p$ & $\wedge$ & $q$ \\
+        1   &   & T &   &   &   &   &   & F &   \\
+        1.1 & T & T & F & T & F &   & T & F & F \\
+        1.2 & F & T & T & T & T &   & F & F & T \\
+        1.3 & F & T & F & T & T &   & F & F & F \\
+    \end{tabular}
+\end{center}
+
+\noindent (b) As a contradiction occurred we know that the following semantic entailment is not falsifiable and therefore it does hold:
+
+\begin{center}
+    \begin{tabular}{ccccccccc}
+        & $\models$ & $((A$ & $\to$ & $B)$ & $\to$ & $A)$ & $\to$ & $A$ \\
+        1   &   &   &   &   &   &   & F &    \\
+        1.1 &   & \textcolor{red}{T} & F & F & T & F & F & \textcolor{red}{F}  \\
+    \end{tabular}
+\end{center}
+
+\section*{Question 2}
+
+\noindent (a)
+
+\framebox{\parbox{\dimexpr\linewidth-0\fboxsep-0\fboxrule}{\itshape%
+    $1.$ $\neg (A_1 \vee A_2),$ $premise$ \\
+    \framebox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{\itshape%
+        $2.$ $A_1,$ $assumption$ \\
+        $3.$ $A_1 \vee A_2,$ $\vee i_1 (2)$ \\
+        $4.$ $\bot,$ $\neg e (1, 3)$
+    }}
+    \framebox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{\itshape%
+        $5.$ $A_2,$ $assumption$ \\
+        $6.$ $A_1 \vee A_2,$ $\vee i_2 (5)$ \\
+        $7.$ $\bot,$ $\neg e (1, 6)$
+    }}
+    $8.$ $\neg A_1,$ $\neg i (2-4)$ \\
+    $9.$ $\neg A_2,$ $\neg i (5-7)$ \\
+    $10.$ $\neg A_1 \wedge \neg A_2,$ $\wedge i (8, 9)$
+}} \\
+
+\noindent (b) We will refer to the rule we derived in (a) as follows:
+
+$$\frac{\neg (A_1 \vee A_2)}{\neg A_1 \wedge \neg A_2} \mathcal{R}_1$$
+
+Before proving the given sequent we will first attempt to prove the following (it will make our final proof less convoluted):
+
+$$\neg (A_1 \to A_2) \vdash A_1 \wedge \neg A_2$$
+
+\framebox{\parbox{\dimexpr\linewidth-0\fboxsep-0\fboxrule}{\itshape%
+    $1.$ $\neg (A_1 \to A_2),$ $premise$ \\
+    \framebox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{\itshape%
+        $2.$ $\neg A_1,$ $assumption$ \\
+        \framebox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{\itshape%
+            $3.$ $A_1,$ $assumption$ \\
+            $4.$ $\bot,$ $\neg e (2, 3)$ \\
+            $5.$ $A_2,$ $\bot e (4)$
+        }}
+        $6.$ $A_1 \to A_2,$ $\to i (3-5)$ \\
+        $7.$ $\bot,$ $\neg e (1, 6)$
+    }}
+    $8.$ $A_1,$ $PBC (2-7)$ \\
+    \framebox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{\itshape%
+        $9.$ $A_2,$ $assumption$ \\
+        $10.$ $A_1 \to A_2,$ $\to i (8, 9)$ \\
+        $11.$ $\bot,$ $\neg e (1, 10)$
+    }}
+    $12.$ $\neg A_2,$ $\neg i (9-11)$ \\
+    $13.$ $A_1 \wedge \neg A_2,$ $\wedge i (8, 12)$
+}} \\
+
+We will refer to this derived rule as follows:
+
+$$\frac{\neg (A_1 \to A_2)}{A_1 \wedge \neg A_2} \mathcal{R}_2$$
+
+\framebox{\parbox{\dimexpr\linewidth-0\fboxsep-0\fboxrule}{\itshape%
+    \framebox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{\itshape%
+        $1.$ $\neg ((p \to q) \vee (r \to p)),$ $assumption$ \\
+        $2.$ $\neg (p \to q) \wedge \neg (r \to p),$ $\mathcal{R}_1 (1)$ \\
+        $3.$ $\neg (p \to q),$ $\wedge e_1 (2)$ \\
+        $4.$ $\neg (r \to p),$ $\wedge e_2 (2)$ \\
+        $5.$ $p \wedge \neg q,$ $\mathcal{R}_2 (3)$ \\
+        $6.$ $r \wedge \neg p,$ $\mathcal{R}_2 (4)$ \\
+        $7.$ $p,$ $\wedge e_1 (5)$ \\
+        $8.$ $\neg p,$ $\wedge e_2 (6)$ \\
+        $9.$ $\bot,$ $\neg e (7, 8)$
+    }}
+    $10.$ $(p \to q) \vee (r \to p),$ $PBC (1-9)$
+}} \\
+
+\noindent (c) We can use the rules derived from (a) and (b), $\mathcal{R}_1$ and $\mathcal{R}_2$, to prove the given sequent:
+
+\framebox{\parbox{\dimexpr\linewidth-0\fboxsep-0\fboxrule}{\itshape%
+    \framebox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{\itshape%
+        $1.$ $(A \to B) \to A,$ $assumption$ \\
+        \framebox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{\itshape%
+            $2.$ $\neg (A \vee \neg (A \to B)),$ $assumption$ \\
+            $3.$ $\neg A,$ $\mathcal{R}_1 (2)$ \\
+            $4.$ $\neg \neg (A \to B),$ $\mathcal{R}_1 (2)$ \\
+            $5.$ $A \to B,$ $\neg \neg e (4)$ \\
+            $6.$ $A,$ $\to e (5, 1)$ \\
+            $7.$ $\bot,$ $\neg e (3, 6)$
+        }}
+        $8.$ $A \vee \neg (A \to B),$ $PBC (2-7)$ \\
+        \framebox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{\itshape%
+            $9.$ $A,$ $assumption$ \\
+            $10.$ $A,$ $COPY (9)$
+        }}
+        \framebox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{\itshape%
+            $11.$ $\neg (A \to B),$ $assumption$ \\
+            $12.$ $A \wedge \neg B,$ $\mathcal{R}_2 (11)$ \\
+            $13.$ $A,$ $\wedge e_1 (12)$
+        }}
+        $14.$ $A,$ $\vee e (8, 9-10, 11-13)$
+    }}
+    $15.$ $((A \to B) \to A) \to A,$ $\to i (1-14)$
+}} \\
+
+\section*{Question 3}
+
+\noindent (a) $\forall x. (T(x) \to \exists y. (G(y) \wedge P(y, x)))$
+
+\noindent (b) $\forall x. (G(x) \to \exists y. (T(y) \wedge P(x, y)))$
+
+\noindent (c) $\neg \exists x. (G(x) \wedge \exists y. (T(y) \wedge P(x, y)) \wedge \exists z. (T(z) \wedge P(x, z)) \wedge \neg (y = z))$
+
+\noindent (d) $\exists x. (M(x, mu, rm) \wedge \neg W(mu, rm, x))$
+
+\noindent (e) $\neg \exists x. (\neg (x = ik) \wedge P(x, mu) \wedge \forall y. ((TG(mu, y) \wedge PG(ik, y)) \to PG(x, y)))$
+
+\noindent (f) $\forall x. ((\neg (x = ik) \wedge P(x, mu)) \to \exists y. (TG(mu, y) \wedge PG(ik, y) \wedge \neg PG(x, y)))$
+
+\section*{Question 4}
+
+\noindent (a)
+
+\framebox{\parbox{\dimexpr\linewidth-0\fboxsep-0\fboxrule}{\itshape%
+    $1.$ $\exists x. (P(x) \wedge Q(x)),$ $premise$ \\
+    \framebox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{\itshape%
+        \, $x_0$ \\
+        $2.$ $(P(x_0) \wedge Q(x_0)) = (P(x) \wedge Q(x))[x_0 / x],$ $assumption$ \\
+        $3.$ $P(x')[x_0 / x'] = P(x_0),$ $\wedge e_1 (2)$ \\
+        $4.$ $Q(x')[x_0 / x'] = Q(x_0),$ $\wedge e_2 (2)$ \\
+        $5.$ $\exists x'. P(x'),$ $\exists i (3)$ \\
+        $6.$ $\exists x'. Q(x'),$ $\exists i (4)$ \\
+        $7.$ $\exists x'. P(x') \wedge \exists x'. Q(x'),$ $\wedge i (5, 6)$
+    }}
+    $8.$ $\exists x'. P(x') \wedge \exists x'. Q(x'),$ $\exists e (1, 2-7)$
+}} \\
+
+\noindent (b) First we will prove the following sequent:
+
+$$\neg \exists x. A \vdash \neg A$$
+
+\framebox{\parbox{\dimexpr\linewidth-0\fboxsep-0\fboxrule}{\itshape%
+    $1.$ $\neg \exists x. A,$ $premise$ \\
+    \framebox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{\itshape%
+        $2.$ $A[t / x] = A,$ $assumption$ \\
+        $3.$ $\exists x. A,$ $\exists i (2)$ \\
+        $4.$ $\bot,$ $\neg e (3, 1)$
+    }}
+    $5.$ $\neg A,$ $\neg i (2-4)$
+}} \\
+
+We will refer to this derived rule as follows:
+
+$$\frac{\neg \exists x. A}{\neg A} \mathcal{R}_3$$
+
+We will also make use of one of the derived rules from question 2, $\mathcal{R}_2$.
+
+\framebox{\parbox{\dimexpr\linewidth-0\fboxsep-0\fboxrule}{\itshape%
+    $1.$ $\forall x. P(x) \to S,$ $premise$ \\
+    \framebox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{\itshape%
+        $2.$ $\neg \exists x. (P(x) \to S),$ $assumption$ \\
+        $3.$ $\neg (P(x) \to S),$ $\mathcal{R}_3 (2)$ \\
+        $4.$ $P(x) \wedge \neg S,$ $\mathcal{R}_2 (3)$ \\
+        $5.$ $P(x),$ $\wedge e_1 (4)$ \\
+        $6.$ $\neg S,$ $\wedge e_2 (4)$ \\
+        \framebox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{\itshape%
+            \, $x_0$ \\
+            $7.$ $P(x)[x_0 / x] = P(x_0),$ $COPY (5)$
+        }}
+        $8.$ $\forall x. P(x),$ $\forall i (7)$ \\
+        $9.$ $S,$ $\to e (1, 8)$ \\
+        $10.$ $\bot,$ $\neg e (9, 6)$
+    }}
+    $11.$ $\exists x. (P(x) \to S),$ $PBC (2-10)$
+}} \\
+
+\noindent (c)
+
+\framebox{\parbox{\dimexpr\linewidth-0\fboxsep-0\fboxrule}{\itshape%
+    $1.$ $\neg \forall x. \neg P(x),$ $premise$ \\
+    \framebox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{\itshape%
+        $2.$ $\neg \exists x. P(x),$ $assumption$ \\
+        \framebox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{\itshape%
+            \, $x_0$ \\
+            \framebox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{\itshape%
+                $3.$ $P(x)[x_0 / x] = P(x_0),$ $assumption$ \\
+                $4.$ $\exists x. P(x),$ $\exists i (3)$ \\
+                $5.$ $\bot,$ $\neg e (4, 2)$
+            }}
+            $6.$ $(\neg P(x))[x_0 / x] = \neg P(x_0),$ $\neg i (3-5)$
+        }}
+        $7.$ $\forall x. \neg P(x),$ $\forall i (3-6)$ \\
+        $8.$ $\bot,$ $\neg e (7, 1)$
+    }}
+    $9.$ $\exists x. P(x),$ $PBC (2-8)$
+}} \\
+
+\section*{Question 5}
+
+8 hours.
+
+\end{document}
+ 
