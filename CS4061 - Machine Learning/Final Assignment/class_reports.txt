@@ -1,0 +1,41 @@
+>>> Review Polarity (optimal model) <<<
+=== Test Report ===
+              precision    recall  f1-score   support
+
+       False       0.79      0.84      0.82       483
+        True       0.84      0.79      0.82       517
+
+    accuracy                           0.82      1000
+   macro avg       0.82      0.82      0.82      1000
+weighted avg       0.82      0.82      0.82      1000
+
+=== Train Report ===
+              precision    recall  f1-score   support
+
+       False       0.99      0.99      0.99      2017
+        True       0.99      0.99      0.99      1983
+
+    accuracy                           0.99      4000
+   macro avg       0.99      0.99      0.99      4000
+weighted avg       0.99      0.99      0.99      4000
+
+>>> Early Access Game (optimal model) <<<
+=== Test Report ===
+              precision    recall  f1-score   support
+
+       False       0.90      1.00      0.95       903
+        True       1.00      0.01      0.02        97
+
+    accuracy                           0.90      1000
+   macro avg       0.95      0.51      0.48      1000
+weighted avg       0.91      0.90      0.86      1000
+
+=== Train Report ===
+              precision    recall  f1-score   support
+
+       False       0.94      1.00      0.97      3570
+        True       1.00      0.45      0.62       430
+
+    accuracy                           0.94      4000
+   macro avg       0.97      0.73      0.79      4000
+weighted avg       0.94      0.94      0.93      4000
