@@ -4,5 +4,9 @@ work/
 *.mpf
 *.lock
 *.OpenDB
+*.pyc
+dataset.jl
+.vscode/
+.idea/
 __pycache__/
 credentials/
