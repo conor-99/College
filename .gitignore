@@ -8,5 +8,7 @@ work/
 dataset.jl
 .vscode/
 .idea/
+bin/
+obj/
 __pycache__/
 credentials/
