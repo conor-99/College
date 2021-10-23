@@ -1,0 +1,5 @@
+.vscode/
+index/
+results/
+target/
+trec_eval-9.0.7/
