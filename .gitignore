@@ -12,3 +12,6 @@ bin/
 obj/
 __pycache__/
 credentials/
+.Rproj.user
+.ipynb_checkpoints
+
