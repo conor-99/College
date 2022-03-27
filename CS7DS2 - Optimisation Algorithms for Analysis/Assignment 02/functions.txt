@@ -1,0 +1,2 @@
+function: 9*(x-5)^4+10*(y-2)^2
+function: Max(x-5,0)+10*|y-2|

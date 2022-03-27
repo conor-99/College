@@ -1,0 +1,69 @@
+(b)(i) f1
+alpha0=0.001, beta=0.25: final_value=78.15876476737421
+alpha0=0.001, beta=0.9: final_value=77.14702133775822
+alpha0=0.01, beta=0.25: final_value=0.0002499999499331747
+alpha0=0.01, beta=0.9: final_value=1.7338114356228889e-06
+alpha0=0.1, beta=0.25: final_value=21805.798005148215    
+alpha0=0.1, beta=0.9: final_value=56403.957676850965     
+(b)(i) f2
+alpha0=0.001, beta=0.25: final_value=17.908019885515273  
+alpha0=0.001, beta=0.9: final_value=17.818582868227747 
+alpha0=0.01, beta=0.25: final_value=0.08019885415266215
+alpha0=0.01, beta=0.9: final_value=0.014171317419942042
+alpha0=0.1, beta=0.25: final_value=0.8019886158399059  
+alpha0=0.1, beta=0.9: final_value=0.39323125815831084   
+
+(b)(ii) f1
+alpha=0.01, beta=0.25: final_value=12.96625888819215    
+alpha=0.01, beta=0.9: final_value=5.113812012656557e-05 
+alpha=0.1, beta=0.25: final_value=4.4816865441184805e-06
+alpha=0.1, beta=0.9: final_value=5.933437498132056e-06  
+alpha=1, beta=0.25: final_value=6.598639127908389e-06   
+alpha=1, beta=0.9: final_value=2.871953019700466e+226   
+(b)(ii) f2
+alpha=0.01, beta=0.25: final_value=1.354537399104696    
+alpha=0.01, beta=0.9: final_value=1.3219123573549041e-08
+alpha=0.1, beta=0.25: final_value=1.3322676295501878e-12
+alpha=0.1, beta=0.9: final_value=0.00014874383379437361
+alpha=1, beta=0.25: final_value=0.0
+alpha=1, beta=0.9: final_value=9.445256543448431e+35   
+
+(b)(iii) f1
+alpha=0.01, beta1=0.25, beta2=0.9: final_value=0.6121534744872484  
+alpha=0.01, beta1=0.9, beta2=0.9: final_value=0.01922612221134975  
+alpha=0.1, beta1=0.25, beta2=0.9: final_value=1.696648143907784e-08
+alpha=0.1, beta1=0.9, beta2=0.9: final_value=0.00017694009863760294
+alpha=1, beta1=0.25, beta2=0.9: final_value=1.5636876837132014     
+alpha=1, beta1=0.9, beta2=0.9: final_value=0.0033587841281137562   
+alpha=0.01, beta1=0.25, beta2=0.999: final_value=10.135476106679274
+alpha=0.01, beta1=0.9, beta2=0.999: final_value=8.28052817037879    
+alpha=0.1, beta1=0.25, beta2=0.999: final_value=0.014479187905774047
+alpha=0.1, beta1=0.9, beta2=0.999: final_value=0.0006231866141981542
+alpha=1, beta1=0.25, beta2=0.999: final_value=3.5936182702545214e-05
+alpha=1, beta1=0.9, beta2=0.999: final_value=3.291053665728005e-07  
+(b)(iii) f2
+alpha=0.01, beta1=0.25, beta2=0.9: final_value=1.9999986111685075e-08
+alpha=0.01, beta1=0.9, beta2=0.9: final_value=1.9999986111685075e-08 
+alpha=0.1, beta1=0.25, beta2=0.9: final_value=0.13333331319989483    
+alpha=0.1, beta1=0.9, beta2=0.9: final_value=0.10020148122684258
+alpha=1, beta1=0.25, beta2=0.9: final_value=1.253918626235695   
+alpha=1, beta1=0.9, beta2=0.9: final_value=1.9545204366517055   
+alpha=0.01, beta1=0.25, beta2=0.999: final_value=1.9999988332131124e-08
+alpha=0.01, beta1=0.9, beta2=0.999: final_value=1.9999988332131124e-08 
+alpha=0.1, beta1=0.25, beta2=0.999: final_value=0.13333331319987263    
+alpha=0.1, beta1=0.9, beta2=0.999: final_value=0.10020148122682038
+alpha=1, beta1=0.25, beta2=0.999: final_value=1.2539186262356328  
+alpha=1, beta1=0.9, beta2=0.999: final_value=1.95452043665159
+
+(c)(i)
+RMSProp (x0=-1): 0
+Heavy Ball (x0=-1): 0
+Adam (x0=-1): 0                                                          
+(c)(ii)
+RMSProp (x0=1): 0
+Heavy Ball (x0=1): 0                                                     
+Adam (x0=1): 1.0000000038104528e-08                                      
+(c)(iii)
+RMSProp (x0=100): 98.90858420662406                                      
+Heavy Ball (x0=100): 0                                                   
+Adam (x0=100): 99.00000000999967
