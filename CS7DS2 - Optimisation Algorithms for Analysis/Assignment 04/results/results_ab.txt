@@ -1,0 +1,24 @@
+=== Function 1 ===
+> GSR time = 0.0245
+> GD time = 0.0228
+> GSR min = 0.041550
+> GD min = 0.000415
+=== Function 2 ===
+> GSR time = 0.0227
+> GD time = 0.0948
+> GSR min = 0.213605
+> GD min = 0.000000
+=== Function 1 ===
+> GSR time = 0.0249
+> GSP time = 0.0524
+> GD time = 0.0226
+> GSR min = 0.480591
+> GSP min = 0.014465
+> GD min = 0.000415
+=== Function 2 ===
+> GSR time = 0.0232
+> GSP time = 0.0497
+> GD time = 0.0967
+> GSR min = 0.196797
+> GSP min = 0.026002
+> GD min = 0.000000
